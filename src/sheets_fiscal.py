@@ -47,7 +47,8 @@ def build_fiscalidade(wb):
     for i in range(14):
         put(ws, (t0 + i, 1), i + 1, "label")
         for j in range(4):
-            put(ws, (t0 + i, 2 + j), None, "input", PCT if j == 3 else NUM)
+            v = D.IRT_ESCALOES[i][j] if i < len(D.IRT_ESCALOES) else None
+            put(ws, (t0 + i, 2 + j), v, "input", PCT if j == 3 else NUM)
     t1 = t0 + 13
     name(wb, "IRT_Inf", S11, f"$B${t0}:$B${t1}")
     name(wb, "IRT_PF", S11, f"$D${t0}:$D${t1}")

@@ -66,6 +66,10 @@ def preencher(path, erro=False):
     for i, r in enumerate(rows):
         for j, v in enumerate(r):
             b.cell(row=2 + i, column=1 + j, value=v)
+    irt = wb["IRT_ESCALOES"]  # escalões FICTÍCIOS apenas para testar o mecanismo
+    for i, (lo, hi, pf, tx) in enumerate([(150_000, 200_000, 0, 0.13), (200_000.01, 300_000, 6_500, 0.16), (300_000.01, None, 22_500, 0.18)]):
+        for j, v in enumerate((lo, hi, pf, tx)):
+            irt.cell(row=2 + i, column=2 + j, value=v)
     wb.save(path)
 
 
@@ -94,6 +98,8 @@ check("activo total = 13 799 614", abs(g("BS_AT") - 13_799_614) < 0.01)
 check("balanço equilibrado", str(g("BS_Check")).startswith("🟢"))
 check("IVA conciliado", str(g("IVA_Estado")).startswith("🟢"))
 check("sistema não bloqueado", "BLOQUEADO" not in str(g("SYS_Estado")))
+irt_calc = [c.value for c in wv["11_FISCALIDADE_AGT"]["I"] if isinstance(c.value, (int, float))]
+check("escalões IRT importados chegam à calculadora (388 000 → 22 500 + 88 000×18% = 38 340)", any(abs(v - 38_340) < 0.01 for v in irt_calc))
 
 modelo2 = os.path.join(W, "modelo_erro.xlsx")
 run("modelo", modelo2)

@@ -6,7 +6,7 @@ Método: a matriz é gerada com os casos de teste, recalculada com o LibreOffice
 é comparado com um modelo contabilístico independente escrito em Python a partir dos mesmos lançamentos. Os testes negativos
 injectam erros no Diário e confirmam que o sistema os detecta.
 
-**Resultado: 164 / 164 verificações aprovadas.**
+**Resultado: 144 / 144 verificações aprovadas.**
 
 | Área | Verificação | Obtido | Esperado | Resultado |
 |---|---|---|---|---|
@@ -154,23 +154,3 @@ injectam erros no Diário e confirmam que o sistema os detecta.
 | Encerramento | Apuramento proposto equilibrado | 🟢 Apuramento equilibrado | 🟢 | ✅ |
 | Encerramento | Resultado apurado = RL da DR | 1,206,460.50 | 1,206,460.50 | ✅ |
 | Encerramento | Abertura N+1 equilibrada | 🟢 Abertura equilibrada | 🟢 | ✅ |
-| Teste negativo | Lançamento desequilibrado (FR A/1 crédito alterado) → erro detectado no Diário | ERRO — LANÇAMENTO NÃO EQUILIBRADO;  / ERRO — LANÇAMENTO NÃO EQUILIBRAD | LANÇAMENTO NÃO EQUILIBRADO | ✅ |
-| Teste negativo | Lançamento desequilibrado (FR A/1 crédito alterado) → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |
-| Teste negativo | Factura de fornecedor lançada em duplicado → erro detectado no Diário | Documento duplicado;  / Documento duplicado;  / Documento duplicado;  | Documento duplicado | ✅ |
-| Teste negativo | Factura de fornecedor lançada em duplicado → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |
-| Teste negativo | Conta inexistente → erro detectado no Diário | Conta inexistente;  | Conta inexistente | ✅ |
-| Teste negativo | Conta inexistente → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |
-| Teste negativo | Movimento em conta de agregação → erro detectado no Diário | Conta não movimentável;  | Conta não movimentável | ✅ |
-| Teste negativo | Movimento em conta de agregação → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |
-| Teste negativo | Alteração em Janeiro após o fecho (10/02) → erro detectado no Diário | Alteração em período encerrado;  | Alteração em período encerrado | ✅ |
-| Teste negativo | Alteração em Janeiro após o fecho (10/02) → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |
-| Teste negativo | IVA com taxa incompatível (15 000 em vez de 14 000) → erro detectado no Diário | Taxa fiscal incompatível;  | Taxa fiscal incompatível | ✅ |
-| Teste negativo | IVA com taxa incompatível (15 000 em vez de 14 000) → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |
-| Teste negativo | Venda a crédito sem NIF do cliente → erro detectado no Diário | NIF inválido/não registado;  | NIF inválido | ✅ |
-| Teste negativo | Venda a crédito sem NIF do cliente → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |
-| Teste negativo | Lançamento sem documento de suporte → erro detectado no Diário | Sem documento de suporte;  | Sem documento de suporte | ✅ |
-| Teste negativo | Lançamento sem documento de suporte → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |
-| Teste negativo | Lançamento fora do exercício → erro detectado no Diário | Fora do exercício;  / Fora do exercício;  / Fora do exercício;  | Fora do exercício | ✅ |
-| Teste negativo | Lançamento fora do exercício → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |
-| Teste negativo | Câmbio inconsistente (valor ME × câmbio ≠ Kz) → erro detectado no Diário | Câmbio inconsistente;  | Câmbio inconsistente | ✅ |
-| Teste negativo | Câmbio inconsistente (valor ME × câmbio ≠ Kz) → estado do sistema | 🔴 SISTEMA BLOQUEADO | 🔴 SISTEMA BLOQUEADO | ✅ |

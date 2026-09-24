@@ -70,6 +70,7 @@ def modelo(out):
         "3. TERCEIROS: todos os NIF usados nos lançamentos (clientes, fornecedores).",
         "4. ACTIVOS (opcional): registo do imobilizado.",
         "5. PLANO_CONTAS (opcional): contas a acrescentar ao PGC do modelo (mesmo código = substitui a designação/tipo).",
+        "7. IRT_ESCALOES: copiar do Diário da República (Lei n.º 14/25) os 12 escalões do Grupo A — limite inferior, limite superior, parcela fixa, taxa (ex.: 0.13).",
         "6. BALANCETE_REFERÊNCIA: saldos finais (D−C, credores negativos) do balancete do sistema actual no fim do mês de reporte.",
         "   Pode usar contas de movimento ou de agregação (ex.: 31, 43, 6, 7).",
         "",
@@ -102,6 +103,8 @@ def modelo(out):
     _sheet(wb, "ACTIVOS", ACT_H)
     _sheet(wb, "PLANO_CONTAS", PC_H, [("62.1.1", "Serviços de consultoria (exemplo)", "M")])
     _sheet(wb, "BALANCETE_REFERÊNCIA", BAL_H, [("43.1.1", "Banco A", 1000), ("51.1", "Capital social", -1000)])
+    _sheet(wb, "IRT_ESCALOES", ["Escalão", "Limite inferior (Kz)", "Limite superior (Kz)", "Parcela fixa (Kz)", "Taxa sobre o excesso (ex.: 0.13)", "Fonte (DR, página)"],
+           [(i + 1, None, None, None, None, "") for i in range(12)])
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     wb.save(out)
     print("Modelo gerado:", os.path.abspath(out))
@@ -171,7 +174,12 @@ def ler(path):
            for r in _rows(wb["ACTIVOS"], 17)] if "ACTIVOS" in wb.sheetnames else []
     plano = [(_txt(r[0]), _txt(r[1]), (_txt(r[2]) or "M").upper()[0]) for r in _rows(wb["PLANO_CONTAS"], 3)] if "PLANO_CONTAS" in wb.sheetnames else []
     ref = [(_txt(r[0]), float(r[2] or 0)) for r in _rows(wb["BALANCETE_REFERÊNCIA"], 3) if r[0]] if "BALANCETE_REFERÊNCIA" in wb.sheetnames else []
-    return cfg, journal, terc, act, plano, ref
+    irt = []
+    if "IRT_ESCALOES" in wb.sheetnames:
+        for r in _rows(wb["IRT_ESCALOES"], 5):
+            if isinstance(r[1], (int, float)) and isinstance(r[4], (int, float)):
+                irt.append((r[1], r[2], r[3] or 0, r[4] if r[4] < 1 else r[4] / 100))
+    return cfg, journal, terc, act, plano, ref, irt
 
 
 def validar(cfg, journal, terc, plano):
@@ -254,7 +262,13 @@ def saldos(journal, plano, mes):
 
 
 def carregar(path, saida, forcar=False):
-    cfg, journal, terc, act, plano_extra, ref = ler(path)
+    cfg, journal, terc, act, plano_extra, ref, irt = ler(path)
+    probs_irt = []
+    for i in range(1, len(irt)):
+        if irt[i][0] <= irt[i - 1][0]:
+            probs_irt.append(("IRT_ESCALOES", i + 1, "ERRO", "Limites inferiores dos escalões têm de ser crescentes"))
+    if irt and irt[0][3] == 0 and irt[0][0] > 0:
+        probs_irt.append(("IRT_ESCALOES", 1, "AVISO", "1.º escalão com taxa 0 — a isenção já é aplicada pelo limite de 150 000 Kz"))
     # plano: PGC do modelo + contas do cliente
     plano = list(D.PLANO)
     pos = {c: i for i, (c, _, _) in enumerate(plano)}
@@ -265,11 +279,13 @@ def carregar(path, saida, forcar=False):
             plano.append((c, n, t))
     plano.sort(key=lambda x: [int(p) if p.isdigit() else p for p in x[0].split(".")])
     probs = validar(cfg, journal, terc, plano)
+    probs = probs_irt + probs
     erros = [p for p in probs if p[2] == "ERRO"]
     mes = int(cfg.get("CFG_MesRep") or 12)
     base = os.path.splitext(saida)[0]
     rel = [f"# Relatório de importação — {cfg.get('CFG_Nome', '')}", "", f"Ficheiro: `{os.path.basename(path)}` · Exercício {cfg.get('CFG_Ano')} · mês de reporte {mes}",
-           "", f"- Linhas importadas: **{len(journal)}** · Lançamentos: **{len({l['ID'] for l in journal})}** · Terceiros: {len(terc)} · Activos: {len(act)}",
+           "", f"- Linhas importadas: **{len(journal)}** · Lançamentos: **{len({l['ID'] for l in journal})}** · Terceiros: {len(terc)} · Activos: {len(act)} · Escalões IRT: {len(irt)}"
+           + ("" if irt else " ⚠️ tabela IRT não carregada (calculadora mostrará 'TABELA POR VALIDAR')"),
            f"- Erros bloqueantes: **{len(erros)}** · Avisos: {len(probs) - len(erros)}", ""]
     if probs:
         rel += ["## Problemas por linha do modelo", "", "| Linha | ID | Gravidade | Problema |", "|---|---|---|---|"]
@@ -281,6 +297,7 @@ def carregar(path, saida, forcar=False):
         D.TERCEIROS = terc or D.TERCEIROS
         D.ACTIVOS = act
         D.PLANO = plano
+        D.IRT_ESCALOES = irt
         D.ANO = int(cfg.get("CFG_Ano") or D.ANO)
         D.MES_REP = mes
         D.CFG_OVERRIDE.update({k: v for k, v in cfg.items() if v not in (None, "")})

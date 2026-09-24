@@ -10,6 +10,7 @@ ANO = int(os.environ.get("MATRIZ_ANO", "2026"))
 # MATRIZ_MODO=producao → matriz vazia (sem entidade, terceiros, activos nem lançamentos fictícios)
 PRODUCAO = os.environ.get("MATRIZ_MODO", "").lower() == "producao"
 MES_REP = int(os.environ.get("MATRIZ_MES", "3"))
+IRT_ESCALOES = []  # [(limite inferior, limite superior, parcela fixa, taxa)] — preencher do Diário da República
 CFG_OVERRIDE = {}  # valores de 00_CONFIGURAÇÃO definidos pelo importador (nome, NIF, …)
 
 

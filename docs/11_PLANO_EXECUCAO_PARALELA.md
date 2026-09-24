@@ -17,7 +17,7 @@
 | Dia | Actividade | Responsável | Entregável |
 |---|---|---|---|
 | D1 | Escolher o mês piloto (recomendado: o mês mais recente já fechado no sistema actual) | Direcção Financeira | Decisão |
-| D1 | Carregar os escalões do IRT 2026 do Diário da República em `11_FISCALIDADE_AGT` | Técnico de contas | Tabela preenchida |
+| D1 | Copiar os 12 escalões do IRT 2026 (Lei n.º 14/25, DR de 30/12/2025) para o separador IRT_ESCALOES do modelo | Técnico de contas | Separador preenchido |
 | D1–D2 | Mapear o plano de contas actual → PGC da matriz (contas novas no separador PLANO_CONTAS) | Contabilista | Tabela de correspondência |
 | D2 | Preencher ENTIDADE e TERCEIROS (exportação de clientes/fornecedores com NIF) | Contabilidade | Modelo |
 | D3 | Lançamento de abertura (balanço de fecho do ano anterior, natureza `Abertura`) + lançamentos de Janeiro até ao mês piloto | Contabilidade | Separador LANÇAMENTOS |
