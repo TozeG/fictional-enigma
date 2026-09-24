@@ -243,7 +243,7 @@ def build_fecho(wb):
             if t in auto:
                 put(ws, (r, 1 + m), auto[t](m, CL(1 + m)), "calc", align="center")
             else:
-                put(ws, (r, 1 + m), "✔" if m <= 2 else None, "input", align="center")
+                put(ws, (r, 1 + m), "✔" if m <= 2 and not D.PRODUCAO else None, "input", align="center")
         r += 1
     last_task = r - 1
     put(ws, (r, 1), "Lançamentos inválidos no mês", "label", bold=True)
@@ -258,14 +258,14 @@ def build_fecho(wb):
     r += 2
     put(ws, (r, 1), "PERÍODO ENCERRADO? (S/N) — input", "label", bold=True)
     for m in range(1, 13):
-        put(ws, (r, 1 + m), "S" if m <= 2 else "N", "input", align="center")
+        put(ws, (r, 1 + m), "S" if m <= 2 and not D.PRODUCAO else "N", "input", align="center")
     rest = r
     name(wb, "FECHO_Estado", S33, f"$B${r}:$M${r}")
     dv_list(ws, f"B{r}:M{r}", '"S,N"')
     r += 1
     put(ws, (r, 1), "Data de fecho — input", "label", bold=True)
     for m in range(1, 13):
-        put(ws, (r, 1 + m), date(D.ANO, m + 1, 10) if m <= 2 else None, "input", DATE)
+        put(ws, (r, 1 + m), date(D.ANO, m + 1, 10) if m <= 2 and not D.PRODUCAO else None, "input", DATE)
     name(wb, "FECHO_Data", S33, f"$B${r}:$M${r}")
     r += 1
     put(ws, (r, 1), "ESTADO DO PERÍODO", "label", bold=True)

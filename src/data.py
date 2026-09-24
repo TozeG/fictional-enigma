@@ -3,9 +3,19 @@
 Regra: nenhuma taxa ou prazo fiscal é apresentado como regra legal sem fonte.
 Os campos 'estado' distinguem  CONFIRMADO (fonte identificada) de  POR VALIDAR.
 """
+import os
 from datetime import date
 
-ANO = 2026
+ANO = int(os.environ.get("MATRIZ_ANO", "2026"))
+# MATRIZ_MODO=producao → matriz vazia (sem entidade, terceiros, activos nem lançamentos fictícios)
+PRODUCAO = os.environ.get("MATRIZ_MODO", "").lower() == "producao"
+MES_REP = int(os.environ.get("MATRIZ_MES", "3"))
+CFG_OVERRIDE = {}  # valores de 00_CONFIGURAÇÃO definidos pelo importador (nome, NIF, …)
+
+
+def demo(valor, vazio=None):
+    """Devolve o valor de demonstração, ou `vazio` em modo produção."""
+    return vazio if PRODUCAO else valor
 
 # ---------------------------------------------------------------------------
 # PLANO DE CONTAS — estrutura baseada no PGC (Decreto n.º 82/01).
@@ -366,7 +376,7 @@ TAXAS = [
     ("IS_REC", "Imposto de Selo", "Recibo de quitação (verba 23.3 da Tabela)", 0.01, "Regra legal", "Código do Imposto de Selo — Tabela anexa, verba 23.3", "Verba 23.3", None, VERIF, "https://www.expansao.co.ao/gestao/detalhe/imposto-de-selo-do-recibo-regresso-ou-retrocesso-60218.html", "POR VALIDAR", "Aplicação limitada (ex.: sujeitos passivos com operações isentas sem direito à dedução). Confirmar."),
     ("INSS_TRAB", "Segurança Social", "Contribuição do trabalhador", 0.03, "Parâmetro do modelo", "Regime jurídico de protecção social obrigatória (confirmar diploma vigente)", "Confirmar", None, VERIF, "", "POR VALIDAR", ""),
     ("INSS_EMP", "Segurança Social", "Contribuição da entidade empregadora", 0.08, "Parâmetro do modelo", "Regime jurídico de protecção social obrigatória (confirmar diploma vigente)", "Confirmar", None, VERIF, "", "POR VALIDAR", ""),
-    ("IRT_A", "IRT", "IRT Grupo A — ver tabela de escalões", None, "Regra legal", "Código do IRT, alterado pela Lei n.º 28/20 e pela Lei do OGE 2026 (Lei n.º 14/25)", "Tabela anexa", date(2026, 1, 1), VERIF, "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", "POR VALIDAR", "Fontes secundárias divergem no limite de isenção (100 000 vs 150 000 Kz). Carregar a tabela oficial do DR."),
+    ("IRT_A", "IRT", "IRT Grupo A — isenção até 150 000 Kz; 12 escalões; taxas 13% a 25% (ver tabela)", None, "Regra legal", "Código do IRT, alterado pela Lei n.º 28/20 e pela Lei n.º 14/25, de 30 de Dezembro (OGE 2026)", "Tabela anexa", date(2026, 1, 1), VERIF, "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", "POR VALIDAR (escalões)", "Isenção 150 000 Kz, 12 escalões e taxas 13%–25% confirmados em várias fontes secundárias. Limites e parcelas fixas de cada escalão: carregar do Diário da República."),
     ("IRT_C", "IRT", "IRT Grupo C — taxa sobre vendas/serviços não sujeitos a retenção (volume 2025 ≥ 10 M Kz)", 0.065, "Regra legal", "Lei do OGE 2026 (Lei n.º 14/25)", "Confirmar", date(2026, 1, 1), VERIF, "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", "CONFIRMADO (fonte secundária)", ""),
     ("IAC", "Imposto sobre a Aplicação de Capitais", "Taxas por tipo de rendimento", None, "Regra legal", "Código do IAC (confirmar diploma e alterações)", "Confirmar", None, VERIF, "", "POR VALIDAR", "Não parametrizado: carregar taxas oficiais."),
     ("IP", "Imposto Predial", "Taxas e isenções (OGE 2026: isenção transmissões habitacionais ≤ 40 M Kz)", None, "Regra legal", "Código do Imposto Predial e Lei do OGE 2026", "Confirmar", date(2026, 1, 1), VERIF, "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", "POR VALIDAR", "Não parametrizado: carregar taxas oficiais."),
@@ -554,3 +564,10 @@ JOURNAL = [
     L(27, d(3, 31), "DI", "IMP", 3, d(3, 31), None, "", "87.1", "Estimativa Imposto Industrial — 1.º trimestre", deb=II_EST, nat="Imposto sobre lucros (estimativa)", codf="II_GER", sup="Mapa 15_IMPOSTO_INDUSTRIAL", obs="Valor = matéria colectável × taxa (ver 15_IMPOSTO_INDUSTRIAL)"),
     L(27, d(3, 31), "DI", "IMP", 3, d(3, 31), None, "", "34.1.1", "Estimativa Imposto Industrial — 1.º trimestre", cred=II_EST, nat="Imposto sobre lucros (estimativa)", sup="Mapa 15_IMPOSTO_INDUSTRIAL"),
 ]
+
+
+if PRODUCAO:
+    JOURNAL = []
+    ACTIVOS = []
+    ARTIGOS = []
+    TERCEIROS = [t for t in TERCEIROS if t[0] == "999999999"]

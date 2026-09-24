@@ -428,6 +428,7 @@ flowchart LR
 | `INV_VAL` | 25_ANÁLISE_DE_INVESTIMENTOS | (interno) |
 | `INV_Valor` | 09_INVENTÁRIOS | (interno) |
 | `IRT_Inf` | 11_FISCALIDADE_AGT | (interno) |
+| `IRT_Isencao` | 11_FISCALIDADE_AGT | (interno) |
 | `IRT_PF` | 11_FISCALIDADE_AGT | (interno) |
 | `IRT_Tx` | 11_FISCALIDADE_AGT | (interno) |
 | `IVA_ApurAcum` | 12_IVA | 99_CONTROLO_SISTEMA |

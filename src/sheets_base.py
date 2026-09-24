@@ -129,17 +129,17 @@ def build_config(wb):
     ws.column_dimensions["C"].width = 60
     rows = [
         ("IDENTIFICAÇÃO", None, None, None, None),
-        ("Nome da entidade", "EMPRESA MODELO, LDA (fictícia)", "CFG_Nome", None, "Entidade fictícia para demonstração."),
-        ("Denominação social", "Empresa Modelo — Comércio e Serviços, Lda", "CFG_Denom", None, ""),
-        ("NIF", "5000000000", "CFG_NIF", "@", "10 dígitos (pessoa colectiva). Validação de existência requer consulta à AGT."),
+        ("Nome da entidade", D.demo("EMPRESA MODELO, LDA (fictícia)", "[Nome da entidade]"), "CFG_Nome", None, "Entidade fictícia para demonstração."),
+        ("Denominação social", D.demo("Empresa Modelo — Comércio e Serviços, Lda", ""), "CFG_Denom", None, ""),
+        ("NIF", D.demo("5000000000", ""), "CFG_NIF", "@", "10 dígitos (pessoa colectiva). Validação de existência requer consulta à AGT."),
         ("Forma jurídica", "Sociedade por quotas", "CFG_Forma", None, ""),
-        ("Sector de actividade (CAE)", "Comércio a retalho e consultoria", "CFG_Sector", None, ""),
-        ("Sede", "Rua Exemplo, n.º 1", "CFG_Sede", None, ""),
+        ("Sector de actividade (CAE)", D.demo("Comércio a retalho e consultoria", ""), "CFG_Sector", None, ""),
+        ("Sede", D.demo("Rua Exemplo, n.º 1", ""), "CFG_Sede", None, ""),
         ("Município", "Luanda", "CFG_Municipio", None, ""),
         ("Província", "Luanda", "CFG_Provincia", None, ""),
-        ("Contactos", "geral@empresamodelo.ao | +244 900 000 000", "CFG_Contactos", None, "Fictício."),
+        ("Contactos", D.demo("geral@empresamodelo.ao | +244 900 000 000", ""), "CFG_Contactos", None, "Fictício."),
         ("Ano económico (exercício)", D.ANO, "CFG_Ano", "0", "Exercício a que respeitam os lançamentos. Dados de outros anos ficam no histórico e não entram nos mapas."),
-        ("Mês de reporte (1–12)", 3, "CFG_MesRep", "0", "Todos os mapas acumulados (Balanço, DR, KPI) são calculados até este mês."),
+        ("Mês de reporte (1–12)", D.MES_REP, "CFG_MesRep", "0", "Todos os mapas acumulados (Balanço, DR, KPI) são calculados até este mês."),
         ("ENQUADRAMENTO", None, None, None, None),
         ("Regime fiscal (Imposto Industrial)", "Regime Geral", "CFG_RegII", None, "Regime Geral / Regime Simplificado — confirmar enquadramento na AGT."),
         ("Regime de IVA", "Regime Geral", "CFG_RegIVA", None, "Regime Geral / Simplificado / Exclusão — confirmar."),
@@ -166,12 +166,12 @@ def build_config(wb):
         ("Tolerância de arredondamento (Kz)", 1, "CFG_Tol", NUM, "Usada nas validações de IVA, câmbio e reconciliações."),
         ("Depreciação: contar mês de aquisição (1=Sim, 0=Não)", 1, "CFG_IniDep", "0", "Política contabilística — confirmar regra fiscal aplicável."),
         ("Auditoria: nº de desvios-padrão para valor anómalo", 3, "CFG_kAnom", "0", "Teste estatístico de valores anormais."),
-        ("Vendas + serviços do exercício anterior (Kz)", 12_000_000, "CFG_VendasN1", NUM, "Da DR do exercício anterior (fictício)."),
-        ("EBITDA do exercício anterior (Kz)", 3_000_000, "CFG_EBITDAN1", NUM, "Da DR do exercício anterior (fictício)."),
+        ("Vendas + serviços do exercício anterior (Kz)", D.demo(12_000_000, 0), "CFG_VendasN1", NUM, "Da DR do exercício anterior (fictício)."),
+        ("EBITDA do exercício anterior (Kz)", D.demo(3_000_000, 0), "CFG_EBITDAN1", NUM, "Da DR do exercício anterior (fictício)."),
         ("Probabilidade de cobrança de saldos vencidos (tesouraria)", 0.5, "CFG_ProbCob", PCT, "Pressuposto da previsão de 13 semanas."),
-        ("Salários líquidos mensais previstos (Kz)", 348_000, "CFG_SalPrev", NUM, "Pressuposto da tesouraria (a pagar na última semana do mês)."),
+        ("Salários líquidos mensais previstos (Kz)", D.demo(348_000, 0), "CFG_SalPrev", NUM, "Pressuposto da tesouraria (a pagar na última semana do mês)."),
         ("Dia de pagamento de salários", 28, "CFG_DiaSal", "0", "Pressuposto da tesouraria."),
-        ("Serviço da dívida mensal previsto (Kz)", 45_000, "CFG_DividaPrev", NUM, "Juros mensais do empréstimo de teste."),
+        ("Serviço da dívida mensal previsto (Kz)", D.demo(45_000, 0), "CFG_DividaPrev", NUM, "Juros mensais do empréstimo de teste."),
         ("LIMITES DE ALERTA (parametrizáveis — política da entidade)", None, None, None, None),
         ("Concentração máxima num cliente (% saldo)", 0.40, "CFG_ConcCli", PCT, "Referência técnica inicial: ajustar à política de risco."),
         ("Concentração máxima num fornecedor (% saldo)", 0.40, "CFG_ConcForn", PCT, "Idem."),
@@ -191,7 +191,7 @@ def build_config(wb):
             continue
         put(ws, f"A{r}", lab, "label")
         if nm:
-            put(ws, f"B{r}", val, "input", fmt)
+            put(ws, f"B{r}", D.CFG_OVERRIDE.get(nm, val), "input", fmt)
             name(wb, nm, S_CFG, f"$B${r}")
         put(ws, f"C{r}", note, "note", wrap=True)
         r += 1

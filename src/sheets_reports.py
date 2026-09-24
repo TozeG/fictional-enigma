@@ -363,6 +363,8 @@ def build_orcamento(wb):
         put(ws, (r, 2), label, "label")
         for m in range(12):
             v = vals(m + 1) if callable(vals) else vals
+            if D.PRODUCAO and fmt != PCT:
+                v = 0
             put(ws, (r, 3 + m), v, "input", fmt)
         put(ws, (r, 15), f"=SUM(C{r}:N{r})" if fmt == NUM else "", "grey", fmt)
         r += 1

@@ -123,7 +123,7 @@ def build_caixa(wb):
         put(ws, f"{c}7", f'=SUMIFS(J_Deb,J_G2,"45",J_Ano,CFG_Ano,J_Mes,{m},J_IsAbe,0)', "calc", NUM)
         put(ws, f"{c}8", f'=SUMIFS(J_Cred,J_G2,"45",J_Ano,CFG_Ano,J_Mes,{m},J_IsAbe,0)', "calc", NUM)
         put(ws, f"{c}9", f"={c}6+{c}7-{c}8", "calc", NUM, bold=True)
-        put(ws, f"{c}10", 257_000 if m == 3 else (257_000 if m == 2 else (257_000 if m == 1 else None)), "input", NUM)
+        put(ws, f"{c}10", D.demo(257_000) if m <= 3 else None, "input", NUM)
         put(ws, f"{c}11", f'=IF({c}10="","",{c}9-{c}10)', "calc", NUM)
         put(ws, f"{c}12", f'=IF({m}>CFG_MesRep,"",IF({c}9<0,"🔴 SALDO DE CAIXA NEGATIVO",IF({c}10="","🟡 Sem contagem física",IF(ABS({c}11)>CFG_Tol,"🔴 DIFERENÇA ENTRE CAIXA CONTABILÍSTICA E CAIXA FÍSICA",IF({c}9>CFG_FundoFixo,"🟡 Acima do fundo fixo","🟢 Reconciliado")))))', "calc")
     status_cf(ws, "B12:M12")
@@ -161,7 +161,7 @@ def build_bancos(wb):
              "Cheques em circulação (−)", "Transferências pendentes (−)", "Despesas bancárias não contabilizadas (+)", "Juros creditados não contabilizados (−)",
              "Outros ajustamentos (±)", "Extracto ajustado", "Diferença de reconciliação", "Itens pendentes", "Estado"]
     header(ws, 5, 1, heads, [9, 14, 26, 6, 15, 15, 12, 12, 12, 14, 14, 12, 15, 13, 10, 30])
-    contas = [("43.1.1", "Banco A", "AO06 0000 0000 0000 0000 0000 1 (fictício)", "AOA", 8_596_500, 0, 0, 0, 2_500, 0, 0),
+    contas = [("43.1.1", "Banco A", "AO06 0000 0000 0000 0000 0000 1 (fictício)", "AOA", D.demo(8_596_500, 0), 0, 0, 0, D.demo(2_500, 0), 0, 0),
               ("43.1.2", "Banco B", "AO06 0000 0000 0000 0000 0000 2 (fictício)", "AOA", 0, 0, 0, 0, 0, 0, 0),
               ("43.2.1", "Banco A — USD", "AO06 0000 0000 0000 0000 0000 3 (fictício)", "USD", 0, 0, 0, 0, 0, 0, 0)]
     for i in range(15):

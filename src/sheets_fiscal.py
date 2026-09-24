@@ -40,7 +40,8 @@ def build_fiscalidade(wb):
     # ---------------- IRT ----------------
     r = r1 + 2
     section(ws, r, 1, "TABELA IRT — GRUPO A (carregar a partir do Diário da República — Lei do OGE 2026)", 8)
-    put(ws, (r + 1, 1), "Estado: POR VALIDAR. Fontes secundárias divergem quanto ao limite de isenção (100 000 vs 150 000 Kz). O modelo NÃO assume valores: preencha com a tabela oficial.", "note")
+    put(ws, (r + 1, 1), "Confirmado (fontes secundárias, Lei n.º 14/25): isenção até 150 000 Kz, 12 escalões, taxas de 13% a 25%, IRT = parcela fixa + (MC − limite inferior) × taxa. "
+                        "Limites e parcelas fixas: POR VALIDAR — preencher a partir do Diário da República. O modelo não inventa os escalões.", "note")
     header(ws, r + 2, 1, ["Escalão", "Limite inferior (Kz)", "Limite superior (Kz)", "Parcela fixa (Kz)", "Taxa sobre o excesso"], None)
     t0 = r + 3
     for i in range(14):
@@ -56,10 +57,12 @@ def build_fiscalidade(wb):
     calc = [("Remuneração bruta mensal", 400_000, "input"), ("Rendimentos não sujeitos/isentos (input)", 0, "input"),
             ("Contribuição INSS do trabalhador", f"=ROUND(I{c0 + 1}*TX_INSS_T,2)", "grey"),
             ("Matéria colectável", f"=I{c0 + 1}-I{c0 + 2}-I{c0 + 3}", "grey"),
-            ("IRT a reter", f'=IF(COUNT(IRT_Inf)=0,"TABELA POR VALIDAR",IFERROR(INDEX(IRT_PF,MATCH(I{c0 + 4},IRT_Inf,1))+(I{c0 + 4}-INDEX(IRT_Inf,MATCH(I{c0 + 4},IRT_Inf,1)))*INDEX(IRT_Tx,MATCH(I{c0 + 4},IRT_Inf,1)),0))', "grey")]
+            ("Limite de isenção mensal (Lei n.º 14/25)", 150_000, "input"),
+            ("IRT a reter", f'=IF(I{c0 + 4}<=I{c0 + 5},0,IF(COUNT(IRT_Inf)=0,"TABELA POR VALIDAR",IFERROR(INDEX(IRT_PF,MATCH(I{c0 + 4},IRT_Inf,1))+(I{c0 + 4}-INDEX(IRT_Inf,MATCH(I{c0 + 4},IRT_Inf,1)))*INDEX(IRT_Tx,MATCH(I{c0 + 4},IRT_Inf,1)),0)))', "grey")]
     for i, (lab, f, k) in enumerate(calc):
         put(ws, (c0 + 1 + i, 8), lab, "label")
         put(ws, (c0 + 1 + i, 9), f, k, NUM)
+    name(wb, "IRT_Isencao", S11, f"$I${c0 + 5}")
     ws.column_dimensions["H"].width = 36
     ws.column_dimensions["I"].width = 18
     # ---------------- impostos a entregar ----------------
@@ -462,10 +465,10 @@ def build_calendario(wb):
             put(ws, (r, 6), "POR VALIDAR", "input")
             put(ws, (r, 7), f"=EOMONTH(DATE(CFG_Ano,D{r},1),1)", "calc", DATE)
             put(ws, (r, 8), "Contabilidade", "input")
-            est = "Entregue" if m <= 2 else "Por entregar"
+            est = "Entregue" if m <= 2 and not D.PRODUCAO else "Por entregar"
             put(ws, (r, 9), est, "input")
-            put(ws, (r, 10), date(D.ANO, m + 1, 20) if m <= 2 else None, "input", DATE)
-            put(ws, (r, 11), f"Comprovativo {imp} {m:02d}/{D.ANO}" if m <= 2 else None, "input")
+            put(ws, (r, 10), date(D.ANO, m + 1, 20) if m <= 2 and not D.PRODUCAO else None, "input", DATE)
+            put(ws, (r, 11), f"Comprovativo {imp} {m:02d}/{D.ANO}" if m <= 2 and not D.PRODUCAO else None, "input")
             put(ws, (r, 12), val[k].format(m=m), "calc", NUM)
             put(ws, (r, 13), "Multa e juros de mora nos termos do CGT (montantes POR VALIDAR)", "note")
             put(ws, (r, 14), f"=G{r}-CFG_DataRef", "calc", "0")

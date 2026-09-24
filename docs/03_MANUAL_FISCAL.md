@@ -71,7 +71,7 @@ O Quadro A separa, por rubrica, gastos contabilísticos em dedutíveis e não de
 
 ## 7. IRT, INSS, Imposto de Selo e outros
 
-- **IRT (Grupo A):** Código do IRT alterado pela Lei n.º 28/20 e pela Lei do OGE 2026. As fontes secundárias divergem quanto ao limite de isenção de 2026 (100 000 vs 150 000 Kz) — **a tabela está vazia propositadamente** e a calculadora devolve "TABELA POR VALIDAR" até ser carregada a tabela oficial. O IRT do teste (40 000 Kz) é ilustrativo.
+- **IRT (Grupo A):** Código do IRT alterado pela Lei n.º 28/20 e pela **Lei n.º 14/25, de 30 de Dezembro (OGE 2026)**. Confirmado em várias fontes secundárias: **isenção até 150 000 Kz/mês** (era 100 000 Kz em 2025), **12 escalões**, taxas de **13% a 25%**, IRT = parcela fixa + (matéria colectável − limite inferior) × taxa, sendo a matéria colectável o rendimento deduzido do INSS do trabalhador. A calculadora já aplica a isenção; **os limites e parcelas fixas de cada escalão têm de ser carregados do Diário da República** (não foi possível confirmá-los em fonte fiável). O IRT do teste (40 000 Kz) é ilustrativo.
 - **IRT Grupo C:** OGE 2026 — 6,5% sobre vendas/serviços não sujeitos a retenção para volume 2025 ≥ 10 M Kz (fonte KPMG).
 - **INSS:** 3% trabalhador / 8% entidade empregadora — parâmetro a validar.
 - **Imposto de Selo:** recibo de quitação 1% (verba 23.3) com âmbito restrito — a validar.

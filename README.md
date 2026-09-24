@@ -21,6 +21,8 @@ Sistema integrado de informação contabilístico-financeira em **Microsoft Exce
 | I | Casos de teste | [`docs/08_CASOS_TESTE.md`](docs/08_CASOS_TESTE.md) |
 | J | Relatório de validação (gerado) | [`docs/09_RELATORIO_VALIDACAO.md`](docs/09_RELATORIO_VALIDACAO.md) |
 | + | Evolução Power Query / Power Pivot / Power BI | [`docs/10_ROADMAP_POWER_BI.md`](docs/10_ROADMAP_POWER_BI.md) |
+| + | Matriz vazia para produção (sem dados fictícios) | [`dist/MATRIZ_PRO_MASTER_VAZIA.xlsx`](dist/MATRIZ_PRO_MASTER_VAZIA.xlsx) |
+| + | Modelo de importação + execução em paralelo | [`dist/MODELO_IMPORTACAO.xlsx`](dist/MODELO_IMPORTACAO.xlsx), [`docs/11_PLANO_EXECUCAO_PARALELA.md`](docs/11_PLANO_EXECUCAO_PARALELA.md) |
 
 ## Arquitectura
 
@@ -46,6 +48,10 @@ python src/build.py            # dist/MATRIZ_PRO_MASTER_CONTABILIDADE_ANGOLA.xls
 python tests/verify.py         # requer LibreOffice Calc (libreoffice-calc)
 python src/gen_docs.py         # docs 04, 05, 06, 08
 MATRIZ_LINHAS=10000 python src/build.py   # Diário com mais capacidade
+MATRIZ_MODO=producao python src/build.py dist/MATRIZ_PRO_MASTER_VAZIA.xlsx   # sem dados fictícios
+python src/importar.py modelo                              # modelo de importação
+python src/importar.py carregar modelo.xlsx --saida dist/MATRIZ_X.xlsx      # valida, gera e compara com o sistema actual
+python tests/test_importar.py                              # teste de ponta a ponta do importador
 ```
 
 | Código | Conteúdo |
@@ -56,8 +62,9 @@ MATRIZ_LINHAS=10000 python src/build.py   # Diário com mais capacidade
 | `src/sheets_fiscal.py` | Fiscalidade AGT, IVA, facturação, SAF-T, Imposto Industrial, calendário, base legal |
 | `src/sheets_reports.py` | Balancete, Balanço, DR, fluxo de caixa, DFC, orçamento, tesouraria, budget vs actual |
 | `src/sheets_analytics.py` | KPI, sustentabilidade, dashboard, planeamento/cenários, projectos, investimentos, risco, break-even |
+| `src/importar.py` | Importação de dados reais, validação prévia e comparação com o balancete do sistema actual |
 | `src/sheets_mgmt.py` | LEIA-ME, controlo interno, auditoria, fecho, encerramento, relatório de gestão, alertas, motor de consistência |
 
 ## Pontos que exigem validação antes do uso oficial
 
-Tabela do IRT 2026 (não carregada: fontes divergem), número/data da Lei do OGE 2026, retenção de 6,5% sobre serviços, codificação 34.5.x do IVA, prazos do calendário fiscal, taxas de amortização fiscais, exigibilidade do IVA em adiantamentos e autoliquidação de serviços de não residentes, XSD do SAF-T. Detalhe em `docs/06_MATRIZ_LEGISLACAO.md`.
+Escalões do IRT 2026 (isenção de 150 000 Kz já aplicada; limites e parcelas fixas por carregar), número/data da Lei do OGE 2026, retenção de 6,5% sobre serviços, codificação 34.5.x do IVA, prazos do calendário fiscal, taxas de amortização fiscais, exigibilidade do IVA em adiantamentos e autoliquidação de serviços de não residentes, XSD do SAF-T. Detalhe em `docs/06_MATRIZ_LEGISLACAO.md`.

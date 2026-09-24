@@ -300,7 +300,7 @@ def build_projectos(wb):
              "VAL", "TIR", "Payback (anos)", "Prazo", "Estado"]
     header(ws, 5, 1, heads, [7, 26, 14, 13, 13, 12, 10, 10, 6, 8] + [12] * 7 + [13] * 6 + [9, 13, 8, 8, 10, 26])
     ws.freeze_panes = "C6"
-    prj = [("PRJ01", "Modernização informática", "Dir. Administrativo", 1_500_000, 1_200_000, "Capitais próprios", "2026-02-01", "2026-06-30", 2, 0.20,
+    prj = [] if D.PRODUCAO else [("PRJ01", "Modernização informática", "Dir. Administrativo", 1_500_000, 1_200_000, "Capitais próprios", "2026-02-01", "2026-06-30", 2, 0.20,
             -1_200_000, 450_000, 450_000, 450_000, 450_000, 0, 0),
            ("PRJ02", "Consultoria Epsilon", "Dir. Operações", 1_000_000, 0, "Receitas do projecto", "2026-02-01", "2026-12-31", 3, 0.25,
             0, 2_500_000, 1_000_000, 0, 0, 0, 3_600_000)]
