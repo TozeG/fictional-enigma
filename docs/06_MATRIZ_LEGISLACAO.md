@@ -36,14 +36,14 @@
 | IS_REC | Imposto de Selo | Recibo de quitação (verba 23.3 da Tabela) | 1.0% | Regra legal | Código do Imposto de Selo — Tabela anexa, verba 23.3 | Verba 23.3 | — | POR VALIDAR | Aplicação limitada (ex.: sujeitos passivos com operações isentas sem direito à dedução). Confirmar. |
 | INSS_TRAB | Segurança Social | Contribuição do trabalhador | 3.0% | Parâmetro do modelo | Regime jurídico de protecção social obrigatória (confirmar diploma vigente) | Confirmar | — | POR VALIDAR |  |
 | INSS_EMP | Segurança Social | Contribuição da entidade empregadora | 8.0% | Parâmetro do modelo | Regime jurídico de protecção social obrigatória (confirmar diploma vigente) | Confirmar | — | POR VALIDAR |  |
-| IRT_A | IRT | IRT Grupo A — isenção até 150 000 Kz; 12 escalões; taxas 13% a 25% (ver tabela) | — (não parametrizada) | Regra legal | Código do IRT, alterado pela Lei n.º 28/20 e pela Lei n.º 14/25, de 30 de Dezembro (OGE 2026) | Tabela anexa | 2026-01-01 | POR VALIDAR (escalões) | Isenção 150 000 Kz, 12 escalões e taxas 13%–25% confirmados em várias fontes secundárias. Limites e parcelas fixas de cada escalão: carregar do Diário da República. |
+| IRT_A | IRT | IRT Grupo A — isenção até 150 000 Kz; 12 escalões; taxas 13% a 25% (ver tabela) | — (não parametrizada) | Regra legal | Código do IRT, alterado pela Lei n.º 28/20 e pela Lei n.º 14/25, de 30 de Dezembro (OGE 2026) | Art. 21.º, n.º 3 e Anexo I da Lei n.º 14/25 | 2026-01-01 | POR VALIDAR (escalões) | Isenção 150 000 Kz, 12 escalões e taxas 13%–25% confirmados em várias fontes secundárias. Limites e parcelas fixas de cada escalão: carregar do Diário da República. |
 | IRT_C | IRT | IRT Grupo C — taxa sobre vendas/serviços não sujeitos a retenção (volume 2025 ≥ 10 M Kz) | 6.5% | Regra legal | Lei do OGE 2026 (Lei n.º 14/25) | Confirmar | 2026-01-01 | CONFIRMADO (fonte secundária) |  |
 | IAC | Imposto sobre a Aplicação de Capitais | Taxas por tipo de rendimento | — (não parametrizada) | Regra legal | Código do IAC (confirmar diploma e alterações) | Confirmar | — | POR VALIDAR | Não parametrizado: carregar taxas oficiais. |
 | IP | Imposto Predial | Taxas e isenções (OGE 2026: isenção transmissões habitacionais ≤ 40 M Kz) | — (não parametrizada) | Regra legal | Código do Imposto Predial e Lei do OGE 2026 | Confirmar | 2026-01-01 | POR VALIDAR | Não parametrizado: carregar taxas oficiais. |
 
 ## Pontos em aberto (validação obrigatória)
 
-1. **Tabela do IRT 2026 (Grupo A)** — confirmado: isenção até 150 000 Kz, 12 escalões, taxas 13%–25% (Lei n.º 14/25). Em aberto: limites e parcelas fixas de cada escalão — carregar do Diário da República em 11_FISCALIDADE_AGT.
+1. **Tabela do IRT 2026 (Grupo A)** — confirmado: isenção até 150 000 Kz, 12 escalões, taxas 13%–25% (Lei n.º 14/25). Localização: art. 21.º, n.º 3 e **Anexo I** da Lei n.º 14/25. Em aberto: limites e parcelas fixas de cada escalão — copiar do Anexo I para o separador IRT_ESCALOES do modelo.
 2. **Número e data da Lei do OGE 2026** — referida como Lei n.º 14/25, de 30 de Dezembro, em fontes secundárias; confirmar.
 3. **Retenção na fonte de 6,5% sobre serviços (Imposto Industrial)** — usada nos testes; confirmar artigo, incidência e dispensas.
 4. **Contas de IVA no PGC (34.5.x)** — codificação analítica usada é a sugerida; confirmar com o instrutivo/decreto executivo que as criou.
