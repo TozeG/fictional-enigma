@@ -10,7 +10,7 @@ injectam erros no Diário e confirmam que o sistema os detecta.
 
 | Área | Verificação | Obtido | Esperado | Resultado |
 |---|---|---|---|---|
-| Recálculo | 111349 fórmulas, erros = 0 | 0.00 | 0.00 | ✅ |
+| Recálculo | 111472 fórmulas, erros = 0 | 0.00 | 0.00 | ✅ |
 | DR mensal | DR01 mês 1 | 600,000.00 | 600,000.00 | ✅ |
 | DR mensal | DR01 mês 2 | 150,000.00 | 150,000.00 | ✅ |
 | DR mensal | DR02 mês 2 | 3,000,000.00 | 3,000,000.00 | ✅ |
