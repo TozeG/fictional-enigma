@@ -47,6 +47,9 @@ def irt_tabela(ano):
 
 
 IRT_ESCALOES, IRT_ISENCAO, IRT_FONTE_ANO = irt_tabela(ANO)
+BANCOS = []  # linhas de 06_BANCOS (vazio = contas de demonstração)
+CONTA_DEFAULT = {}  # substituição das contas por omissão dos modelos de operação (perfil)
+PERFIL = os.environ.get("MATRIZ_PERFIL", "").lower()
 OPERACOES = []  # linhas de 02A_OPERAÇÕES (dicts com as chaves de sheets_ops.IN_COLS)
 CFG_OVERRIDE = {}  # valores de 00_CONFIGURAÇÃO definidos pelo importador (nome, NIF, …)
 
@@ -641,8 +644,9 @@ def demo_operacoes():
         op(31, "Pagamento de impostos", 245_000, "43.1.1", ContaEsp="34.5.6"),                                       # 16
         op(22, "Entrada de capital", 2_000_000, "43.1.1", ContaEsp="51.1"),                                          # 17
         op(24, "Depreciação do mês", None, None, CC="ADM"),                                                          # 18
+        op(20, "Recebimento de cliente com retenção na fonte", 3_420_000, "43.1.1", Ref=12, NIF="5000000005", Proj="PRJ02"),  # 19
     ]
-    substituidos = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 22, 24, 29, 31}
+    substituidos = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 20, 22, 24, 29, 31}
     manual = [l for l in J if l["ID"] not in substituidos]
     for l in manual:  # referências a documentos que passaram a operações
         if l["Ref"] == 3:
@@ -660,3 +664,57 @@ if PRODUCAO:
 
 elif os.environ.get("MATRIZ_DEMO", "").lower() == "operacoes":
     OPERACOES, JOURNAL = demo_operacoes()
+
+
+# ---------------------------------------------------------------------------
+# PERFIL DA ENTIDADE: comércio e prestação de serviços, Regime Geral de IVA, banco BCI
+# (MATRIZ_PERFIL=comercio_servicos; categorias genéricas a renomear pelo utilizador)
+# ---------------------------------------------------------------------------
+PERFIS = {
+    "comercio_servicos": dict(
+        sector="Comércio e prestação de serviços",
+        contas={  # código: (designação, tipo)
+            "61.1": ("Vendas de mercadorias", "A"),
+            "61.1.1": ("Vendas — mercadorias categoria 1 (renomear)", "M"),
+            "61.1.2": ("Vendas — mercadorias categoria 2 (renomear)", "M"),
+            "61.1.3": ("Vendas — mercadorias categoria 3 (renomear)", "M"),
+            "62.1": ("Serviços principais", "A"),
+            "62.1.1": ("Serviços técnicos, instalação e manutenção (renomear)", "M"),
+            "62.1.2": ("Consultoria e formação (renomear)", "M"),
+            "62.1.3": ("Outros serviços (renomear)", "M"),
+            "26.1": ("Mercadorias", "A"),
+            "26.1.1": ("Mercadorias — armazém principal", "M"),
+            "42.1": ("Depósitos a prazo — BCI", "M"),
+            "43.1.1": ("BCI — conta à ordem Kz", "M"),
+            "43.1.2": ("Outro banco — conta Kz (a configurar)", "M"),
+            "43.2.1": ("BCI — conta moeda estrangeira (se aplicável)", "M"),
+        },
+        conta_default={"CONTA:61.1": "CONTA:61.1.1", "CONTA:62.1": "CONTA:62.1.1", "26.1": "26.1.1"},
+        bancos=[("43.1.1", "BCI — Banco de Comércio e Indústria", "(preencher IBAN)", "AOA", 0, 0, 0, 0, 0, 0, 0),
+                ("43.2.1", "BCI — moeda estrangeira (se aplicável)", "(preencher IBAN)", "USD", 0, 0, 0, 0, 0, 0, 0)],
+    ),
+}
+
+
+def aplicar_perfil(nome):
+    global PLANO, BANCOS, CONTA_DEFAULT
+    p = PERFIS[nome]
+    novo, vistos = [], set()
+    for c, d, t in PLANO:
+        if c in p["contas"]:
+            d, t = p["contas"][c]
+        novo.append((c, d, t))
+        vistos.add(c)
+    for c, (d, t) in p["contas"].items():
+        if c not in vistos:
+            novo.append((c, d, t))
+    novo.sort(key=lambda x: [int(k) if k.isdigit() else k for k in x[0].split(".")])
+    PLANO = novo
+    BANCOS = p["bancos"]
+    CONTA_DEFAULT = dict(p["conta_default"])
+    CFG_OVERRIDE["CFG_Sector"] = p["sector"]
+    CFG_OVERRIDE["CFG_RegIVA"] = "Regime Geral"
+
+
+if PERFIL:
+    aplicar_perfil(PERFIL)

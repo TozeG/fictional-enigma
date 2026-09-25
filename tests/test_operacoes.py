@@ -1,6 +1,6 @@
 """Equivalência: o cenário de demonstração registado por OPERAÇÕES (02A) dá os mesmos resultados que lançado à mão no Diário.
 
-18 operações substituem os lançamentos manuais equivalentes; ficam manuais os especiais (abertura, NC, moeda estrangeira,
+19 operações substituem os lançamentos manuais equivalentes; ficam manuais os especiais (abertura, NC, moeda estrangeira,
 diferimentos, retenções, apuramento do IVA, estimativa de imposto). Tolerância 0,05 Kz: o custo médio automático é
 104 385,96 (arredondamento a cêntimos) contra 104 386 lançado à mão.
 """
@@ -56,7 +56,7 @@ if __name__ == "__main__":
         ok.append((f"{n}: {gb(n)}", str(gb(n)).startswith("🟢"), None))
     import sheets_ops
     est = [wb["02A_OPERAÇÕES"][f"{sheets_ops.OC['Estado']}{sheets_ops.OR0 + i}"].value for i in range(len(ops))]
-    ok.append((f"18 operações registadas sem erro", sum(1 for e in est if str(e).startswith("🔴")) == 0 and len([e for e in est if e]) == 18, est))
+    ok.append((f"{len(ops)} operações registadas sem erro", sum(1 for e in est if str(e).startswith("🔴")) == 0 and len([e for e in est if e]) == len(ops), est))
     ok.append(("nenhuma linha do Diário com erro", sum(x or 0 for x in gb("J_ErrFlag")) == 0, None))
     ok.append(("kardex: custo das saídas = custo médio", wb["09_INVENTÁRIOS"]["H42"].value == 0, wb["09_INVENTÁRIOS"]["H42"].value))
     ok.append((f"sistema: {gb('SYS_Estado')}", "BLOQUEADO" not in str(gb("SYS_Estado")), None))

@@ -36,6 +36,9 @@ TIPOS = [
     ("Recebimento de cliente", "Recebimento de cliente", "RC", "RC",
      [("TES", "D", "BASE"), ("CONTA:31.1.1", "C", "BASE")],
      "Valor recebido. Ref. = nº da operação da venda liquidada. Pago/recebido = caixa/banco."),
+    ("Recebimento de cliente com retenção na fonte", "Recebimento de cliente", "RC", "RC",
+     [("TES", "D", "LIQRET"), ("34.1.2", "D", "RET"), ("CONTA:31.1.1", "C", "BASE")],
+     "Valor = total da factura liquidada (com IVA). Ref. = nº da operação da prestação de serviços. Retenção = taxa RET_SERV (11_FISCALIDADE_AGT) × valor do serviço sem IVA."),
     ("Pagamento a fornecedor", "Pagamento a fornecedor", "RCF", "RCF",
      [("CONTA:32.1.1", "D", "BASE"), ("TES", "C", "BASE")],
      "Valor pago. Ref. = nº da operação da compra liquidada."),
@@ -60,7 +63,7 @@ TIPOS = [
      [("73.1", "D", "DEP"), ("CONTA:18.1.5", "C", "DEP")],
      "Valor vazio = depreciação do mês calculada em 10_ACTIVOS_FIXOS."),
 ]
-VALKEYS = ["BASE", "IVA", "TOTAL", "CUSTO", "INSS_E", "INSS_TOT", "IRT", "LIQ", "DEP"]
+VALKEYS = ["BASE", "IVA", "TOTAL", "CUSTO", "INSS_E", "INSS_TOT", "IRT", "LIQ", "DEP", "RET", "LIQRET"]
 
 IN_COLS = [  # (chave, cabeçalho, largura, formato)
     ("Data", "Data", 11, DATE), ("Tipo", "Tipo de operação", 30, None), ("TipoDoc", "Tipo doc. (opcional)", 8, "@"),
@@ -73,7 +76,7 @@ IN_COLS = [  # (chave, cabeçalho, largura, formato)
     ("EstAGT", "Estado AGT", 11, "@"), ("Obs", "Observação", 28, None),
 ]
 OC = {k: CL(2 + i) for i, (k, *_) in enumerate(IN_COLS)}   # coluna A = nº operação
-CALC = ["Taxa", "IVA", "Total", "Custo", "INSS_T", "INSS_E", "INSS_TOT", "IRT", "LIQ", "DQ", "DV", "CMP", "ID", "DocEf", "Nat", "Linhas", "Estado", "DEP"]
+CALC = ["Taxa", "IVA", "Total", "Custo", "INSS_T", "INSS_E", "INSS_TOT", "IRT", "LIQ", "DQ", "DV", "CMP", "ID", "DocEf", "Nat", "Linhas", "Estado", "DEP", "BaseRef", "RET", "LIQRET"]
 for i, k in enumerate(CALC):
     OC[k] = CL(2 + len(IN_COLS) + i)
 LAST_OP = OR0 + OPS - 1
@@ -90,7 +93,7 @@ def add_templates(wb):
             put(ws, (r, c0), f'=IF({CL(c0 + 1)}{r}="","",{CL(c0 + 1)}{r}&"|"&{CL(c0 + 2)}{r})', "grey")
             put(ws, (r, c0 + 1), nome, "input")
             put(ws, (r, c0 + 2), s, "input", "0")
-            put(ws, (r, c0 + 3), src, "input")
+            put(ws, (r, c0 + 3), D.CONTA_DEFAULT.get(src, src), "input")
             put(ws, (r, c0 + 4), lado, "input")
             put(ws, (r, c0 + 5), val, "input")
             r += 1
@@ -131,8 +134,9 @@ def build_operacoes(wb):
           "CAMADA 1 — INPUT (azul)  |  cálculo automático (cinzento)")
     heads = ["Nº"] + [h for _, h, _, _ in IN_COLS] + ["Taxa IVA", "IVA", "Total", "Custo mercadorias", "INSS trabalhador", "INSS empresa",
                                                       "INSS total", "IRT", "Líquido a pagar", "Δ qtd stock", "Δ valor stock", "Custo médio antes",
-                                                      "ID lançamento", "Tipo doc. efectivo", "Natureza", "Linhas no Diário", "Estado", "Depreciação do mês"]
-    widths = [6] + [w for _, _, w, _ in IN_COLS] + [7, 12, 13, 13, 12, 12, 12, 12, 13, 9, 12, 11, 10, 8, 20, 7, 30, 12]
+                                                      "ID lançamento", "Tipo doc. efectivo", "Natureza", "Linhas no Diário", "Estado", "Depreciação do mês",
+                                                      "Base do serviço liquidado", "Retenção na fonte", "Líquido recebido"]
+    widths = [6] + [w for _, _, w, _ in IN_COLS] + [7, 12, 13, 13, 12, 12, 12, 12, 13, 9, 12, 11, 10, 8, 20, 7, 30, 12, 13, 12, 13]
     header(ws, OR0 - 1, 1, heads, widths)
     for j in range(len(IN_COLS) + 1, len(heads)):
         ws.cell(row=OR0 - 1, column=1 + j).fill = fill("595959")
@@ -172,6 +176,9 @@ def build_operacoes(wb):
             "Estado": (f'=IF({g("ID")}="","",IF(ISNA(MATCH({tipo},TOP_Nome,0)),"🔴 Tipo de operação desconhecido",IF({g("Linhas")}<2,"🔴 Não gerou lançamento — verifique valor e meio",'
                        f'IF(COUNTIFS(J_ID,{g("ID")},J_ErrFlag,1)>0,"🔴 "&COUNTIFS(J_ID,{g("ID")},J_ErrFlag,1)&" linha(s) com erro — ver Erros_Detectados no Diário",'
                        f'IF(AND({tipo}={sal},COUNT(IRT_Inf)=0),"🟡 Tabela IRT em falta",IF({g("Validador")}="","🟡 Registada — por aprovar","🟢 Registada"))))))'),
+            "BaseRef": f'=IF(N({g("Ref")})=0,0,IFERROR(N(INDEX(${OC["Valor"]}${OR0}:${OC["Valor"]}${LAST_OP},{g("Ref")})),0))',
+            "RET": f'=IF({tipo}<>"Recebimento de cliente com retenção na fonte",0,ROUND({g("BaseRef")}*TX_RET,2))',
+            "LIQRET": f"=N({g('Valor')})-{g('RET')}",
             "DEP": f'=IF({tipo}<>"Depreciação do mês",0,IF(N({g("Valor")})<>0,N({g("Valor")}),IFERROR(INDEX(AF_DepMesReg,MONTH({g("Data")})),0)))',
         }
         for k in CALC:
@@ -221,7 +228,7 @@ def build_motor(wb):
                 "Lado": f'=IF(E{r}="","",IFERROR(INDEX(MOD_Lado,MATCH(D{r},MOD_Key,0))&"",""))',
                 "VK": f'=IF(E{r}="","",IFERROR(INDEX(MOD_Val,MATCH(D{r},MOD_Key,0))&"",""))',
                 "Mont": (f'=IF(E{r}="",0,IFERROR(CHOOSE(MATCH(G{r},L_ValKeys,0),N({o("Valor")}),{o("IVA")},{o("Total")},{o("Custo")},{o("INSS_E")},'
-                         f'{o("INSS_TOT")},{o("IRT")},{o("LIQ")},{o("DEP")}),0))'),
+                         f'{o("INSS_TOT")},{o("IRT")},{o("LIQ")},{o("DEP")},{o("RET")},{o("LIQRET")}),0))'),
                 "Meio": f'={o("Meio")}&""',
                 "Conta": (f'=IF(E{r}="","",IF(E{r}="MEIO_CLI",IF(I{r}="A crédito","31.1.1",I{r}),IF(E{r}="MEIO_FOR",IF(I{r}="A crédito","32.1.1",I{r}),'
                           f'IF(E{r}="MEIO_FORI",IF(I{r}="A crédito","32.2",I{r}),IF(E{r}="TES",I{r},IF(LEFT(E{r},6)="CONTA:",IF({o("ContaEsp")}<>"",{o("ContaEsp")}&"",MID(E{r},7,20)),E{r}))))))'),
@@ -249,8 +256,8 @@ def build_motor(wb):
                 "CR": '=""', "Fonte": '=""', "Moeda": '=""', "Cambio": '=""', "ValME": '=""', "DtAlt": '=""', "DtCom": '=""', "ErroCom": '=""',
                 "Proj": f'=IF({idc}="","",{o("Proj")}&"")',
                 "Nat": f'=IF({idc}="","",{o("Nat")})',
-                "CodF": f'=IF({idc}="","",IF(OR({iva_line},{base_isenta}),{o("CodF")}&"",""))',
-                "Base": f'=IF(OR({idc}="",{JC["CodF"]}{r}=""),"",N({o("Valor")}))',
+                "CodF": f'=IF({idc}="","",IF(G{r}="RET","RET_SERV",IF(OR({iva_line},{base_isenta}),{o("CodF")}&"","")))',
+                "Base": f'=IF(OR({idc}="",{JC["CodF"]}{r}=""),"",IF(G{r}="RET",{o("BaseRef")},N({o("Valor")})))',
                 "Ref": f'=IF(OR({idc}="",{o("Ref")}=""),"",IF(OR(LEFT(J{r},2)="31",LEFT(J{r},2)="32"),{OP_ID0}+{o("Ref")},""))',
                 "FormaPag": f'=IF({idc}="","",IF(LEFT(J{r},2)="45","Numerário",IF(LEFT(J{r},2)="43","Transferência","")))',
                 "Artigo": f'=IF(OR({idc}="",{o("Artigo")}=""),"",IF(LEFT(J{r},1)="2",{o("Artigo")}&"",""))',

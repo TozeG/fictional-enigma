@@ -49,7 +49,7 @@ python src/build.py            # dist/MATRIZ_PRO_MASTER_CONTABILIDADE_ANGOLA.xls
 python tests/verify.py         # requer LibreOffice Calc (libreoffice-calc)
 python src/gen_docs.py         # docs 04, 05, 06, 08
 MATRIZ_LINHAS=10000 python src/build.py   # Diário com mais capacidade
-MATRIZ_MODO=producao python src/build.py dist/MATRIZ_PRO_MASTER_VAZIA.xlsx   # sem dados fictícios
+MATRIZ_MODO=producao python src/build.py dist/MATRIZ_PRO_MASTER_VAZIA.xlsx   # sem dados fictícios (MATRIZ_PERFIL=comercio_servicos para o perfil da entidade)
 python src/importar.py modelo                              # modelo de importação
 python src/importar.py carregar modelo.xlsx --saida dist/MATRIZ_X.xlsx      # valida, gera e compara com o sistema actual
 python tests/test_importar.py                              # teste de ponta a ponta do importador

@@ -2,7 +2,7 @@
 
 A matriz **é** o sistema de contabilidade, fiscalidade e gestão financeira. Não há migração nem execução em paralelo: arranca-se com o balanço de abertura e, a partir daí, registam-se as operações do dia-a-dia.
 
-Ficheiro de trabalho: `dist/MATRIZ_PRO_MASTER_VAZIA.xlsx` (sem dados fictícios; capacidade: 1 000 operações + 500 lançamentos manuais por exercício).
+Ficheiro de trabalho: `dist/MATRIZ_PRO_MASTER_VAZIA.xlsx` (sem dados fictícios; capacidade: 1 000 operações + 500 lançamentos manuais por exercício), já configurado para **comércio e prestação de serviços, Regime Geral de IVA, banco BCI** (43.1.1). Vendas em 61.1.1–61.1.3 e serviços em 62.1.1–62.1.3 (categorias genéricas: renomeie em 01_PLANO_CONTAS); stock em 26.1.1. A operação usa a categoria 1 por omissão; para outra, indique-a em "Conta específica".
 Ficheiro de aprendizagem: `dist/MATRIZ_PRO_MASTER_CONTABILIDADE_ANGOLA.xlsx` (mesma matriz com um trimestre de exemplo já registado).
 
 ## Semana 1 — Preparação (uma vez)
@@ -30,6 +30,7 @@ Uma linha por acontecimento. Escolhe-se o **Tipo de operação** e preenchem-se 
 | Vendi mercadoria | Venda de mercadorias | Artigo + quantidade → custo automático |
 | Prestei um serviço | Prestação de serviços | |
 | Recebi de um cliente | Recebimento de cliente | Ref. = nº da operação da venda |
+| Recebi de uma empresa que reteve imposto | Recebimento de cliente com retenção na fonte | Valor = total da factura; retenção 6,5% (RET_SERV) calculada sobre o serviço sem IVA; fica como crédito de Imposto Industrial (34.1.2) |
 | Comprei mercadoria | Compra de mercadorias | Artigo + quantidade |
 | Paguei uma despesa (luz, renda, material…) | Despesa / fornecimento de serviços | Conta específica = conta de custo |
 | Comprei equipamento | Aquisição de imobilizado | + registar em 10_ACTIVOS_FIXOS |
@@ -41,7 +42,7 @@ Uma linha por acontecimento. Escolhe-se o **Tipo de operação** e preenchem-se 
 | Sócios entraram com capital | Entrada de capital | |
 | Fim do mês | Depreciação do mês | Valor vazio = cálculo de 10_ACTIVOS_FIXOS |
 
-Situações especiais (notas de crédito, moeda estrangeira, retenções na fonte sofridas, adiantamentos, acréscimos e diferimentos, apuramento do IVA, estimativa de imposto) lançam-se no `02_DIÁRIO` (zona manual) — os exemplos estão na matriz de aprendizagem.
+Situações especiais (notas de crédito, moeda estrangeira, adiantamentos, acréscimos e diferimentos, apuramento do IVA, estimativa de imposto) lançam-se no `02_DIÁRIO` (zona manual) — os exemplos estão na matriz de aprendizagem.
 
 **A matriz não emite facturas.** As facturas continuam a ser emitidas por software validado pela AGT (obrigatório para Grandes Contribuintes desde 01/01/2026 e para os regimes geral e simplificado do IVA a partir de 01/01/2027 — DP n.º 71/25); na matriz regista-se a operação com o número, a série e o hash do documento.
 

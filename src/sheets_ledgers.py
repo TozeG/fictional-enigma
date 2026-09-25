@@ -161,7 +161,7 @@ def build_bancos(wb):
              "Cheques em circulação (−)", "Transferências pendentes (−)", "Despesas bancárias não contabilizadas (+)", "Juros creditados não contabilizados (−)",
              "Outros ajustamentos (±)", "Extracto ajustado", "Diferença de reconciliação", "Itens pendentes", "Estado"]
     header(ws, 5, 1, heads, [9, 14, 26, 6, 15, 15, 12, 12, 12, 14, 14, 12, 15, 13, 10, 30])
-    contas = [("43.1.1", "Banco A", "AO06 0000 0000 0000 0000 0000 1 (fictício)", "AOA", D.demo(8_596_500, 0), 0, 0, 0, D.demo(2_500, 0), 0, 0),
+    contas = D.BANCOS if D.BANCOS else [("43.1.1", "Banco A", "AO06 0000 0000 0000 0000 0000 1 (fictício)", "AOA", D.demo(8_596_500, 0), 0, 0, 0, D.demo(2_500, 0), 0, 0),
               ("43.1.2", "Banco B", "AO06 0000 0000 0000 0000 0000 2 (fictício)", "AOA", 0, 0, 0, 0, 0, 0, 0),
               ("43.2.1", "Banco A — USD", "AO06 0000 0000 0000 0000 0000 3 (fictício)", "USD", 0, 0, 0, 0, 0, 0, 0)]
     for i in range(15):
