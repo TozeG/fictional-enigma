@@ -13,7 +13,9 @@ S_J = "02_DIÁRIO_LANÇAMENTOS"
 S_33 = "33_FECHO_MENSAL"
 
 JR0 = 6
-JR1 = JR0 + int(__import__("os").environ.get("MATRIZ_LINHAS", "2000")) - 1  # linhas do diário
+JM1 = JR0 + int(__import__("os").environ.get("MATRIZ_LINHAS", "2000")) - 1  # fim da zona MANUAL do diário
+JA0 = JM1 + 1                                                                 # início da zona AUTOMÁTICA (gerada de 02A_OPERAÇÕES)
+JR1 = JM1 + int(__import__("os").environ.get("MATRIZ_OPERACOES", "300")) * 6  # fim do diário (manual + automática)
 PR0, PR1 = 6, 405           # linhas do plano
 TR0, TR1 = 6, 305           # linhas de terceiros
 
@@ -419,14 +421,20 @@ def build_journal(wb):
     put(ws, "J3", '=IF(ABS(G3-I3)>0.005,"🔴 ERRO — DIÁRIO NÃO EQUILIBRADO","🟢 Diário equilibrado")&" | Linhas com erro: "&SUM(J_ErrFlag)', "grey")
     status_cf(ws, "J3")
     data_rows = D.JOURNAL
+    import sheets_ops
+    auto_fill = fill("E2EFDA")
     for i in range(JR1 - JR0 + 1):
         r = JR0 + i
-        rec = data_rows[i] if i < len(data_rows) else None
+        manual = r <= JM1
+        rec = data_rows[i] if (manual and i < len(data_rows)) else None
         for j, (k, _, _, fmt) in enumerate(J_IN):
-            v = rec[k] if rec else None
-            c = ws.cell(row=r, column=1 + j, value=v)
-            c.font = font(False, C_INPUT_FONT)
-            c.protection = Protection(locked=False)
+            if manual:
+                c = ws.cell(row=r, column=1 + j, value=rec[k] if rec else None)
+                c.font = font(False, C_INPUT_FONT)
+                c.protection = Protection(locked=False)
+            else:
+                c = ws.cell(row=r, column=1 + j, value="=" + sheets_ops.motor_ref(k, r - JA0))
+                c.fill = auto_fill
             if fmt:
                 c.number_format = fmt
         for j, (k, _, _, fmt, tpl) in enumerate(J_CALC):
@@ -440,26 +448,29 @@ def build_journal(wb):
         ws.cell(row=4, column=len(J_IN) + 1 + j).fill = fill(C_CALC_FILL)
     for k, col in JCOLS.items():
         name(wb, "J_" + k, S_J, f"${col}${JR0}:${col}${JR1}")
+    for k in ("DC", "Artigo", "Classe", "Data", "Qtd"):
+        name(wb, "MJ_" + k, S_J, f"${JCOLS[k]}${JR0}:${JCOLS[k]}${JM1}")
+    put(ws, "L3", f"Zona manual: linhas {JR0}–{JM1}  |  Zona AUTOMÁTICA (verde, gerada de 02A_OPERAÇÕES — não editar): linhas {JA0}–{JR1}", "note")
     # validações de dados
-    dv_list(ws, f"{JCOLS['TipoDoc']}{JR0}:{JCOLS['TipoDoc']}{JR1}", "=TD_Cod")
-    dv_list(ws, f"{JCOLS['Conta']}{JR0}:{JCOLS['Conta']}{JR1}", "=PC_Cod")
-    dv_list(ws, f"{JCOLS['Nat']}{JR0}:{JCOLS['Nat']}{JR1}", "=L_Natureza")
-    dv_list(ws, f"{JCOLS['CodF']}{JR0}:{JCOLS['CodF']}{JR1}", "=TX_Cod")
-    dv_list(ws, f"{JCOLS['Moeda']}{JR0}:{JCOLS['Moeda']}{JR1}", "=L_Moeda")
-    dv_list(ws, f"{JCOLS['FormaPag']}{JR0}:{JCOLS['FormaPag']}{JR1}", "=L_FormaPag")
-    dv_list(ws, f"{JCOLS['CC']}{JR0}:{JCOLS['CC']}{JR1}", "=L_CC")
-    dv_list(ws, f"{JCOLS['EstAGT']}{JR0}:{JCOLS['EstAGT']}{JR1}", "=L_EstAGT")
-    dv_list(ws, f"{JCOLS['EstDoc']}{JR0}:{JCOLS['EstDoc']}{JR1}", "=L_EstDoc")
-    dv_list(ws, f"{JCOLS['NIF']}{JR0}:{JCOLS['NIF']}{JR1}", "=T_NIF")
+    dv_list(ws, f"{JCOLS['TipoDoc']}{JR0}:{JCOLS['TipoDoc']}{JM1}", "=TD_Cod")
+    dv_list(ws, f"{JCOLS['Conta']}{JR0}:{JCOLS['Conta']}{JM1}", "=PC_Cod")
+    dv_list(ws, f"{JCOLS['Nat']}{JR0}:{JCOLS['Nat']}{JM1}", "=L_Natureza")
+    dv_list(ws, f"{JCOLS['CodF']}{JR0}:{JCOLS['CodF']}{JM1}", "=TX_Cod")
+    dv_list(ws, f"{JCOLS['Moeda']}{JR0}:{JCOLS['Moeda']}{JM1}", "=L_Moeda")
+    dv_list(ws, f"{JCOLS['FormaPag']}{JR0}:{JCOLS['FormaPag']}{JM1}", "=L_FormaPag")
+    dv_list(ws, f"{JCOLS['CC']}{JR0}:{JCOLS['CC']}{JM1}", "=L_CC")
+    dv_list(ws, f"{JCOLS['EstAGT']}{JR0}:{JCOLS['EstAGT']}{JM1}", "=L_EstAGT")
+    dv_list(ws, f"{JCOLS['EstDoc']}{JR0}:{JCOLS['EstDoc']}{JM1}", "=L_EstDoc")
+    dv_list(ws, f"{JCOLS['NIF']}{JR0}:{JCOLS['NIF']}{JM1}", "=T_NIF")
     from openpyxl.worksheet.datavalidation import DataValidation
     dvd = DataValidation(type="date", operator="between", formula1="DATE(2000,1,1)", formula2="DATE(2100,12,31)", showErrorMessage=True,
                          errorTitle="Data inválida", error="Introduza uma data válida.")
     ws.add_data_validation(dvd)
-    dvd.add(f"B{JR0}:B{JR1}")
+    dvd.add(f"B{JR0}:B{JM1}")
     dvn = DataValidation(type="decimal", operator="greaterThanOrEqual", formula1="0", showErrorMessage=True, errorTitle="Valor negativo",
                          error="Débito e Crédito não podem ser negativos. Use o lado oposto.")
     ws.add_data_validation(dvn)
-    dvn.add(f"K{JR0}:L{JR1}")
+    dvn.add(f"K{JR0}:L{JM1}")
     status_cf(ws, f"{JCOLS['EstVal']}{JR0}:{JCOLS['EstFisc']}{JR1}")
     value_cf(ws, f"{JCOLS['Erros']}{JR0}:{JCOLS['Erros']}{JR1}", f'LEN({JCOLS["Erros"]}{JR0})>0', C_ERR)
     last = CL(len(J_IN) + len(J_CALC))

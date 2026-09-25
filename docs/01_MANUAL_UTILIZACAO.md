@@ -36,7 +36,11 @@ Separadores: azul = input, cinzento = processamento, verde = output.
 6. **16_ORÇAMENTO_EMPRESARIAL** — pressupostos do orçamento.
 7. **Apague os lançamentos de teste** do Diário (linhas 6 a 94 — 89 linhas, 32 lançamentos) e registe o lançamento de abertura (natureza `Abertura`) a partir do balanço de fecho do ano anterior.
 
-## 4. Como lançar uma operação
+## 4. Como registar operações (modo aplicação) — `02A_OPERAÇÕES`
+
+Uma linha por operação: **Data · Tipo de operação · NIF · Descrição · Valor (sem IVA) · Código IVA · Pago/recebido por** ("A crédito" ou caixa/banco). Conforme o tipo: artigo e quantidade (mercadorias), conta específica (despesas, activos, impostos), referência da operação liquidada (recebimentos e pagamentos). O motor gera os lançamentos na zona automática do Diário (linhas verdes) e a coluna **Estado** indica 🟢 Registada / 🟡 por aprovar / 🔴 erro. Calcula automaticamente: IVA, custo das mercadorias vendidas (custo médio ponderado), INSS (3% + 8%) e IRT pela tabela oficial do exercício. Tipos disponíveis e guia rápido: `11_GUIA_DE_ARRANQUE.md`. Os modelos de lançamento de cada tipo estão em `01A_TABELAS` e são editáveis.
+
+## 4.1 Lançamentos manuais (situações especiais) — `02_DIÁRIO_LANÇAMENTOS`
 
 Cada operação = várias linhas com o **mesmo ID_Lançamento**, Σ Débito = Σ Crédito.
 

@@ -47,6 +47,7 @@ def irt_tabela(ano):
 
 
 IRT_ESCALOES, IRT_ISENCAO, IRT_FONTE_ANO = irt_tabela(ANO)
+OPERACOES = []  # linhas de 02A_OPERAÇÕES (dicts com as chaves de sheets_ops.IN_COLS)
 CFG_OVERRIDE = {}  # valores de 00_CONFIGURAÇÃO definidos pelo importador (nome, NIF, …)
 
 
@@ -604,8 +605,58 @@ JOURNAL = [
 ]
 
 
+def first(j, id_):
+    return next(l for l in j if l["ID"] == id_)
+
+
+def demo_operacoes():
+    """Cenário de demonstração registado por OPERAÇÕES (02A) + lançamentos especiais manuais."""
+    import copy
+    J = copy.deepcopy(JOURNAL)
+    g = lambda i: first(J, i)
+    U1, U2 = "contab01", "dirfin01"
+
+    def op(i, tipo, valor, meio=None, **kw):
+        l = g(i)
+        d = dict(Data=l["Data"], Tipo=tipo, Serie=l["Serie"], NumDoc=l["NumDoc"], NIF=l["NIF"], Desc=l["Desc"], Valor=valor, Meio=meio,
+                 Venc=l["Venc"], CC=l["CC"], Proj=l["Proj"], Suporte=l["Suporte"], User=U1, Validador=U2, Hash=l["Hash"], Cert=l["Cert"], EstAGT=l["EstAGT"])
+        d.update(kw)
+        return d
+    ops = [
+        op(2, "Venda de mercadorias", 100_000, "45.1", CodF="IVA_GER", Artigo="A001", Qtd=60, CC="COM"),            # 1
+        op(3, "Venda de mercadorias", 500_000, "A crédito", CodF="IVA_GER", Artigo="A001", Qtd=300, CC="COM"),      # 2
+        op(4, "Compra de mercadorias", 550_000, "A crédito", CodF="IVA_GER", Artigo="A001", Qtd=500),               # 3
+        op(5, "Despesa / fornecimento de serviços", 50_000, "45.1", CodF="IVA_GER", ContaEsp="75.2.1", CC="ADM"),   # 4
+        op(7, "Salários (processar e pagar)", 400_000, "43.1.1", CC="ADM", Desc="Salários Jan/2026"),              # 5
+        op(8, "Aquisição de imobilizado", 1_200_000, "43.1.1", CodF="IVA_GER", ContaEsp="11.5.1", CC="ADM", Proj="PRJ01"),  # 6
+        op(9, "Empréstimo recebido", 3_000_000, "43.1.1", ContaEsp="33.1.1"),                                     # 7
+        op(10, "Pagamento a fornecedor", 400_000, "43.1.1", Ref=3, NIF="5000000002"),                               # 8
+        op(11, "Recebimento de cliente", 300_000, "43.1.1", Ref=2, NIF="5000000001"),                               # 9
+        op(29, "Pagamento de impostos", 65_970, "43.1.1", ContaEsp="34.3.1"),                                        # 10
+        op(29, "Pagamento de impostos", 44_000, "43.1.1", ContaEsp="34.9.1", NumDoc=5),                              # 11
+        op(12, "Prestação de serviços", 3_000_000, "A crédito", CodF="IVA_GER", CC="OPS", Proj="PRJ02"),            # 12
+        op(13, "Venda de mercadorias", 200_000, "A crédito", CodF="IVA_ISE", Artigo="A001", Qtd=100, CC="COM"),     # 13
+        op(15, "Depreciação do mês", None, None, CC="ADM"),                                                          # 14
+        op(16, "Juros e encargos bancários", 45_000, "43.1.1", ContaEsp="76.1"),                                     # 15
+        op(31, "Pagamento de impostos", 245_000, "43.1.1", ContaEsp="34.5.6"),                                       # 16
+        op(22, "Entrada de capital", 2_000_000, "43.1.1", ContaEsp="51.1"),                                          # 17
+        op(24, "Depreciação do mês", None, None, CC="ADM"),                                                          # 18
+    ]
+    substituidos = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 22, 24, 29, 31}
+    manual = [l for l in J if l["ID"] not in substituidos]
+    for l in manual:  # referências a documentos que passaram a operações
+        if l["Ref"] == 3:
+            l["Ref"] = 100002
+        elif l["Ref"] == 12:
+            l["Ref"] = 100012
+    return ops, manual
+
+
 if PRODUCAO:
     JOURNAL = []
     ACTIVOS = []
     ARTIGOS = []
     TERCEIROS = [t for t in TERCEIROS if t[0] == "999999999"]
+
+elif os.environ.get("MATRIZ_DEMO", "").lower() == "operacoes":
+    OPERACOES, JOURNAL = demo_operacoes()

@@ -1,4 +1,4 @@
-"""Importação de dados reais e execução em paralelo com o sistema actual.
+"""Importação em massa (opcional): carga inicial de lançamentos, terceiros e activos a partir de Excel, com validação e comparação com um balancete de referência.
 
 Fluxo:
   1. python src/importar.py modelo [dist/MODELO_IMPORTACAO.xlsx]
@@ -60,7 +60,7 @@ def modelo(out):
     ins = wb.active
     ins.title = "INSTRUÇÕES"
     txt = [
-        "MODELO DE IMPORTAÇÃO — MATRIZ PRO MASTER (execução em paralelo)",
+        "MODELO DE IMPORTAÇÃO — MATRIZ PRO MASTER (carga em massa, opcional)",
         "",
         "1. ENTIDADE: identificação, exercício e mês de reporte (o último mês importado).",
         "2. LANÇAMENTOS: uma linha por conta movimentada; mesmo ID_Lançamento para todas as linhas da operação; Σ Débito = Σ Crédito.",
@@ -314,7 +314,7 @@ def carregar(path, saida, forcar=False):
     # comparação com o sistema actual
     if ref:
         mov, saldo = saldos(journal, plano, mes)
-        rel += ["## Execução em paralelo — balancete da matriz × sistema actual", "",
+        rel += ["## Comparação com o balancete de referência", "",
                 f"Saldos acumulados até ao fim do mês {mes} (D−C).", "", "| Conta | Matriz | Sistema actual | Diferença | Estado |", "|---|---|---|---|---|"]
         dif = 0
         for c, v in ref:

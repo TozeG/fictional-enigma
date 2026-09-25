@@ -20,7 +20,7 @@ def esperado(mc, ano):
 def calc(ano, bruto):
     base = os.path.join(W, f"irt_{ano}.xlsx")
     if not os.path.exists(base):
-        env = dict(os.environ, MATRIZ_ANO=str(ano), MATRIZ_LINHAS="100")
+        env = dict(os.environ, MATRIZ_ANO=str(ano), MATRIZ_LINHAS="100", MATRIZ_OPERACOES="20")
         subprocess.run([sys.executable, os.path.join(ROOT, "src", "build.py"), base], env=env, check=True, capture_output=True)
     wb = load_workbook(base)
     ws = wb["11_FISCALIDADE_AGT"]

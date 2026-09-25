@@ -35,6 +35,7 @@ def build_fiscalidade(wb):
     status_cf(ws, f"L7:L{r1}")
     status_cf(ws, f"O7:O{r1}")
     name(wb, "TX_II", S11, "$D$" + str(7 + [t[0] for t in D.TAXAS].index("II_GER")))
+    name(wb, "TX_INSS_E", S11, "$D$" + str(7 + [t[0] for t in D.TAXAS].index("INSS_EMP")))
     name(wb, "TX_INSS_T", S11, "$D$" + str(7 + [t[0] for t in D.TAXAS].index("INSS_TRAB")))
     name(wb, "TX_RET", S11, "$D$" + str(7 + [t[0] for t in D.TAXAS].index("RET_SERV")))
     # ---------------- IRT ----------------
@@ -240,7 +241,7 @@ def build_facturacao(wb):
             ("Hash", 7, None, J("Hash", True)), ("Certificado software", 18, None, J("Cert", True)), ("Estado doc.", 10, None, J("EstDoc", True)),
             ("Estado AGT", 11, None, J("EstAGT", True)), ("Data comunicação", 10, DATE, '=IF({L}="","",IF(N(INDEX(J_DtCom,{L}))=0,"",INDEX(J_DtCom,{L})))'),
             ("Erro comunicação", 18, None, J("ErroCom", True)),
-            ("Sequência", 14, None, '=IF({L}="","",IF(F{r}=1,"🟢 OK",IF(COUNTIFS($D$12:$D$311,D{r},$E$12:$E$311,E{r},$F$12:$F$311,F{r}-1)>0,"🟢 OK","🔴 Quebra de sequência")))'),
+            ("Sequência", 14, None, '=IF({L}="","",IF(N(F{r})=0,"🔴 Sem número de documento",IF(F{r}=1,"🟢 OK",IF(COUNTIFS($D$12:$D$311,D{r},$E$12:$E$311,E{r},$F$12:$F$311,F{r}-1)>0,"🟢 OK","🔴 Quebra de sequência"))))'),
             ("Validação do documento", 30, None, '=IF({L}="","",IF(M{r}="","🔴 Sem hash",IF(N{r}="","🔴 Sem certificado de software",IF(P{r}="Erro","🔴 Erro de comunicação: "&R{r},IF(S{r}<>"🟢 OK",S{r},IF(AND(D{r}<>"RC",H{r}=""),"🔴 Sem NIF do adquirente",IF(P{r}="Pendente","🟡 Comunicação pendente",IF(INDEX(J_Dup,{L})=1,"🔴 Documento duplicado","🟢 Conforme"))))))))')]
     last = listing(ws, 12, 300, "SeqFact", cols)
     status_cf(ws, f"S12:T{last}")

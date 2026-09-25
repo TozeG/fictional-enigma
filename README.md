@@ -2,7 +2,7 @@
 
 Sistema integrado de informação contabilístico-financeira em **Microsoft Excel**, gerado por código (auditável e reprodutível).
 
-**UMA ÚNICA FONTE DE DADOS → MÚLTIPLAS VISÕES.** Cada operação é lançada uma vez em `02_DIÁRIO_LANÇAMENTOS`; Diário Geral, Razão, Caixa, Bancos, Clientes, Fornecedores, Inventários, Activos, IVA, Imposto Industrial, Balancete, Balanço, DR, DFC, Orçamento, Tesouraria, KPI, Risco, Dashboard, Relatórios, Alertas e Controlo são calculados por fórmula.
+**UMA ÚNICA FONTE DE DADOS → MÚLTIPLAS VISÕES.** Funciona como aplicação: cada operação (venda, compra, recebimento, pagamento, salários, impostos…) é registada uma vez em `02A_OPERAÇÕES`, em linguagem de gestão; o motor `02B_MOTOR` gera as partidas dobradas no `02_DIÁRIO_LANÇAMENTOS` (que também aceita lançamentos manuais especiais); Diário Geral, Razão, Caixa, Bancos, Clientes, Fornecedores, Inventários, Activos, IVA, Imposto Industrial, Balancete, Balanço, DR, DFC, Orçamento, Tesouraria, KPI, Risco, Dashboard, Relatórios, Alertas e Controlo são calculados por fórmula.
 
 > Estruturado para conformidade com o quadro legal identificado e sujeito à validação contabilística, fiscal e técnica antes da utilização oficial. A folha de cálculo **não** é software de facturação validado pela AGT.
 
@@ -22,7 +22,8 @@ Sistema integrado de informação contabilístico-financeira em **Microsoft Exce
 | J | Relatório de validação (gerado) | [`docs/09_RELATORIO_VALIDACAO.md`](docs/09_RELATORIO_VALIDACAO.md) |
 | + | Evolução Power Query / Power Pivot / Power BI | [`docs/10_ROADMAP_POWER_BI.md`](docs/10_ROADMAP_POWER_BI.md) |
 | + | Matriz vazia para produção (sem dados fictícios) | [`dist/MATRIZ_PRO_MASTER_VAZIA.xlsx`](dist/MATRIZ_PRO_MASTER_VAZIA.xlsx) |
-| + | Modelo de importação + execução em paralelo | [`dist/MODELO_IMPORTACAO.xlsx`](dist/MODELO_IMPORTACAO.xlsx), [`docs/11_PLANO_EXECUCAO_PARALELA.md`](docs/11_PLANO_EXECUCAO_PARALELA.md) |
+| + | **Guia de arranque** (empresa sem sistema anterior) | [`docs/11_GUIA_DE_ARRANQUE.md`](docs/11_GUIA_DE_ARRANQUE.md) |
+| + | Modelo de importação (carga inicial em massa, opcional) | [`dist/MODELO_IMPORTACAO.xlsx`](dist/MODELO_IMPORTACAO.xlsx) |
 
 ## Arquitectura
 
@@ -52,6 +53,8 @@ MATRIZ_MODO=producao python src/build.py dist/MATRIZ_PRO_MASTER_VAZIA.xlsx   # s
 python src/importar.py modelo                              # modelo de importação
 python src/importar.py carregar modelo.xlsx --saida dist/MATRIZ_X.xlsx      # valida, gera e compara com o sistema actual
 python tests/test_importar.py                              # teste de ponta a ponta do importador
+python tests/test_operacoes.py                             # operações = lançamentos manuais (54/54)
+python tests/test_irt.py                                   # IRT 2024/2025/2026 (17/17)
 ```
 
 | Código | Conteúdo |
@@ -62,6 +65,7 @@ python tests/test_importar.py                              # teste de ponta a po
 | `src/sheets_fiscal.py` | Fiscalidade AGT, IVA, facturação, SAF-T, Imposto Industrial, calendário, base legal |
 | `src/sheets_reports.py` | Balancete, Balanço, DR, fluxo de caixa, DFC, orçamento, tesouraria, budget vs actual |
 | `src/sheets_analytics.py` | KPI, sustentabilidade, dashboard, planeamento/cenários, projectos, investimentos, risco, break-even |
+| `src/sheets_ops.py` | Modo aplicação: 02A_OPERAÇÕES, 02B_MOTOR e modelos de lançamento |
 | `src/importar.py` | Importação de dados reais, validação prévia e comparação com o balancete do sistema actual |
 | `src/sheets_mgmt.py` | LEIA-ME, controlo interno, auditoria, fecho, encerramento, relatório de gestão, alertas, motor de consistência |
 

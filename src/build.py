@@ -14,11 +14,12 @@ import sheets_fiscal as SF  # noqa: E402
 import sheets_reports as SR  # noqa: E402
 import sheets_analytics as SA  # noqa: E402
 import sheets_mgmt as SM  # noqa: E402
+import sheets_ops as SO  # noqa: E402
 
 OUT = os.path.join(os.path.dirname(__file__), "..", "dist", "MATRIZ_PRO_MASTER_CONTABILIDADE_ANGOLA.xlsx")
 
 ORDER = [
-    SM.build_leiame, SB.build_config, SB.build_plano, SB.build_tables, SB.build_terceiros, SB.build_journal,
+    SM.build_leiame, SB.build_config, SB.build_plano, SB.build_tables, SB.build_terceiros, SO.build_operacoes, SO.build_motor, SB.build_journal,
     SL.build_diario_geral, SL.build_razao, SL.build_caixa, SL.build_bancos, SL.build_clientes, SL.build_fornecedores,
     SL.build_inventarios, SL.build_activos,
     SF.build_fiscalidade, SF.build_iva, SF.build_facturacao, SF.build_saft, SF.build_ii,
@@ -71,6 +72,7 @@ def main(out=OUT):
             continue
         fn(wb)
     SA.build_dashboard(wb)
+    SO.add_templates(wb)
     # posicionar o dashboard depois de 28_KPI_FINANCEIROS
     ws = wb["29_DASHBOARD_EXECUTIVO"]
     wb.move_sheet(ws, offset=wb.sheetnames.index("30_BUDGET_VS_ACTUAL") - wb.sheetnames.index("29_DASHBOARD_EXECUTIVO"))

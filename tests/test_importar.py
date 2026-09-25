@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 sys.path.insert(0, os.path.join(ROOT, "tests"))
 os.environ["MATRIZ_MODO"] = "demo"
 os.environ.setdefault("MATRIZ_LINHAS", "200")
+os.environ.setdefault("MATRIZ_OPERACOES", "40")
 import data as D  # noqa: E402
 import sheets_base as SB  # noqa: E402
 from openpyxl import load_workbook  # noqa: E402

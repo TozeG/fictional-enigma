@@ -19,6 +19,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 sys.path.insert(0, os.path.join(ROOT, "tests"))
 os.environ.setdefault("MATRIZ_LINHAS", "200")
+os.environ.setdefault("MATRIZ_OPERACOES", "40")
 
 import data as D  # noqa: E402
 import build  # noqa: E402
