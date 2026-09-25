@@ -71,7 +71,7 @@ O Quadro A separa, por rubrica, gastos contabilísticos em dedutíveis e não de
 
 ## 7. IRT, INSS, Imposto de Selo e outros
 
-- **IRT (Grupo A):** a tabela é escolhida pelo exercício (`00_CONFIGURAÇÃO`). **Até 2024** — Lei n.º 28/20 (13 escalões, isenção 70 000 Kz). **2025** — Lei n.º 18/24, art. 20.º n.º 3 e Anexo I (DR I Série n.º 247, 30/12/2024, p. 13798): isenção 100 000 Kz, 12 escalões, 13% a 25%, base = excesso sobre 100 001, 150 001, … tal como publicado. **2026** — Lei n.º 14/25, art. 21.º n.º 3 e Anexo I: isenção 150 000 Kz aplicada; **escalões por carregar** (separador IRT_ESCALOES do modelo). Matéria colectável = remuneração − INSS do trabalhador. Testes: `tests/test_irt.py` (14 casos).
+- **IRT (Grupo A):** a tabela é escolhida pelo exercício (`00_CONFIGURAÇÃO`), todas a partir de fontes primárias. **Até 2024** — Lei n.º 28/20 (13 escalões, isenção 70 000 Kz). **2025** — Lei n.º 18/24, art. 20.º n.º 3 e Anexo I (DR 30/12/2024): 12 escalões, isenção 100 000 Kz, 13%–25%. **2026** — Lei n.º 14/25, art. 21.º n.º 3 e Anexo I (DR 30/12/2025): **11 escalões, isenção 150 000 Kz, 16%–25%**. IRT = parcela fixa + (matéria colectável − «excesso de») × taxa; matéria colectável = remuneração − INSS do trabalhador. Valores transcritos tal como publicados, incluindo os saltos de parcela fixa (em 2026, acima de 150 000 Kz a parcela fixa é 12 500 Kz — confirmar a interpretação com a AGT). Testes: `tests/test_irt.py`.
 - **IRT Grupo C:** OGE 2026 — 6,5% sobre vendas/serviços não sujeitos a retenção para volume 2025 ≥ 10 M Kz (fonte KPMG).
 - **INSS:** 3% trabalhador / 8% entidade empregadora — parâmetro a validar.
 - **Imposto de Selo:** recibo de quitação 1% (verba 23.3) com âmbito restrito — a validar.

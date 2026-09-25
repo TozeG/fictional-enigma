@@ -1,4 +1,4 @@
-"""Calculadora IRT (11_FISCALIDADE_AGT): Lei 28/20 (≤ 2024), Lei 18/24 Anexo I (2025), 2026 sem escalões (Lei 14/25 por carregar)."""
+"""Calculadora IRT (11_FISCALIDADE_AGT): Lei 28/20 (≤ 2024), Lei 18/24 Anexo I (2025), Lei 14/25 Anexo I (2026)."""
 import os, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 W = os.environ.get("MATRIZ_WORK", "/tmp/claude-0/w/irt")
@@ -45,9 +45,10 @@ for ano, lista in casos.items():
         r = abs(irt - e) < 0.01 and abs(irt - fixos.get((ano, bruto), irt)) < 0.01
         ok &= r
         print(("✅" if r else "❌"), f"{ano} · bruto {bruto:,} · MC {mc:,.0f} · IRT {irt:,.2f} (esperado {e:,.2f})")
-for bruto, exp in ((140_000, 0), (400_000, "TABELA POR VALIDAR")):
+# 2026 — valores calculados à mão a partir do Anexo I da Lei 14/25 (MC = bruto × 97%)
+for bruto, manual in ((150_000, 0), (160_000, 13_332), (400_000, 65_970), (1_200_000, 221_690), (12_000_000, 2_752_250)):
     mc, irt = calc(2026, bruto)
-    r = irt == exp
+    r = abs(irt - manual) < 0.01 and abs(irt - esperado(bruto * 0.97, 2026)) < 0.01
     ok &= r
-    print(("✅" if r else "❌"), f"2026 · bruto {bruto:,} · IRT {irt!r} (esperado {exp!r})")
+    print(("✅" if r else "❌"), f"2026 · bruto {bruto:,} · MC {mc:,.0f} · IRT {irt:,.2f} (cálculo manual {manual:,.2f})")
 sys.exit(0 if ok else 1)

@@ -97,10 +97,10 @@ injectam erros no Diário e confirmam que o sistema os detecta.
 | IVA | Conciliação contabilidade × mapa | 🟢 IVA conciliado | 🟢 | ✅ |
 | DFC | Recebimentos de clientes | 4,323,000.00 | 4,323,000.00 | ✅ |
 | DFC | Pagamentos a fornecedores | -1,377,000.00 | -1,377,000.00 | ✅ |
-| DFC | Pagamentos ao pessoal | -348,000.00 | -348,000.00 | ✅ |
+| DFC | Pagamentos ao pessoal | -322,030.00 | -322,030.00 | ✅ |
 | DFC | Pagamentos de imobilizações | -1,368,000.00 | -1,368,000.00 | ✅ |
 | DFC | Empréstimos obtidos | 3,000,000.00 | 3,000,000.00 | ✅ |
-| DFC | Pagamentos/recebimentos de impostos | -329,000.00 | -329,000.00 | ✅ |
+| DFC | Pagamentos/recebimentos de impostos | -354,970.00 | -354,970.00 | ✅ |
 | DFC | Juros e custos similares pagos | -45,000.00 | -45,000.00 | ✅ |
 | DFC | Outros recebimentos/pagamentos operacionais | -1,200,000.00 | -1,200,000.00 | ✅ |
 | DFC | Aplicações e investimentos financeiros | -1,000,000.00 | -1,000,000.00 | ✅ |

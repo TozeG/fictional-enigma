@@ -25,8 +25,16 @@ IRT_18_24 = [
     (1_500_001, 2_000_000, 292_249, 0.22), (2_000_001, 2_500_000, 402_249, 0.23), (2_500_001, 5_000_000, 517_249, 0.24),
     (5_000_001, 10_000_000, 1_117_249, 0.245), (10_000_001, None, 2_342_248, 0.25),
 ]
+# Lei n.º 14/25, de 30/12 (OGE 2026), art. 21.º n.º 3 e Anexo I — DR de 30/12/2025 (documento fornecido pelo utilizador).
+# 11 escalões; isenção até 150 000 Kz; 1.ª taxa 16%. Transcrito tal como publicado.
+IRT_14_25 = [
+    (0, 150_000, 0, 0.0), (150_000, 200_000, 12_500, 0.16), (200_000, 300_000, 31_250, 0.18), (300_000, 500_000, 49_250, 0.19),
+    (500_000, 1_000_000, 87_250, 0.20), (1_000_000, 1_500_000, 187_250, 0.21), (1_500_000, 2_000_000, 292_250, 0.22),
+    (2_000_000, 2_500_000, 402_250, 0.23), (2_500_000, 5_000_000, 517_250, 0.24), (5_000_000, 10_000_000, 1_117_250, 0.245),
+    (10_000_000, None, 2_342_250, 0.25),
+]
 IRT_FONTE = {2024: "Lei n.º 28/20 (tabela AGT)", 2025: "Lei n.º 18/24, Anexo I (DR I Série n.º 247, 30/12/2024, p. 13798)",
-             2026: "Lei n.º 14/25, art. 21.º n.º 3 e Anexo I — escalões POR CARREGAR"}
+             2026: "Lei n.º 14/25, art. 21.º n.º 3 e Anexo I (DR de 30/12/2025)"}
 
 
 def irt_tabela(ano):
@@ -35,7 +43,7 @@ def irt_tabela(ano):
         return IRT_28_20, 70_000, IRT_FONTE[2024]
     if ano == 2025:
         return IRT_18_24, 100_000, IRT_FONTE[2025]
-    return [], 150_000, IRT_FONTE[2026]
+    return IRT_14_25, 150_000, IRT_FONTE[2026]
 
 
 IRT_ESCALOES, IRT_ISENCAO, IRT_FONTE_ANO = irt_tabela(ANO)
@@ -405,7 +413,7 @@ TAXAS = [
     ("IS_REC", "Imposto de Selo", "Recibo de quitação (verba 23.3 da Tabela)", 0.01, "Regra legal", "Código do Imposto de Selo — Tabela anexa, verba 23.3", "Verba 23.3", None, VERIF, "https://www.expansao.co.ao/gestao/detalhe/imposto-de-selo-do-recibo-regresso-ou-retrocesso-60218.html", "POR VALIDAR", "Aplicação limitada (ex.: sujeitos passivos com operações isentas sem direito à dedução). Confirmar."),
     ("INSS_TRAB", "Segurança Social", "Contribuição do trabalhador", 0.03, "Parâmetro do modelo", "Regime jurídico de protecção social obrigatória (confirmar diploma vigente)", "Confirmar", None, VERIF, "", "POR VALIDAR", ""),
     ("INSS_EMP", "Segurança Social", "Contribuição da entidade empregadora", 0.08, "Parâmetro do modelo", "Regime jurídico de protecção social obrigatória (confirmar diploma vigente)", "Confirmar", None, VERIF, "", "POR VALIDAR", ""),
-    ("IRT_A", "IRT", "IRT Grupo A — isenção até 150 000 Kz; 12 escalões; taxas 13% a 25% (ver tabela)", None, "Regra legal", "Código do IRT, alterado pela Lei n.º 28/20 e pela Lei n.º 14/25, de 30 de Dezembro (OGE 2026)", "Art. 21.º, n.º 3 e Anexo I da Lei n.º 14/25", date(2026, 1, 1), VERIF, "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", "POR VALIDAR (escalões)", "Isenção 150 000 Kz, 12 escalões e taxas 13%–25% confirmados em várias fontes secundárias. Limites e parcelas fixas de cada escalão: carregar do Diário da República."),
+    ("IRT_A", "IRT", "IRT Grupo A — tabela por exercício: ≤2024 Lei 28/20; 2025 Lei 18/24; 2026 Lei 14/25 (isenção 150 000 Kz, 11 escalões, 16%–25%)", None, "Regra legal", "Código do IRT, alterado pela Lei n.º 28/20 e pela Lei n.º 14/25, de 30 de Dezembro (OGE 2026)", "Art. 21.º, n.º 3 e Anexo I da Lei n.º 14/25", date(2026, 1, 1), VERIF, "Diário da República de 30/12/2025 (Lei n.º 14/25, Anexo I) e de 30/12/2024 (Lei n.º 18/24, Anexo I)", "CONFIRMADO (fonte primária)", "Tabelas carregadas em 11_FISCALIDADE_AGT e testadas (tests/test_irt.py)."),
     ("IRT_C", "IRT", "IRT Grupo C — taxa sobre vendas/serviços não sujeitos a retenção (volume 2025 ≥ 10 M Kz)", 0.065, "Regra legal", "Lei do OGE 2026 (Lei n.º 14/25)", "Confirmar", date(2026, 1, 1), VERIF, "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", "CONFIRMADO (fonte secundária)", ""),
     ("IAC", "Imposto sobre a Aplicação de Capitais", "Taxas por tipo de rendimento", None, "Regra legal", "Código do IAC (confirmar diploma e alterações)", "Confirmar", None, VERIF, "", "POR VALIDAR", "Não parametrizado: carregar taxas oficiais."),
     ("IP", "Imposto Predial", "Taxas e isenções (OGE 2026: isenção transmissões habitacionais ≤ 40 M Kz)", None, "Regra legal", "Código do Imposto Predial e Lei do OGE 2026", "Confirmar", date(2026, 1, 1), VERIF, "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", "POR VALIDAR", "Não parametrizado: carregar taxas oficiais."),
@@ -419,7 +427,7 @@ BASE_LEGAL = [
     ("Lei", "26/20", "20/07/2020", "Vários", "Imposto Industrial", "Altera o Código do Imposto Industrial (taxa geral 25%)", "Pessoas colectivas e singulares com actividade comercial/industrial", "20/07/2020", "—", "https://lex.ao/docs/assembleia-nacional/2020/lei-n-o-26-20-de-20-de-julho/", VERIF, "CONFIRMADO (fonte secundária)"),
     ("Lei", "28/20", "22/07/2020", "Tabela", "IRT", "Altera o Código do IRT", "Rendimentos do trabalho", "01/09/2020", "Alterada pela Lei do OGE 2026", "https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw4x/mjm3/~edisp/minfin1237855.pdf", VERIF, "CONFIRMADO (fonte secundária)"),
     ("Lei", "18/24", "30/12/2024", "Art. 20.º e Anexo I", "OGE 2025 / IRT", "Isenção de IRT até 100 000 Kz; nova tabela Grupo A (12 escalões, 13%–25%); Grupo C 6,5%; suspende o n.º 2 do art. 9.º do CIRT", "Rendimentos de 2025", "01/01/2025", "Substituída para 2026 pela Lei n.º 14/25", "Diário da República I Série n.º 247, 30/12/2024, pp. 13782–13798 (documento fornecido pelo utilizador)", VERIF, "CONFIRMADO (fonte primária)"),
-    ("Lei", "14/25", "30/12/2025", "Várias", "OGE 2026", "Lei do OGE 2026: alterações ao IRT (isenção e escalões), IRT Grupo C 6,5%, Imposto Predial, Imposto de Selo", "Todos os contribuintes", "01/01/2026", "—", "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", VERIF, "POR VALIDAR (número/data a confirmar no DR)"),
+    ("Lei", "14/25", "30/12/2025", "Várias", "OGE 2026", "Lei do OGE 2026: IRT — isenção 150 000 Kz e nova tabela Grupo A (art. 21.º n.º 3, Anexo I: 11 escalões, 16%–25%); IRT Grupo C 6,5%; Imposto Predial; Imposto de Selo", "Todos os contribuintes", "01/01/2026", "—", "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", VERIF, "CONFIRMADO (fonte primária: Anexo I no DR de 30/12/2025)"),
     ("Decreto Presidencial", "71/25", "20/03/2025", "Vários", "Facturação", "Regime Jurídico das Facturas e Documentos Equivalentes: software validado AGT, facturação electrónica, comunicação, SAF-T, cópias de segurança", "Grandes Contribuintes e fornecedores do Estado desde 01/01/2026; regimes geral e simplificado de IVA desde 01/01/2027", "Faseado", "Revoga o regime anterior (confirmar)", "https://www.ey.com/pt_ao/technical/tax-alerts/facturacao-electronica-a-partir-de-1-de-janeiro-de-2026", VERIF, "CONFIRMADO (fonte secundária)"),
     ("Decreto Presidencial", "312/18", "—", "—", "Facturação", "Regime jurídico das facturas anterior", "—", "—", "Presumivelmente revogado pelo DP 71/25 — confirmar", "—", VERIF, "POR VALIDAR"),
     ("Código", "Imposto de Selo", "—", "Tabela anexa, verba 23.3", "Imposto de Selo", "Recibo de quitação — 1% (âmbito restrito)", "Ver parametrização IS_REC", "—", "—", "https://www.expansao.co.ao/gestao/detalhe/imposto-de-selo-do-recibo-regresso-ou-retrocesso-60218.html", VERIF, "POR VALIDAR"),
@@ -501,12 +509,12 @@ JOURNAL = [
     # 06 — Processamento salarial
     L(6, d(1, 28), "FS", "2026", 1, d(1, 28), None, "", "72.2", "Salários Jan/2026 — remunerações brutas", deb=400_000, cc="ADM", nat="Processamento salarial", sup="Folha salarial 01/2026", obs="TESTE 07 — Pagamento de salário (processamento)"),
     L(6, d(1, 28), "FS", "2026", 1, d(1, 28), None, "", "72.5", "Salários Jan/2026 — INSS entidade empregadora (8%)", deb=32_000, cc="ADM", nat="Processamento salarial", sup="Folha salarial 01/2026"),
-    L(6, d(1, 28), "FS", "2026", 1, d(1, 28), None, "", "36.1.1", "Salários Jan/2026 — líquido a pagar", cred=348_000, nat="Processamento salarial", sup="Folha salarial 01/2026"),
-    L(6, d(1, 28), "FS", "2026", 1, d(1, 28), None, "", "34.3.1", "Salários Jan/2026 — IRT retido", cred=40_000, nat="Processamento salarial", sup="Folha salarial 01/2026", obs="Valor ILUSTRATIVO — calcular com a tabela IRT oficial validada"),
+    L(6, d(1, 28), "FS", "2026", 1, d(1, 28), None, "", "36.1.1", "Salários Jan/2026 — líquido a pagar", cred=322_030, nat="Processamento salarial", sup="Folha salarial 01/2026"),
+    L(6, d(1, 28), "FS", "2026", 1, d(1, 28), None, "", "34.3.1", "Salários Jan/2026 — IRT retido", cred=65_970, nat="Processamento salarial", sup="Folha salarial 01/2026", obs="IRT = 49 250 + (388 000 − 300 000) × 19% (Lei n.º 14/25, Anexo I, 4.º escalão)"),
     L(6, d(1, 28), "FS", "2026", 1, d(1, 28), None, "", "34.9.1", "Salários Jan/2026 — INSS (3% + 8%)", cred=44_000, nat="Processamento salarial", sup="Folha salarial 01/2026"),
     # 07 — Pagamento de salários
-    L(7, d(1, 30), "EXT", "BA", 130, d(1, 30), None, "", "36.1.1", "Pagamento salários Jan/2026", deb=348_000, nat="Pagamento ao pessoal", sup="Extracto Banco A 30/01", obs="TESTE 07 — Pagamento de salário"),
-    L(7, d(1, 30), "EXT", "BA", 130, d(1, 30), None, "", "43.1.1", "Pagamento salários Jan/2026", cred=348_000, nat="Pagamento ao pessoal", forma="Transferência", sup="Extracto Banco A 30/01"),
+    L(7, d(1, 30), "EXT", "BA", 130, d(1, 30), None, "", "36.1.1", "Pagamento salários Jan/2026", deb=322_030, nat="Pagamento ao pessoal", sup="Extracto Banco A 30/01", obs="TESTE 07 — Pagamento de salário"),
+    L(7, d(1, 30), "EXT", "BA", 130, d(1, 30), None, "", "43.1.1", "Pagamento salários Jan/2026", cred=322_030, nat="Pagamento ao pessoal", forma="Transferência", sup="Extracto Banco A 30/01"),
     # 28 — Apuramento do IVA de Janeiro
     L(28, d(1, 31), "DI", "IVA", 1, d(1, 31), None, "", "34.5.3", "Apuramento IVA 01/2026 — transferência do liquidado", deb=84_000, nat="Apuramento de IVA", sup="Mapa 12_IVA 01/2026", obs="Apuramento mensal do IVA (34.5.2/34.5.3 → 34.5.6/34.5.7)"),
     L(28, d(1, 31), "DI", "IVA", 1, d(1, 31), None, "", "34.5.2", "Apuramento IVA 01/2026 — transferência do dedutível", cred=84_000, nat="Apuramento de IVA", sup="Mapa 12_IVA 01/2026"),
@@ -524,9 +532,9 @@ JOURNAL = [
     L(11, d(2, 8), "RC", "A", 1, d(2, 8), None, "5000000001", "43.1.1", "RC A/1 — recebimento parcial FT A/1", deb=300_000, nat="Recebimento de cliente", forma="Transferência", sup="RC A/1", estdoc="Normal", hsh="Rt5c", cert=CERT, estagt="Comunicado", dtcom=d(2, 8), obs="TESTE 06 — Recebimento de cliente"),
     L(11, d(2, 8), "RC", "A", 1, d(2, 8), None, "5000000001", "31.1.1", "RC A/1 — Cliente Alfa", cred=300_000, nat="Recebimento de cliente", ref=3, sup="RC A/1"),
     # 29 — Pagamento de IRT e INSS de Janeiro
-    L(29, d(2, 20), "DLI", "AGT", 1, d(2, 20), None, "", "34.3.1", "Entrega IRT retido 01/2026", deb=40_000, nat="Pagamento de impostos", sup="Guia/comprovativo AGT 01/2026", obs="Pagamento ao Estado (calendário fiscal)"),
+    L(29, d(2, 20), "DLI", "AGT", 1, d(2, 20), None, "", "34.3.1", "Entrega IRT retido 01/2026", deb=65_970, nat="Pagamento de impostos", sup="Guia/comprovativo AGT 01/2026", obs="Pagamento ao Estado (calendário fiscal)"),
     L(29, d(2, 20), "DLI", "AGT", 1, d(2, 20), None, "", "34.9.1", "Entrega INSS 01/2026", deb=44_000, nat="Pagamento de impostos", sup="Guia INSS 01/2026"),
-    L(29, d(2, 20), "DLI", "AGT", 1, d(2, 20), None, "", "43.1.1", "Pagamento IRT + INSS 01/2026", cred=84_000, nat="Pagamento de impostos", forma="Transferência", sup="Guia/comprovativo AGT 01/2026"),
+    L(29, d(2, 20), "DLI", "AGT", 1, d(2, 20), None, "", "43.1.1", "Pagamento IRT + INSS 01/2026", cred=109_970, nat="Pagamento de impostos", forma="Transferência", sup="Guia/comprovativo AGT 01/2026"),
     # 12 — Prestação de serviços
     L(12, d(2, 20), "FT", "A", 2, d(2, 20), d(3, 21), "5000000005", "31.1.1", "FT A/2 — Epsilon — consultoria", deb=3_420_000, proj="PRJ02", nat="Venda", sup="FT A/2", estdoc="Normal", hsh="Mn8w", cert=CERT, estagt="Comunicado", dtcom=d(2, 20), obs="TESTE 12 — Operação sujeita a IVA (serviços)"),
     L(12, d(2, 20), "FT", "A", 2, d(2, 20), None, "", "62.1", "FT A/2 — serviços de consultoria", cred=3_000_000, cc="OPS", proj="PRJ02", nat="Venda", sup="FT A/2"),

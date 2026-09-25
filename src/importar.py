@@ -70,7 +70,7 @@ def modelo(out):
         "3. TERCEIROS: todos os NIF usados nos lançamentos (clientes, fornecedores).",
         "4. ACTIVOS (opcional): registo do imobilizado.",
         "5. PLANO_CONTAS (opcional): contas a acrescentar ao PGC do modelo (mesmo código = substitui a designação/tipo).",
-        "7. IRT_ESCALOES: copiar do Diário da República (Lei n.º 14/25) os 12 escalões do Grupo A — limite inferior, limite superior, parcela fixa, taxa (ex.: 0.13).",
+        "7. IRT_ESCALOES: copiar do Diário da República (Lei n.º 14/25) (opcional) escalões que substituam a tabela legal do exercício — limite inferior («excesso de»), limite superior, parcela fixa, taxa (ex.: 0.16). Vazio = usa a tabela legal carregada (Lei 28/20, 18/24 ou 14/25).",
         "6. BALANCETE_REFERÊNCIA: saldos finais (D−C, credores negativos) do balancete do sistema actual no fim do mês de reporte.",
         "   Pode usar contas de movimento ou de agregação (ex.: 31, 43, 6, 7).",
         "",
@@ -103,7 +103,7 @@ def modelo(out):
     _sheet(wb, "ACTIVOS", ACT_H)
     _sheet(wb, "PLANO_CONTAS", PC_H, [("62.1.1", "Serviços de consultoria (exemplo)", "M")])
     _sheet(wb, "BALANCETE_REFERÊNCIA", BAL_H, [("43.1.1", "Banco A", 1000), ("51.1", "Capital social", -1000)])
-    _sheet(wb, "IRT_ESCALOES", ["Escalão", "Limite inferior (Kz)", "Limite superior (Kz)", "Parcela fixa (Kz)", "Taxa sobre o excesso (ex.: 0.13)", "Fonte (DR, página)"],
+    _sheet(wb, "IRT_ESCALOES", ["Escalão", "Limite inferior (Kz)", "Limite superior (Kz)", "Parcela fixa (Kz)", "Taxa sobre o excesso (ex.: 0.16)", "Fonte (DR, página)"],
            [(i + 1, None, None, None, None, "") for i in range(12)])
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True)
     wb.save(out)

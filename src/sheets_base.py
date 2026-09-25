@@ -169,7 +169,7 @@ def build_config(wb):
         ("Vendas + serviços do exercício anterior (Kz)", D.demo(12_000_000, 0), "CFG_VendasN1", NUM, "Da DR do exercício anterior (fictício)."),
         ("EBITDA do exercício anterior (Kz)", D.demo(3_000_000, 0), "CFG_EBITDAN1", NUM, "Da DR do exercício anterior (fictício)."),
         ("Probabilidade de cobrança de saldos vencidos (tesouraria)", 0.5, "CFG_ProbCob", PCT, "Pressuposto da previsão de 13 semanas."),
-        ("Salários líquidos mensais previstos (Kz)", D.demo(348_000, 0), "CFG_SalPrev", NUM, "Pressuposto da tesouraria (a pagar na última semana do mês)."),
+        ("Salários líquidos mensais previstos (Kz)", D.demo(322_030, 0), "CFG_SalPrev", NUM, "Pressuposto da tesouraria (a pagar na última semana do mês)."),
         ("Dia de pagamento de salários", 28, "CFG_DiaSal", "0", "Pressuposto da tesouraria."),
         ("Serviço da dívida mensal previsto (Kz)", D.demo(45_000, 0), "CFG_DividaPrev", NUM, "Juros mensais do empréstimo de teste."),
         ("LIMITES DE ALERTA (parametrizáveis — política da entidade)", None, None, None, None),

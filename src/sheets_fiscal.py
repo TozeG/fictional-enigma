@@ -41,7 +41,7 @@ def build_fiscalidade(wb):
     r = r1 + 2
     section(ws, r, 1, "TABELA IRT — GRUPO A — " + D.IRT_FONTE_ANO, 8)
     notas = {True: "Limite inferior = valor 'Excesso de' da tabela oficial; valores transcritos tal como publicados (incl. descontinuidades oficiais entre escalões).",
-             False: "Confirmado (fontes secundárias): isenção até 150 000 Kz, 12 escalões, taxas 13%–25%. Limites e parcelas fixas: POR VALIDAR — copiar do Anexo I da Lei n.º 14/25. "
+             False: "Tabela não carregada para este exercício: copiar do diploma aplicável. "
                     "As tabelas de 2024 (Lei 28/20) e 2025 (Lei 18/24) NÃO se aplicam a 2026."}
     put(ws, (r + 1, 1), notas[bool(D.IRT_ESCALOES)], "note")
     header(ws, r + 2, 1, ["Escalão", "Limite inferior (Kz)", "Limite superior (Kz)", "Parcela fixa (Kz)", "Taxa sobre o excesso"], None)
