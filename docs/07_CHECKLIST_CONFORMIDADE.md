@@ -13,7 +13,7 @@ Estado actual: **estruturado para conformidade; validação técnica e jurídica
 | 5 | Código do Imposto Industrial (Lei 26/20 e alterações) — taxa aplicável ao sector | 🟡 | DR + enquadramento AGT |
 | 6 | Retenção na fonte sobre serviços (6,5%) — incidência e dispensas | 🟡 | Artigo do CII |
 | 7 | Código do Imposto de Selo — verbas aplicáveis | 🟡 | Tabela anexa |
-| 8 | Código do IRT + **tabela oficial 2026** carregada em 11_FISCALIDADE_AGT | 🟡 Isenção 150 000 Kz aplicada; escalões por carregar | Lei n.º 14/25 (OGE 2026) |
+| 8 | Código do IRT + **tabela oficial 2026** carregada em 11_FISCALIDADE_AGT | 🟢 ≤ 2025: tabela Lei 28/20 carregada e testada · 🟡 2026: isenção 150 000 Kz aplicada; escalões do Anexo I por carregar | Lei n.º 28/20; Lei n.º 14/25, Anexo I |
 | 9 | Contribuições INSS (taxas vigentes) | 🟡 | Diploma da protecção social |
 | 10 | Regime de facturação (DP 71/25) e faseamento da facturação electrónica | 🟢 Identificado / 🟡 aplicação | DP 71/25 + regulamentação |
 | 11 | Estrutura SAF-T (AO) vigente | 🟡 | XSD no Portal da AGT |

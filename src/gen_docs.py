@@ -146,7 +146,7 @@ def legislacao():
         taxa = f"{t[3]:.1%}" if isinstance(t[3], float) else "— (não parametrizada)"
         L.append(f"| {t[0]} | {t[1]} | {t[2]} | {taxa} | {t[4]} | {t[5]} | {t[6]} | {t[7] or '—'} | {t[10]} | {t[11]} |")
     L += ["", "## Pontos em aberto (validação obrigatória)", "",
-          "1. **Tabela do IRT 2026 (Grupo A)** — confirmado: isenção até 150 000 Kz, 12 escalões, taxas 13%–25% (Lei n.º 14/25). Localização: art. 21.º, n.º 3 e **Anexo I** da Lei n.º 14/25. Em aberto: limites e parcelas fixas de cada escalão — copiar do Anexo I para o separador IRT_ESCALOES do modelo.",
+          "1. **Tabela do IRT (Grupo A)** — **até 2025**: tabela da Lei n.º 28/20 (13 escalões, isenção 70 000 Kz) carregada a partir da tabela publicada pela AGT e testada (`tests/test_irt.py`). **2026**: art. 21.º, n.º 3 e Anexo I da Lei n.º 14/25 — isenção 150 000 Kz, 12 escalões, 13%–25% confirmados; limites e parcelas fixas **por carregar** (a tabela de 2020 NÃO se aplica a 2026).",
           "2. **Número e data da Lei do OGE 2026** — referida como Lei n.º 14/25, de 30 de Dezembro, em fontes secundárias; confirmar.",
           "3. **Retenção na fonte de 6,5% sobre serviços (Imposto Industrial)** — usada nos testes; confirmar artigo, incidência e dispensas.",
           "4. **Contas de IVA no PGC (34.5.x)** — codificação analítica usada é a sugerida; confirmar com o instrutivo/decreto executivo que as criou.",

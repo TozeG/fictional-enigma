@@ -10,7 +10,18 @@ ANO = int(os.environ.get("MATRIZ_ANO", "2026"))
 # MATRIZ_MODO=producao → matriz vazia (sem entidade, terceiros, activos nem lançamentos fictícios)
 PRODUCAO = os.environ.get("MATRIZ_MODO", "").lower() == "producao"
 MES_REP = int(os.environ.get("MATRIZ_MES", "3"))
-IRT_ESCALOES = []  # [(limite inferior, limite superior, parcela fixa, taxa)] — preencher do Diário da República
+# Tabela IRT Grupo A — Lei n.º 28/20 (vigente de 2020 a 31/12/2025). Fonte: tabela publicada pela AGT
+# (imagem fornecida pelo utilizador em 24/09/2026). "Limite inferior" = valor "Excesso de" da tabela oficial.
+# Valores transcritos tal como publicados (incl. as descontinuidades oficiais no 5.º, 9.º e 10.º escalões).
+IRT_28_20 = [
+    (0, 70_000, 0, 0.0), (70_000, 100_000, 3_000, 0.10), (100_000, 150_000, 6_000, 0.13), (150_000, 200_000, 12_500, 0.16),
+    (200_000, 300_000, 31_250, 0.18), (300_000, 500_000, 49_250, 0.19), (500_000, 1_000_000, 87_250, 0.20),
+    (1_000_000, 1_500_000, 187_250, 0.21), (1_500_000, 2_000_000, 292_000, 0.22), (2_000_000, 2_500_000, 402_250, 0.23),
+    (2_500_000, 5_000_000, 517_250, 0.24), (5_000_000, 10_000_000, 1_117_250, 0.245), (10_000_000, None, 2_342_250, 0.25),
+]
+IRT_ISENCAO = 70_000 if ANO <= 2025 else 150_000
+# 2026+: Lei n.º 14/25, Anexo I — por carregar (isenção 150 000 Kz, 12 escalões, 13%–25%).
+IRT_ESCALOES = IRT_28_20 if ANO <= 2025 else []
 CFG_OVERRIDE = {}  # valores de 00_CONFIGURAÇÃO definidos pelo importador (nome, NIF, …)
 
 

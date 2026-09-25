@@ -1,6 +1,6 @@
 # 09 — Relatório de Validação
 
-Gerado automaticamente por `tests/verify.py` em 2026-09-24.
+Gerado automaticamente por `tests/verify.py` em 2026-09-25.
 
 Método: a matriz é gerada com os casos de teste, recalculada com o LibreOffice Calc (motor independente do Excel) e cada valor
 é comparado com um modelo contabilístico independente escrito em Python a partir dos mesmos lançamentos. Os testes negativos

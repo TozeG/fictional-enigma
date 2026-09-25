@@ -268,7 +268,7 @@ def carregar(path, saida, forcar=False):
         if irt[i][0] <= irt[i - 1][0]:
             probs_irt.append(("IRT_ESCALOES", i + 1, "ERRO", "Limites inferiores dos escalões têm de ser crescentes"))
     if irt and irt[0][3] == 0 and irt[0][0] > 0:
-        probs_irt.append(("IRT_ESCALOES", 1, "AVISO", "1.º escalão com taxa 0 — a isenção já é aplicada pelo limite de 150 000 Kz"))
+        probs_irt.append(("IRT_ESCALOES", 1, "AVISO", "1.º escalão com taxa 0 — confirme que corresponde à isenção legal do exercício"))
     # plano: PGC do modelo + contas do cliente
     plano = list(D.PLANO)
     pos = {c: i for i, (c, _, _) in enumerate(plano)}
@@ -297,7 +297,8 @@ def carregar(path, saida, forcar=False):
         D.TERCEIROS = terc or D.TERCEIROS
         D.ACTIVOS = act
         D.PLANO = plano
-        D.IRT_ESCALOES = irt
+        D.IRT_ESCALOES = irt or (D.IRT_28_20 if D.ANO <= 2025 else [])
+        D.IRT_ISENCAO = 70_000 if D.ANO <= 2025 else 150_000
         D.ANO = int(cfg.get("CFG_Ano") or D.ANO)
         D.MES_REP = mes
         D.CFG_OVERRIDE.update({k: v for k, v in cfg.items() if v not in (None, "")})

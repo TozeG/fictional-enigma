@@ -71,7 +71,7 @@ O Quadro A separa, por rubrica, gastos contabilísticos em dedutíveis e não de
 
 ## 7. IRT, INSS, Imposto de Selo e outros
 
-- **IRT (Grupo A):** Código do IRT alterado pela Lei n.º 28/20 e pela **Lei n.º 14/25, de 30 de Dezembro (OGE 2026)**. Confirmado em várias fontes secundárias: **isenção até 150 000 Kz/mês** (era 100 000 Kz em 2025), **12 escalões**, taxas de **13% a 25%**, IRT = parcela fixa + (matéria colectável − limite inferior) × taxa, sendo a matéria colectável o rendimento deduzido do INSS do trabalhador. A calculadora já aplica a isenção; **os limites e parcelas fixas de cada escalão têm de ser carregados do Diário da República** (não foi possível confirmá-los em fonte fiável). O IRT do teste (40 000 Kz) é ilustrativo.
+- **IRT (Grupo A):** a tabela depende do exercício (`00_CONFIGURAÇÃO`). **Até 2025** — Lei n.º 28/20: 13 escalões, isenção até 70 000 Kz, taxas de 10% a 25%, carregada a partir da tabela publicada pela AGT (limite inferior = "Excesso de"; valores tal como publicados, incluindo as descontinuidades oficiais no 5.º, 9.º e 10.º escalões). **2026** — Lei n.º 14/25, art. 21.º, n.º 3 e Anexo I: isenção até 150 000 Kz, 12 escalões, 13% a 25%; a isenção já é aplicada, mas **os limites e parcelas fixas do Anexo I têm de ser carregados** (separador IRT_ESCALOES do modelo de importação). Matéria colectável = remuneração − INSS do trabalhador. Testes: `tests/test_irt.py`.
 - **IRT Grupo C:** OGE 2026 — 6,5% sobre vendas/serviços não sujeitos a retenção para volume 2025 ≥ 10 M Kz (fonte KPMG).
 - **INSS:** 3% trabalhador / 8% entidade empregadora — parâmetro a validar.
 - **Imposto de Selo:** recibo de quitação 1% (verba 23.3) com âmbito restrito — a validar.

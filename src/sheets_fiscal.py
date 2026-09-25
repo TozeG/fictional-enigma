@@ -39,9 +39,14 @@ def build_fiscalidade(wb):
     name(wb, "TX_RET", S11, "$D$" + str(7 + [t[0] for t in D.TAXAS].index("RET_SERV")))
     # ---------------- IRT ----------------
     r = r1 + 2
-    section(ws, r, 1, "TABELA IRT — GRUPO A (carregar a partir do Diário da República — Lei do OGE 2026)", 8)
-    put(ws, (r + 1, 1), "Confirmado (fontes secundárias, Lei n.º 14/25): isenção até 150 000 Kz, 12 escalões, taxas de 13% a 25%, IRT = parcela fixa + (MC − limite inferior) × taxa. "
-                        "Limites e parcelas fixas: POR VALIDAR — preencher a partir do Diário da República. O modelo não inventa os escalões.", "note")
+    if D.ANO <= 2025:
+        section(ws, r, 1, "TABELA IRT — GRUPO A — Lei n.º 28/20 (vigente até 31/12/2025)", 8)
+        put(ws, (r + 1, 1), "Fonte: tabela publicada pela AGT (13 escalões; isenção até 70 000 Kz). Limite inferior = 'Excesso de'. "
+                            "Valores tal como publicados. NÃO aplicável a rendimentos de 2026 (Lei n.º 14/25).", "note")
+    else:
+        section(ws, r, 1, "TABELA IRT — GRUPO A — Lei n.º 14/25, Anexo I (2026)", 8)
+        put(ws, (r + 1, 1), "Confirmado (fontes secundárias): isenção até 150 000 Kz, 12 escalões, taxas 13%–25%. Limites e parcelas fixas: POR VALIDAR — "
+                            "copiar do Anexo I da Lei n.º 14/25. A tabela da Lei n.º 28/20 (isenção 70 000 Kz) NÃO se aplica a 2026.", "note")
     header(ws, r + 2, 1, ["Escalão", "Limite inferior (Kz)", "Limite superior (Kz)", "Parcela fixa (Kz)", "Taxa sobre o excesso"], None)
     t0 = r + 3
     for i in range(14):
@@ -58,7 +63,7 @@ def build_fiscalidade(wb):
     calc = [("Remuneração bruta mensal", 400_000, "input"), ("Rendimentos não sujeitos/isentos (input)", 0, "input"),
             ("Contribuição INSS do trabalhador", f"=ROUND(I{c0 + 1}*TX_INSS_T,2)", "grey"),
             ("Matéria colectável", f"=I{c0 + 1}-I{c0 + 2}-I{c0 + 3}", "grey"),
-            ("Limite de isenção mensal (Lei n.º 14/25)", 150_000, "input"),
+            ("Limite de isenção mensal" + (" (Lei n.º 28/20)" if D.ANO <= 2025 else " (Lei n.º 14/25)"), D.IRT_ISENCAO, "input"),
             ("IRT a reter", f'=IF(I{c0 + 4}<=I{c0 + 5},0,IF(COUNT(IRT_Inf)=0,"TABELA POR VALIDAR",IFERROR(INDEX(IRT_PF,MATCH(I{c0 + 4},IRT_Inf,1))+(I{c0 + 4}-INDEX(IRT_Inf,MATCH(I{c0 + 4},IRT_Inf,1)))*INDEX(IRT_Tx,MATCH(I{c0 + 4},IRT_Inf,1)),0)))', "grey")]
     for i, (lab, f, k) in enumerate(calc):
         put(ws, (c0 + 1 + i, 8), lab, "label")
