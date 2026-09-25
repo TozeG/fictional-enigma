@@ -297,8 +297,9 @@ def carregar(path, saida, forcar=False):
         D.TERCEIROS = terc or D.TERCEIROS
         D.ACTIVOS = act
         D.PLANO = plano
-        D.IRT_ESCALOES = irt or (D.IRT_28_20 if D.ANO <= 2025 else [])
-        D.IRT_ISENCAO = 70_000 if D.ANO <= 2025 else 150_000
+        esc, ise, fonte = D.irt_tabela(D.ANO)
+        D.IRT_ESCALOES, D.IRT_ISENCAO = (irt or esc), ise
+        D.IRT_FONTE_ANO = fonte if not irt else "escalões importados do modelo (IRT_ESCALOES)"
         D.ANO = int(cfg.get("CFG_Ano") or D.ANO)
         D.MES_REP = mes
         D.CFG_OVERRIDE.update({k: v for k, v in cfg.items() if v not in (None, "")})

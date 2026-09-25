@@ -10,18 +10,35 @@ ANO = int(os.environ.get("MATRIZ_ANO", "2026"))
 # MATRIZ_MODO=producao → matriz vazia (sem entidade, terceiros, activos nem lançamentos fictícios)
 PRODUCAO = os.environ.get("MATRIZ_MODO", "").lower() == "producao"
 MES_REP = int(os.environ.get("MATRIZ_MES", "3"))
-# Tabela IRT Grupo A — Lei n.º 28/20 (vigente de 2020 a 31/12/2025). Fonte: tabela publicada pela AGT
-# (imagem fornecida pelo utilizador em 24/09/2026). "Limite inferior" = valor "Excesso de" da tabela oficial.
-# Valores transcritos tal como publicados (incl. as descontinuidades oficiais no 5.º, 9.º e 10.º escalões).
+# Tabelas IRT Grupo A. Coluna 1 = valor "excesso de" da tabela oficial (base do cálculo), transcrito tal como publicado.
+# Lei n.º 28/20 — vigente de 2020 a 31/12/2024 (tabela publicada pela AGT; imagem fornecida pelo utilizador).
 IRT_28_20 = [
     (0, 70_000, 0, 0.0), (70_000, 100_000, 3_000, 0.10), (100_000, 150_000, 6_000, 0.13), (150_000, 200_000, 12_500, 0.16),
     (200_000, 300_000, 31_250, 0.18), (300_000, 500_000, 49_250, 0.19), (500_000, 1_000_000, 87_250, 0.20),
     (1_000_000, 1_500_000, 187_250, 0.21), (1_500_000, 2_000_000, 292_000, 0.22), (2_000_000, 2_500_000, 402_250, 0.23),
     (2_500_000, 5_000_000, 517_250, 0.24), (5_000_000, 10_000_000, 1_117_250, 0.245), (10_000_000, None, 2_342_250, 0.25),
 ]
-IRT_ISENCAO = 70_000 if ANO <= 2025 else 150_000
-# 2026+: Lei n.º 14/25, Anexo I — por carregar (isenção 150 000 Kz, 12 escalões, 13%–25%).
-IRT_ESCALOES = IRT_28_20 if ANO <= 2025 else []
+# Lei n.º 18/24, de 30/12 (OGE 2025), art. 20.º n.º 3 e Anexo I — DR I Série n.º 247, pág. 13798. Vigente em 2025.
+IRT_18_24 = [
+    (0, 100_000, 0, 0.0), (100_001, 150_000, 0, 0.13), (150_001, 200_000, 12_500, 0.16), (200_001, 300_000, 31_250, 0.18),
+    (300_001, 500_000, 49_250, 0.19), (500_001, 1_000_000, 87_250, 0.20), (1_000_001, 1_500_000, 187_249, 0.21),
+    (1_500_001, 2_000_000, 292_249, 0.22), (2_000_001, 2_500_000, 402_249, 0.23), (2_500_001, 5_000_000, 517_249, 0.24),
+    (5_000_001, 10_000_000, 1_117_249, 0.245), (10_000_001, None, 2_342_248, 0.25),
+]
+IRT_FONTE = {2024: "Lei n.º 28/20 (tabela AGT)", 2025: "Lei n.º 18/24, Anexo I (DR I Série n.º 247, 30/12/2024, p. 13798)",
+             2026: "Lei n.º 14/25, art. 21.º n.º 3 e Anexo I — escalões POR CARREGAR"}
+
+
+def irt_tabela(ano):
+    """(escalões, isenção, fonte) aplicáveis ao exercício."""
+    if ano <= 2024:
+        return IRT_28_20, 70_000, IRT_FONTE[2024]
+    if ano == 2025:
+        return IRT_18_24, 100_000, IRT_FONTE[2025]
+    return [], 150_000, IRT_FONTE[2026]
+
+
+IRT_ESCALOES, IRT_ISENCAO, IRT_FONTE_ANO = irt_tabela(ANO)
 CFG_OVERRIDE = {}  # valores de 00_CONFIGURAÇÃO definidos pelo importador (nome, NIF, …)
 
 
@@ -401,6 +418,7 @@ BASE_LEGAL = [
     ("Regulamentação IVA / PGC", "Instrutivo/Decreto Executivo — a identificar", "—", "—", "IVA / Contabilidade", "Cria as contas de IVA no PGC (34.5.x)", "Sujeitos passivos de IVA", "—", "—", "—", VERIF, "POR VALIDAR"),
     ("Lei", "26/20", "20/07/2020", "Vários", "Imposto Industrial", "Altera o Código do Imposto Industrial (taxa geral 25%)", "Pessoas colectivas e singulares com actividade comercial/industrial", "20/07/2020", "—", "https://lex.ao/docs/assembleia-nacional/2020/lei-n-o-26-20-de-20-de-julho/", VERIF, "CONFIRMADO (fonte secundária)"),
     ("Lei", "28/20", "22/07/2020", "Tabela", "IRT", "Altera o Código do IRT", "Rendimentos do trabalho", "01/09/2020", "Alterada pela Lei do OGE 2026", "https://www.ucm.minfin.gov.ao/cs/groups/public/documents/document/aw4x/mjm3/~edisp/minfin1237855.pdf", VERIF, "CONFIRMADO (fonte secundária)"),
+    ("Lei", "18/24", "30/12/2024", "Art. 20.º e Anexo I", "OGE 2025 / IRT", "Isenção de IRT até 100 000 Kz; nova tabela Grupo A (12 escalões, 13%–25%); Grupo C 6,5%; suspende o n.º 2 do art. 9.º do CIRT", "Rendimentos de 2025", "01/01/2025", "Substituída para 2026 pela Lei n.º 14/25", "Diário da República I Série n.º 247, 30/12/2024, pp. 13782–13798 (documento fornecido pelo utilizador)", VERIF, "CONFIRMADO (fonte primária)"),
     ("Lei", "14/25", "30/12/2025", "Várias", "OGE 2026", "Lei do OGE 2026: alterações ao IRT (isenção e escalões), IRT Grupo C 6,5%, Imposto Predial, Imposto de Selo", "Todos os contribuintes", "01/01/2026", "—", "https://kpmg.com/ao/pt/insights/tax-news/lei-orcamento-geral-estado-2026.html", VERIF, "POR VALIDAR (número/data a confirmar no DR)"),
     ("Decreto Presidencial", "71/25", "20/03/2025", "Vários", "Facturação", "Regime Jurídico das Facturas e Documentos Equivalentes: software validado AGT, facturação electrónica, comunicação, SAF-T, cópias de segurança", "Grandes Contribuintes e fornecedores do Estado desde 01/01/2026; regimes geral e simplificado de IVA desde 01/01/2027", "Faseado", "Revoga o regime anterior (confirmar)", "https://www.ey.com/pt_ao/technical/tax-alerts/facturacao-electronica-a-partir-de-1-de-janeiro-de-2026", VERIF, "CONFIRMADO (fonte secundária)"),
     ("Decreto Presidencial", "312/18", "—", "—", "Facturação", "Regime jurídico das facturas anterior", "—", "—", "Presumivelmente revogado pelo DP 71/25 — confirmar", "—", VERIF, "POR VALIDAR"),
