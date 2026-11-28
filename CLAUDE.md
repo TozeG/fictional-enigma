@@ -36,7 +36,9 @@ A calibração 1 mostrou 28 duplicados em 58 achados. Cada tipo de problema tem 
 | Formato uniforme (números, moeda, siglas, referências) e inconsistências de grafia de nomes | `normalizador` |
 | Estrutura, argumento, conclusão face à evidência | `analista-estrutural` |
 | Clareza, repetição, ritmo, registo | `estilista` |
-| Experiência do leitor-alvo | `leitor-critico` (só relatório e consulta-autor) |
+| Experiência do leitor-alvo | `leitor-critico` (relatório, `consulta-autor` e `preservacao`) |
+
+Qualquer agente pode emitir achados de `preservacao` (protocolo §4), mas só sobre excertos que ninguém mais assinalou. Quando há sobreposição, fica a preservação do dono do âmbito.
 
 Quando um agente vê um problema que não é seu, menciona-o numa linha da secção «Fora do meu âmbito» do seu relatório e **não cria achado**.
 

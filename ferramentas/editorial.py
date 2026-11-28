@@ -49,6 +49,7 @@ def validar(manuscrito_path, achados_path):
 
     for i, a in enumerate(achados):
         ref = a.get("id", f"#{i}")
+        inicio = len(erros)
         for campo in OBRIGATORIOS:
             if campo not in a or a[campo] in ("", None):
                 erros.append(f"{ref}: campo obrigatório ausente: {campo}")
@@ -100,6 +101,11 @@ def validar(manuscrito_path, achados_path):
         if prop and prop == exc and tipo != "consulta-autor" and agente != "analista-estrutural":
             erros.append(f"{ref}: proposta idêntica ao excerto")
         por_excerto[exc].append(a)
+        # Um achado já rejeitado pelo auditor fica como registo e não chega ao autor:
+        # os seus defeitos passam a aviso e não invalidam o lote
+        if a.get("estado") == "rejeitado-auditor" and len(erros) > inicio:
+            avisos.extend(f"(rejeitado-auditor) {e}" for e in erros[inicio:])
+            del erros[inicio:]
 
     # Conflitos: agentes diferentes com propostas diferentes para o mesmo excerto
     conflitos = []

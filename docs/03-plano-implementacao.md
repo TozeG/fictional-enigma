@@ -5,7 +5,7 @@
 | Versão | Duração indicativa | Entregáveis | Critério de aceitação (verificável) |
 |---|---|---|---|
 | **v0.1: Fundação** *(feito neste repositório)* | — | Norma PT-AO, protocolo de achados, 9 agentes, comando `/revisao-editorial`, validador, kit de calibração | `editorial.py` rejeita os 3 achados defeituosos do exemplo ✔ |
-| **v0.2: Calibração** | Semana 1 | Correr o sistema sobre `calibracao/texto-teste.md` e ajustar as instruções dos agentes | `editorial.py avaliar`: cobertura ≥ 80 % e **0** armadilhas violadas, em 3 execuções seguidas |
+| **v0.2: Calibração** *(concluída, 28 de Novembro de 2026)* | — | 3 execuções, instruções ajustadas. Ver `calibracao/registo-calibracao.md` | 16/16 e 0 armadilhas nas 3 execuções ✔; duplicação de 48 % → 8,3 % |
 | **v0.3: Piloto real** | Semanas 2 e 3 | Um capítulo ou artigo real (5000 a 10 000 palavras) com revisão humana paralela | Taxa de aceitação dos achados pelo autor ≥ 70 %; rejeição pelo auditor < 15 %; nenhum angolanismo alterado indevidamente |
 | **v0.4: Integrações** | Semana 4 | LanguageTool `pt-AO` (servidor local), Pandoc `.docx`, Crossref | Pipeline `.docx → revisão → .docx` sem perda de estilos; DOI validados automaticamente |
 | **v1.0: Operação** | Mês 2 | Primeira obra completa; folha de estilo madura; métricas por obra | Revisor de provas dá APTO; registo de alterações a 100 %; tempo e custo medidos |

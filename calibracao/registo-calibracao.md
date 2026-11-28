@@ -37,5 +37,28 @@ Critério da v0.2: cobertura ≥ 80 % e 0 armadilhas violadas no lote que chega 
 | verificador-factual | Numeração de parágrafos trocada em 3 achados | Regra de contagem no `CLAUDE.md` §3-A |
 | todos | Sobreposição de âmbito | Tabela «um problema, um dono» (`CLAUDE.md` §3-A) |
 
-## Execução 2: pendente
-## Execução 3: pendente
+## Execuções 2 e 3: 28 de Novembro de 2026
+
+**Condições:** gabarito v1.1 fixado antes das execuções. Instruções com as fronteiras de âmbito (`CLAUDE.md` §3-A). Agentes nativos com o modelo definido em cada um. Projectos isolados e teste cego, sem acesso a `calibracao/` nem a outros projectos.
+
+| Medida | Exec. 1 | Exec. 2 | Exec. 3 | Meta |
+|---|---|---|---|---|
+| Achados brutos | 58 | 33 | 36 | — |
+| Validados pelo auditor | 26 | 27 | 31 | — |
+| Cobertura (lote validado) | 16/16 | **16/16** | **16/16** | ≥ 80 % |
+| Armadilhas violadas | 0 | **0** | **0** | 0 |
+| Rejeição por mérito | 6,9 % | **3,0 %** | **2,8 %** | < 15 % |
+| Duplicação | 48 % | **15,2 %** | **8,3 %** | < 20 % |
+| Veredicto do auditor | Aprovado com reserva | Aprovado com reserva | Aprovado com reserva | — |
+
+**Resultado: v0.2 CONCLUÍDA.** Três execuções seguidas cumprem o critério. As execuções 2 e 3 não dependeram de ajustes posteriores ao gabarito.
+
+### Lições das execuções 2 e 3
+1. **Correcção inconsciente do excerto.** O leitor crítico, que não tinha a ferramenta Grep, escreveu «a expansão» quando o original diz «expanção», nas duas execuções. O validador apanhou-o nas duas. → Protocolo §3-A (confirmação literal com Grep) e Grep acrescentado ao agente.
+2. **Contradição nas instruções do leitor crítico.** As instruções do agente permitiam preservações, mas o §3-A não. → Harmonizado no `CLAUDE.md` §3-A.
+3. **O validador invalidava lotes por achados já rejeitados.** → Os defeitos de achados `rejeitado-auditor` passam a aviso.
+4. **Lacuna residual:** a mistura de «vinte» por extenso com «25» em algarismos não teve achado de forma. Só foi tratada como inconsistência factual. Fica para a calibração alargada (v1.x).
+
+### Limites desta calibração (a ter em conta)
+- O texto é **curto** (≈330 palavras), **institucional** e tem **16 erros**. A v0.3 (piloto real) e a v1.x (50 ou mais erros por género, incluindo ficção) são necessárias antes de generalizar.
+- Os erros semeados foram escritos por quem desenhou o sistema, o que pode favorecer tipos de erro que o sistema já antecipa. O piloto real com revisão humana paralela corrige este viés.
