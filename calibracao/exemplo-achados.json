@@ -1,0 +1,44 @@
+[
+  {
+    "id": "LIN-0001", "agente": "revisor-linguistico", "categoria": "ortografia", "subcategoria": "consoante-muda-pre-AO",
+    "localizacao": {"paragrafo": 1}, "excerto": "um projeto de leitura", "proposta": "um projecto de leitura",
+    "tipo_intervencao": "obrigatoria", "severidade": "media",
+    "fundamento": {"regra": "Ortografia de 1945: conserva-se o 'c' em projecto.", "fonte": "normas/norma-pt-ao.md §3; Acordo Ortográfico de 1945", "estatuto": "facto-normativo"},
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0002", "agente": "revisor-linguistico", "categoria": "sintaxe", "subcategoria": "haver-impessoal",
+    "localizacao": {"paragrafo": 1}, "excerto": "Houveram muitas dificuldades", "proposta": "Houve muitas dificuldades",
+    "tipo_intervencao": "obrigatoria", "severidade": "alta",
+    "fundamento": {"regra": "Haver existencial é impessoal e fica na 3.ª pessoa do singular.", "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo, verbos impessoais", "estatuto": "facto-normativo"},
+    "confianca": "alta"
+  },
+  {
+    "id": "FAC-0001", "agente": "verificador-factual", "categoria": "numeros", "subcategoria": "pontos-percentuais",
+    "localizacao": {"paragrafo": 4}, "excerto": "um aumento de 15%", "proposta": "um aumento de 15 pontos percentuais (75% em termos relativos)",
+    "tipo_intervencao": "obrigatoria", "severidade": "alta",
+    "fundamento": {"regra": "(35-20)=15 p.p.; (35-20)/20=0,75. Confundir p.p. com variação relativa altera o sentido.", "fonte": "Cálculo verificado: python3 -c 'print((35-20)/20)' devolve 0.75", "estatuto": "facto-verificado"},
+    "confianca": "alta"
+  },
+  {
+    "id": "ESTL-0001", "agente": "estilista", "categoria": "repeticao",
+    "localizacao": {"paragrafo": 3}, "excerto": "e cada sessão incluía", "proposta": "e incluía",
+    "tipo_intervencao": "obrigatoria", "severidade": "baixa",
+    "fundamento": {"regra": "Três ocorrências de 'cada sessão' em 30 palavras.", "estatuto": "preferencia-estilo"},
+    "confianca": "media"
+  },
+  {
+    "id": "LIN-0003", "agente": "revisor-linguistico", "categoria": "concordancia",
+    "excerto": "A gente agora lemos juntos", "proposta": "A gente agora lê junto",
+    "tipo_intervencao": "obrigatoria", "severidade": "media",
+    "fundamento": {"regra": "'A gente' concorda na 3.ª pessoa do singular.", "fonte": "Cunha & Cintra", "estatuto": "facto-normativo"},
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0004", "agente": "revisor-linguistico", "categoria": "ortografia",
+    "excerto": "a expansão para", "proposta": "a expansão para",
+    "tipo_intervencao": "obrigatoria", "severidade": "media",
+    "fundamento": {"regra": "Paronímia.", "fonte": "Priberam", "estatuto": "facto-normativo"},
+    "confianca": "alta"
+  }
+]

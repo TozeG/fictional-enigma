@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lista de achados editoriais SIE-AO",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "agente", "categoria", "excerto", "proposta", "tipo_intervencao", "severidade", "fundamento", "confianca"],
+    "properties": {
+      "id": {"type": "string", "pattern": "^(EST|LIN|ESTL|FAC|NOR|LEI|PRV)-[0-9]{4}$"},
+      "agente": {"enum": ["analista-estrutural", "revisor-linguistico", "estilista", "verificador-factual", "normalizador", "leitor-critico", "revisor-provas"]},
+      "categoria": {"type": "string"},
+      "subcategoria": {"type": "string"},
+      "localizacao": {"type": "object"},
+      "excerto": {"type": "string", "minLength": 1},
+      "proposta": {"type": "string", "minLength": 1},
+      "tipo_intervencao": {"enum": ["obrigatoria", "recomendada", "opcional", "consulta-autor"]},
+      "severidade": {"enum": ["critica", "alta", "media", "baixa"]},
+      "fundamento": {
+        "type": "object",
+        "required": ["regra", "estatuto"],
+        "properties": {
+          "regra": {"type": "string", "minLength": 1},
+          "fonte": {"type": "string"},
+          "estatuto": {"enum": ["facto-normativo", "facto-verificado", "interpretacao", "hipotese", "preferencia-estilo"]}
+        }
+      },
+      "confianca": {"enum": ["alta", "media", "baixa"]},
+      "nota": {"type": "string"},
+      "estado": {"enum": ["proposto", "validado", "rejeitado-auditor", "aceite-autor", "rejeitado-autor"]}
+    }
+  }
+}
