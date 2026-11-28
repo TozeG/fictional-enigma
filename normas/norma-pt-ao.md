@@ -19,6 +19,8 @@ Antes de propor qualquer alteração, o agente classifica o fenómeno:
 2. **Variação angolana legítima**: léxico, construções ou usos próprios do português de Angola. → **preservar**. No máximo, `consulta-autor` sobre glossário ou itálico.
 3. **Opção de estilo**: clareza, ritmo, repetição. → `recomendada` ou `opcional`
 
+**Grafia original de textos alheios:** os títulos de obras, legislação e documentos citados, bem como as citações literais, mantêm a grafia da fonte (AO90, PT-BR, inglês). Ex.: «Regulamento (UE) 2024/1689 [...] de 13 de junho de 2024» fica em minúscula porque é o título oficial. Só o texto do autor segue a norma de 1945.
+
 **Regra de ouro:** o discurso directo e a voz de personagens **não se normalizam**. A oralidade («A gente lemos», «me disseram») é recurso literário ou testemunhal e não é erro do autor.
 
 ## 3. Ortografia pré-AO90: contrastes mais frequentes
