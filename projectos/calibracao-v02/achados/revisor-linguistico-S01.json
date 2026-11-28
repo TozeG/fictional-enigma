@@ -1,0 +1,140 @@
+[
+  {
+    "id": "LIN-0001",
+    "agente": "revisor-linguistico",
+    "categoria": "ortografia",
+    "subcategoria": "consoante-conservada-1945",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "iniciou um projeto de leitura em vinte escolas",
+    "proposta": "iniciou um projecto de leitura em vinte escolas",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Na ortografia de 1945 conserva-se o c de «projecto». A forma «projeto» é AO90/PT-BR. O próprio texto usa «projecto» nos §§ 2, 6 e 7.",
+      "fonte": "Acordo Ortográfico de 1945 (consoantes mudas conservadas); norma-pt-ao.md §3; Dicionário da Língua Portuguesa Contemporânea (ACL, 2001), entrada «projecto»",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta",
+    "nota": "Também é incoerência interna: as restantes ocorrências estão em «projecto»."
+  },
+  {
+    "id": "LIN-0002",
+    "agente": "revisor-linguistico",
+    "categoria": "sintaxe",
+    "subcategoria": "concordancia-haver-impessoal",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "Houveram muitas dificuldades no arranque",
+    "proposta": "Houve muitas dificuldades no arranque",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O verbo «haver» no sentido de «existir» é impessoal e conjuga-se só na 3.ª pessoa do singular; «muitas dificuldades» é complemento directo, não sujeito.",
+      "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo, verbos impessoais (haver existencial); norma-pt-ao.md §4",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0003",
+    "agente": "revisor-linguistico",
+    "categoria": "sintaxe",
+    "subcategoria": "colocacao-pronominal",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "me disseram que os alunos gostam de ler",
+    "proposta": "disseram-me que os alunos gostam de ler",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Em texto formal usa-se a ênclise por defeito. O sujeito «Os professores» não atrai o pronome, e «que» e «já» pertencem à oração relativa intercalada, não à oração principal.",
+      "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo, colocação dos pronomes átonos; norma-pt-ao.md §4",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta",
+    "nota": "Está na voz do autor do relatório, fora do discurso directo. A próclise é frequente na oralidade angolana, mas aqui o registo é institucional."
+  },
+  {
+    "id": "LIN-0004",
+    "agente": "revisor-linguistico",
+    "categoria": "sintaxe",
+    "subcategoria": "regencia-verbal-crase",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "os alunos assistiram as sessões de leitura",
+    "proposta": "os alunos assistiram às sessões de leitura",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "«Assistir» no sentido de «estar presente, presenciar» rege a preposição «a». A preposição contrai-se com o artigo «as» e dá «às» (crase).",
+      "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo, regência do verbo «assistir»; norma-pt-ao.md §4",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0005",
+    "agente": "revisor-linguistico",
+    "categoria": "ortografia",
+    "subcategoria": "consoante-conservada-1945",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "Os resultados foram ótimos.",
+    "proposta": "Os resultados foram óptimos.",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Na ortografia de 1945 conserva-se o p de «óptimo». A forma «ótimo» é AO90/PT-BR.",
+      "fonte": "Acordo Ortográfico de 1945 (consoantes mudas conservadas); norma-pt-ao.md §3; Dicionário da Língua Portuguesa Contemporânea (ACL, 2001), entrada «óptimo»",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0006",
+    "agente": "revisor-linguistico",
+    "categoria": "pontuacao",
+    "subcategoria": "virgula-adjunto-anteposto",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "Apesar disso o projecto enfrentou problemas",
+    "proposta": "Apesar disso, o projecto enfrentou problemas",
+    "tipo_intervencao": "recomendada",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Um adjunto adverbial ou conector concessivo anteposto ao sujeito, como «Apesar disso», isola-se normalmente por vírgula. Quando o adjunto é curto, a vírgula é por vezes tida como facultativa.",
+      "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo, emprego da vírgula (adjuntos adverbiais antepostos)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media"
+  },
+  {
+    "id": "LIN-0007",
+    "agente": "revisor-linguistico",
+    "categoria": "ortografia",
+    "subcategoria": "paronimia-grafia",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "incluem a expanção para outras províncias",
+    "proposta": "incluem a expansão para outras províncias",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Escreve-se «expansão» com s, tal como os cognatos «expandir» e «expansivo». A forma «expanção» não existe.",
+      "fonte": "Dicionário da Língua Portuguesa Contemporânea (ACL, 2001), entrada «expansão»; Dicionário Priberam (antes do AO)",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0008",
+    "agente": "revisor-linguistico",
+    "categoria": "ortografia",
+    "subcategoria": "maiuscula-meses",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "com o ministério em janeiro de 2025",
+    "proposta": "com o ministério em Janeiro de 2025",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Na ortografia de 1945 os nomes dos meses escrevem-se com maiúscula inicial. O texto já usa «Março» no § 1.",
+      "fonte": "Acordo Ortográfico de 1945 (emprego de maiúsculas iniciais: nomes dos meses); norma-pt-ao.md §3",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  }
+]

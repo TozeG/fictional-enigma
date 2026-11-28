@@ -1,30 +1,158 @@
 {
   "descricao": "Gabarito do texto-teste. 'esperados' são os erros semeados que o sistema deve detectar; 'armadilhas' são variações legítimas que NÃO podem ser corrigidas.",
-  "criterios": {"recall_min": 0.8, "armadilhas_max": 0},
+  "criterios": {
+    "recall_min": 0.8,
+    "armadilhas_max": 0
+  },
   "esperados": [
-    {"id": "G01", "tipo": "ortografia-pre-AO", "agente": "revisor-linguistico", "chave": "um projeto de leitura", "correcto": "um projecto de leitura"},
-    {"id": "G02", "tipo": "haver-impessoal", "agente": "revisor-linguistico", "chave": "Houveram muitas dificuldades", "correcto": "Houve muitas dificuldades"},
-    {"id": "G03", "tipo": "colocacao-pronominal", "agente": "revisor-linguistico", "chave": "me disseram que os alunos", "correcto": "disseram-me que os alunos"},
-    {"id": "G04", "tipo": "afirmacao-sem-fonte", "agente": "verificador-factual", "chave": "85% dos alunos nunca tinham lido", "correcto": "consulta-autor: indicar fonte/método do dado"},
-    {"id": "G05", "tipo": "inconsistencia-interna", "agente": "normalizador", "chave": "as 25 escolas participantes", "correcto": "harmonizar com 'vinte escolas'"},
-    {"id": "G06", "tipo": "regencia", "agente": "revisor-linguistico", "chave": "assistiram as sessões", "correcto": "assistiram às sessões"},
-    {"id": "G07", "tipo": "repeticao", "agente": "estilista", "chave": "e cada sessão incluía", "correcto": "reduzir a tripla repetição de 'cada sessão'"},
-    {"id": "G08", "tipo": "ortografia-pre-AO", "agente": "revisor-linguistico", "chave": "foram ótimos", "correcto": "foram óptimos"},
-    {"id": "G09", "tipo": "erro-calculo", "agente": "verificador-factual", "chave": "um aumento de 15%", "correcto": "15 pontos percentuais (75% de aumento relativo)"},
-    {"id": "G10", "tipo": "pontuacao", "agente": "revisor-linguistico", "chave": "Apesar disso o projecto", "correcto": "Apesar disso, o projecto"},
-    {"id": "G11", "tipo": "erro-calculo", "agente": "verificador-factual", "chave": "cerca de metade do previsto", "correcto": "60% do previsto"},
-    {"id": "G12", "tipo": "formato-numeros", "agente": "normalizador", "chave": "5.000.000 Kz", "correcto": "5 000 000 Kz (uniformizar)"},
-    {"id": "G13", "tipo": "conclusao-contraditoria", "agente": "analista-estrutural", "chave": "com poucos recursos e sem dificuldades", "correcto": "a conclusão contradiz as dificuldades e o subfinanciamento relatados"},
-    {"id": "G14", "tipo": "ortografia", "agente": "revisor-linguistico", "chave": "a expanção para", "correcto": "a expansão para"},
-    {"id": "G15", "tipo": "maiuscula-meses-pre-AO", "agente": "revisor-linguistico", "chave": "em janeiro de 2025", "correcto": "em Janeiro de 2025"},
-    {"id": "G16", "tipo": "incoerencia-temporal", "agente": "verificador-factual", "chave": "Março de 2024", "correcto": "consulta-autor: o relatório projecta Janeiro de 2025; confirmar datas e se o documento é retrospectivo"}
+    {
+      "id": "G01",
+      "tipo": "ortografia-pre-AO",
+      "agente": "revisor-linguistico",
+      "chave": "um projeto de leitura",
+      "correcto": "um projecto de leitura"
+    },
+    {
+      "id": "G02",
+      "tipo": "haver-impessoal",
+      "agente": "revisor-linguistico",
+      "chave": "Houveram muitas dificuldades",
+      "correcto": "Houve muitas dificuldades"
+    },
+    {
+      "id": "G03",
+      "tipo": "colocacao-pronominal",
+      "agente": "revisor-linguistico",
+      "chave": "me disseram que os alunos",
+      "correcto": "disseram-me que os alunos"
+    },
+    {
+      "id": "G04",
+      "tipo": "afirmacao-sem-fonte",
+      "agente": "verificador-factual",
+      "chave": "85% dos alunos nunca tinham lido",
+      "correcto": "consulta-autor: indicar fonte/método do dado"
+    },
+    {
+      "id": "G05",
+      "tipo": "inconsistencia-interna",
+      "agente": "normalizador",
+      "chave": "as 25 escolas participantes",
+      "correcto": "harmonizar com 'vinte escolas'"
+    },
+    {
+      "id": "G06",
+      "tipo": "regencia",
+      "agente": "revisor-linguistico",
+      "chave": "assistiram as sessões",
+      "correcto": "assistiram às sessões"
+    },
+    {
+      "id": "G07",
+      "tipo": "repeticao",
+      "agente": "estilista",
+      "chave": "e cada sessão incluía",
+      "correcto": "reduzir a tripla repetição de 'cada sessão'"
+    },
+    {
+      "id": "G08",
+      "tipo": "ortografia-pre-AO",
+      "agente": "revisor-linguistico",
+      "chave": "foram ótimos",
+      "correcto": "foram óptimos"
+    },
+    {
+      "id": "G09",
+      "tipo": "erro-calculo",
+      "agente": "verificador-factual",
+      "chave": "um aumento de 15%",
+      "correcto": "15 pontos percentuais (75% de aumento relativo)"
+    },
+    {
+      "id": "G10",
+      "tipo": "pontuacao",
+      "agente": "revisor-linguistico",
+      "chave": "Apesar disso o projecto",
+      "correcto": "Apesar disso, o projecto"
+    },
+    {
+      "id": "G11",
+      "tipo": "erro-calculo",
+      "agente": "verificador-factual",
+      "chave": "cerca de metade do previsto",
+      "correcto": "60% do previsto"
+    },
+    {
+      "id": "G12",
+      "tipo": "formato-numeros",
+      "agente": "normalizador",
+      "chave": "5.000.000 Kz",
+      "correcto": "5 000 000 Kz (uniformizar)"
+    },
+    {
+      "id": "G13",
+      "tipo": "conclusao-contraditoria",
+      "agente": "analista-estrutural",
+      "chave": "com poucos recursos e sem dificuldades",
+      "correcto": "a conclusão contradiz as dificuldades e o subfinanciamento relatados"
+    },
+    {
+      "id": "G14",
+      "tipo": "ortografia",
+      "agente": "revisor-linguistico",
+      "chave": "a expanção para",
+      "correcto": "a expansão para"
+    },
+    {
+      "id": "G15",
+      "tipo": "maiuscula-meses-pre-AO",
+      "agente": "revisor-linguistico",
+      "chave": "em janeiro de 2025",
+      "correcto": "em Janeiro de 2025"
+    },
+    {
+      "id": "G16",
+      "tipo": "incoerencia-temporal",
+      "agente": "verificador-factual",
+      "correcto": "consulta-autor: a reunião de Janeiro de 2025 é passada à data da revisão (Novembro de 2026) ou o relatório não tem data de fecho; confirmar",
+      "chaves": [
+        "Março de 2024",
+        "Iremos reunir-nos com o ministério em janeiro de 2025"
+      ],
+      "requer_tipo": [
+        "consulta-autor"
+      ]
+    }
   ],
   "armadilhas": [
-    {"chave": "A gente agora lemos juntos", "motivo": "Discurso directo de personagem: a oralidade preserva-se"},
-    {"chave": "zungueira", "motivo": "Angolanismo legítimo"},
-    {"chave": "candongueiros", "motivo": "Angolanismo legítimo"},
-    {"chave": "a direcção provincial", "motivo": "Grafia correcta pré-AO90; não converter para 'direção'"},
-    {"chave": "Segundo o director", "motivo": "Grafia correcta pré-AO90"},
-    {"chave": "Iremos reunir-nos", "motivo": "Construção correcta"}
+    {
+      "chave": "A gente agora lemos juntos",
+      "motivo": "Discurso directo de personagem: a oralidade preserva-se"
+    },
+    {
+      "chave": "zungueira",
+      "motivo": "Angolanismo legítimo"
+    },
+    {
+      "chave": "candongueiros",
+      "motivo": "Angolanismo legítimo"
+    },
+    {
+      "chave": "a direcção provincial",
+      "motivo": "Grafia correcta pré-AO90; não converter para 'direção'"
+    },
+    {
+      "chave": "Segundo o director",
+      "motivo": "Grafia correcta pré-AO90"
+    },
+    {
+      "chave": "Iremos reunir-nos",
+      "motivo": "Construção correcta"
+    }
+  ],
+  "versao": "1.1",
+  "historico": [
+    "1.0 (2026-11-28): versão inicial.",
+    "1.1 (2026-11-28): G16 passa a aceitar as duas pontas da incoerência temporal e exige consulta-autor, porque na v1.0 só aceitava uma e era defeito de medição detectado na calibração 1. As armadilhas passam a ignorar achados com categoria 'preservacao' ou cuja proposta mantém o texto."
   ]
 }

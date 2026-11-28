@@ -1,0 +1,146 @@
+[
+  {
+    "id": "FAC-0001",
+    "agente": "verificador-factual",
+    "categoria": "numeros",
+    "subcategoria": "pontos-percentuais-vs-variacao-relativa",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "o que representa um aumento de 15%",
+    "proposta": "o que representa um aumento de 15 pontos percentuais (uma subida relativa de 75%)",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "A diferença entre duas percentagens exprime-se em pontos percentuais; a variação relativa calcula-se sobre o valor inicial. 35% − 20% = 15 p.p.; (35 − 20) / 20 = 75%.",
+      "fonte": "Verificação interna por cálculo: python3 -c \"print(35-20, (35-20)/20*100)\" → 15 75.0",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "Cálculo: 35 − 20 = 15 p.p.; 15 / 20 × 100 = 75,0%. «Aumento de 15%» sugere ao decisor uma melhoria cinco vezes menor do que a real (de 20% para 23%). Para um relatório que fundamenta a expansão do projecto, o erro joga contra o próprio autor."
+  },
+  {
+    "id": "FAC-0002",
+    "agente": "verificador-factual",
+    "categoria": "numeros",
+    "subcategoria": "proporcao",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "ou seja, cerca de metade do previsto",
+    "proposta": "ou seja, 60% do previsto (faltaram 2 000 000 Kz)",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "A proporção disponibilizada é 3 000 000 / 5 000 000 = 0,6, isto é, 60%, e não «cerca de metade» (50%).",
+      "fonte": "Verificação interna por cálculo: python3 -c \"print(3000000/5000000*100, 5000000-3000000)\" → 60.0 2000000",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "Cálculo: 3 000 000 / 5 000 000 × 100 = 60,0%; défice = 2 000 000 Kz (40%). Dez pontos de diferença num relatório de prestação de contas a financiadores não é arredondamento aceitável. A grafia «5.000.000 Kz» (ponto como separador de milhares, contra a folha de estilo) fica para o normalizador."
+  },
+  {
+    "id": "FAC-0003",
+    "agente": "verificador-factual",
+    "categoria": "coerencia-interna",
+    "subcategoria": "numero-de-escolas",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "as 25 escolas participantes",
+    "proposta": "Confirmar o número de escolas participantes: o parágrafo 1 diz «vinte escolas» e o parágrafo 3 diz «25 escolas». Qual é o número correcto (e houve escolas acrescentadas depois do arranque)? Uniformizar em todo o relatório.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O mesmo dado não pode aparecer com valores diferentes na mesma obra. A contradição está demonstrada no próprio texto; o valor correcto só o autor o pode confirmar.",
+      "fonte": "Verificação interna: §1 «iniciou um projeto de leitura em vinte escolas» vs. §3 «percorreu as 25 escolas participantes»",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "A contradição é certa; a correcção depende do autor. Se o projecto começou com 20 e passou a 25, o texto deve dizê-lo expressamente. O número de escolas afecta também a plausibilidade do calendário da biblioteca móvel (FAC-0004)."
+  },
+  {
+    "id": "FAC-0004",
+    "agente": "verificador-factual",
+    "categoria": "plausibilidade",
+    "subcategoria": "calendario-logistico",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "A biblioteca móvel percorreu as 25 escolas participantes todos os sábados",
+    "proposta": "Esclarecer a logística: havia uma só biblioteca móvel? Visitava todas as escolas em cada sábado, ou cada escola num sábado diferente (rotação)? Quantas sessões teve cada escola no total?",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Com sessões de cerca de duas horas (§3), visitar todas as escolas no mesmo sábado exigiria 40 a 50 horas de sessões num só dia, sem contar deslocações — implausível para uma única biblioteca móvel.",
+      "fonte": "Verificação interna por cálculo: python3 -c \"print(20*2, 25*2)\" → 40 50 (horas de sessão por sábado)",
+      "estatuto": "hipotese"
+    },
+    "confianca": "media",
+    "nota": "Cálculo: 20 escolas × 2 h = 40 h; 25 escolas × 2 h = 50 h por sábado. A leitura mais provável é uma rotação semanal, mas o texto não o diz; se assim for, «todos os sábados» deve passar a, por exemplo, «visitou as escolas participantes em rotação, aos sábados»."
+  },
+  {
+    "id": "FAC-0005",
+    "agente": "verificador-factual",
+    "categoria": "fontes",
+    "subcategoria": "dado-sem-fonte",
+    "localizacao": {"seccao": "S01", "paragrafo": 2},
+    "excerto": "Segundo o director, 85% dos alunos nunca tinham lido um livro completo antes do projecto.",
+    "proposta": "Indicar a origem do dado: de que escola (ou estrutura) é o director citado? O valor de 85% resulta de inquérito, registo escolar ou estimativa? Sobre quantos alunos e em que data foi recolhido? Se for estimativa, apresentá-la como tal.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Um dado quantitativo atribuído a um testemunho oral, sem método nem base, não está verificado. Num relatório para decisores e financiadores, as percentagens de diagnóstico devem ter fonte e método explícitos.",
+      "fonte": "Não verificável no texto nem externamente (documento interno); hierarquia de fontes do verificador-factual",
+      "estatuto": "hipotese"
+    },
+    "confianca": "media",
+    "nota": "«O director» é ambíguo: pode ser o director de uma escola ou o director provincial. Nota de coerência: 85% sem nenhum livro completo lido não contradiz necessariamente a «taxa de leitura regular» inicial de 20% (§4), mas convém que os dois indicadores tenham definição explícita."
+  },
+  {
+    "id": "FAC-0006",
+    "agente": "verificador-factual",
+    "categoria": "fontes",
+    "subcategoria": "metodo-do-indicador",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "A taxa de leitura regular subiu de 20% para 35%",
+    "proposta": "Definir o indicador e a medição: o que conta como «leitura regular»? Como e quando foram medidos os 20% (início) e os 35% (fim)? Mesma amostra de alunos nas duas medições? Quantos alunos?",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "É o principal resultado do relatório e sustenta o pedido de expansão; sem definição, método e período de medição, não é verificável nem comparável.",
+      "fonte": "Não verificável no texto (documento interno sem anexo metodológico)",
+      "estatuto": "hipotese"
+    },
+    "confianca": "media",
+    "nota": "A aritmética da variação é tratada em FAC-0001. Este achado incide só sobre a origem dos valores 20% e 35%."
+  },
+  {
+    "id": "FAC-0007",
+    "agente": "verificador-factual",
+    "categoria": "coerencia-interna",
+    "subcategoria": "conclusao-contradita-pelo-texto",
+    "localizacao": {"seccao": "S01", "paragrafo": 8},
+    "excerto": "com poucos recursos e sem dificuldades",
+    "proposta": "com poucos recursos, apesar das dificuldades",
+    "tipo_intervencao": "recomendada",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "A conclusão contradiz factos relatados no próprio texto: §1 «muitas dificuldades no arranque, sobretudo pela falta de livros»; §7 «o projecto enfrentou problemas de financiamento» (só 60% do orçamento disponibilizado).",
+      "fonte": "Verificação interna: §1 e §7 do manuscrito",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "A contradição é demonstrável, mas a redacção final da conclusão é do autor; por isso «recomendada». Para decisores, afirmar «sem dificuldades» depois de descrever falta de livros e um défice de 2 000 000 Kz mina a credibilidade do relatório."
+  },
+  {
+    "id": "FAC-0008",
+    "agente": "verificador-factual",
+    "categoria": "datas",
+    "subcategoria": "actualidade",
+    "localizacao": {"seccao": "S01", "paragrafo": 8},
+    "excerto": "Iremos reunir-nos com o ministério em janeiro de 2025.",
+    "proposta": "Confirmar a data de fecho do relatório: se for posterior a Janeiro de 2025, a reunião deve ser referida no passado (e com o seu resultado) ou com nova data. Indicar também a que ministério se refere (Ministério da Educação?).",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Uma acção futura datada só é correcta se o relatório for anterior a essa data; o texto não indica a data de redacção nem o período coberto.",
+      "fonte": "Verificação interna: o texto refere o arranque em Março de 2024 e não tem data de fecho",
+      "estatuto": "hipotese"
+    },
+    "confianca": "baixa",
+    "nota": "A grafia «janeiro» (minúscula, contra a norma de 1945 adoptada: «Janeiro») e «ministério» ficam para o revisor linguístico/normalizador."
+  }
+]

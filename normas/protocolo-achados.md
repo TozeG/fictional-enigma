@@ -46,7 +46,11 @@ Prefixos de `id`: EST (estrutural), LIN (linguístico), ESTL (estilo), FAC (fact
 5. Os `id` são únicos.
 6. Dois agentes com propostas diferentes para o mesmo excerto geram **conflito**, que o auditor resolve pela regra de precedência do `CLAUDE.md`.
 
-## 4. Proibições
+## 4. Achados de preservação
+
+Quando um agente quer **proteger** um excerto de alterações (um angolanismo, uma fala de personagem, um trecho forte), usa `categoria: "preservacao"`, `tipo_intervencao: "opcional"` e uma `proposta` que começa por «Preservar». Assim, nem os outros agentes nem o avaliador confundem uma protecção com uma correcção.
+
+## 5. Proibições
 
 - Achados vagos («melhorar a fluidez») sem excerto nem proposta.
 - Reescrever parágrafos inteiros sob a capa de «correcção». Uma reescrita é `recomendada` ou `consulta-autor`, com justificação.

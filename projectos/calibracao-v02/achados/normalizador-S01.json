@@ -1,0 +1,164 @@
+[
+  {
+    "id": "NOR-0001",
+    "agente": "normalizador",
+    "categoria": "ortografia",
+    "subcategoria": "consoante-c-conservada",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "projeto de leitura",
+    "proposta": "projecto de leitura",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Ortografia de 1945: conserva-se a consoante c em «projecto». A folha de estilo fixa a ortografia de 1945 e o resto do texto usa «projecto» (§2, §6, §7), pelo que há também inconsistência interna.",
+      "fonte": "normas/norma-pt-ao.md §3 (projecto/projeto); folha-de-estilo.md, linha «Ortografia»; brief.md",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta",
+    "nota": "Grafia AO90 isolada num texto que usa «projecto» noutros pontos."
+  },
+  {
+    "id": "NOR-0002",
+    "agente": "normalizador",
+    "categoria": "consistencia-interna",
+    "subcategoria": "numero-de-escolas",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "as 25 escolas participantes",
+    "proposta": "Confirmar com o autor o número de escolas: o parágrafo 1 refere «vinte escolas» e este refere 25. Uniformizar para o valor correcto (e, se o autor quiser, escrever ambos da mesma forma, por extenso ou em algarismos).",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "A mesma entidade (as escolas do projecto) é quantificada de duas formas incompatíveis no mesmo texto. Só o autor pode dizer qual é a correcta.",
+      "fonte": "Verificação interna do manuscrito (parágrafos 1 e 3); normalizador.md, escopo «consistência interna»",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "Excerto do par: «em vinte escolas» (parágrafo 1). Não se propõe qual dos valores prevalece."
+  },
+  {
+    "id": "NOR-0003",
+    "agente": "normalizador",
+    "categoria": "ortografia",
+    "subcategoria": "consoante-p-conservada",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "foram ótimos",
+    "proposta": "foram óptimos",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Ortografia de 1945: conserva-se a consoante p em «óptimo». Grafia AO90 não admitida pela folha de estilo.",
+      "fonte": "normas/norma-pt-ao.md §3 (óptimo/ótimo); folha-de-estilo.md, linha «Ortografia»",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta",
+    "nota": ""
+  },
+  {
+    "id": "NOR-0004",
+    "agente": "normalizador",
+    "categoria": "numeros",
+    "subcategoria": "percentagem-pontos-percentuais",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "um aumento de 15%",
+    "proposta": "um aumento de 15 pontos percentuais",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Distinguir pontos percentuais de variação percentual. De 20% para 35% a diferença é de 15 pontos percentuais; a variação percentual relativa seria de 75%. «Aumento de 15%» está errado nos dois sentidos.",
+      "fonte": "normas/norma-pt-ao.md §6 (Percentagens); verificação aritmética (35 - 20 = 15 p.p.; 35/20 = 1,75)",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "Alternativa equivalente: «um aumento de 75%». Mantém-se a proposta em pontos percentuais por ser a leitura que o autor aparenta pretender."
+  },
+  {
+    "id": "NOR-0005",
+    "agente": "normalizador",
+    "categoria": "numeros",
+    "subcategoria": "separador-de-milhares",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "5.000.000 Kz",
+    "proposta": "5 000 000 Kz",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "A folha de estilo define milhares com espaço. No mesmo período o texto usa «3 000 000 Kz», logo há inconsistência interna.",
+      "fonte": "folha-de-estilo.md, linha «Números» (5 000 000 Kz); normas/norma-pt-ao.md §6",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta",
+    "nota": "Recomenda-se espaço fino ou espaço sem quebra entre os grupos, para evitar quebras de linha no valor."
+  },
+  {
+    "id": "NOR-0006",
+    "agente": "normalizador",
+    "categoria": "consistencia-interna",
+    "subcategoria": "calculo-proporcao",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "cerca de metade do previsto",
+    "proposta": "Confirmar com o autor: 3 000 000 Kz em 5 000 000 Kz corresponde a 60%, não a «cerca de metade». Reformular, por exemplo, para «cerca de 60% do previsto» ou «três quintos do previsto».",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Coerência entre os valores indicados e a sua descrição (3 000 000 / 5 000 000 = 0,6). A descrição qualitativa não corresponde aos números do próprio texto.",
+      "fonte": "Verificação aritmética interna do manuscrito (parágrafo 6)",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "Pode ser que o valor correcto seja outro (por exemplo 2 500 000 Kz). Daí a consulta ao autor em vez de correcção directa."
+  },
+  {
+    "id": "NOR-0007",
+    "agente": "normalizador",
+    "categoria": "consistencia-interna",
+    "subcategoria": "contradicao-factual",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "sem dificuldades",
+    "proposta": "Rever a conclusão: o parágrafo 1 refere «muitas dificuldades no arranque» e o parágrafo 6 «problemas de financiamento». Sugere-se, por exemplo, «com poucos recursos e superando as dificuldades iniciais», se for essa a intenção do autor.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "A conclusão contradiz o que o próprio relatório narra antes. Cabe ao autor decidir se retira, atenua ou reformula a afirmação.",
+      "fonte": "Verificação interna do manuscrito (parágrafos 1, 6 e 7)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Questão de coerência interna, não de norma. Não se aplica nenhuma alteração sem decisão do autor."
+  },
+  {
+    "id": "NOR-0008",
+    "agente": "normalizador",
+    "categoria": "maiusculas",
+    "subcategoria": "nome-de-instituicao",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "com o ministério em janeiro",
+    "proposta": "com o Ministério da Educação em Janeiro",
+    "tipo_intervencao": "recomendada",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Instituição concreta referida pelo nome próprio e identificada no brief como «Ministério da Educação»: maiúscula inicial e, na primeira menção, designação completa. A folha de estilo não regula o ponto, pelo que se propõe o seu registo. A parte «Janeiro» é tratada em NOR-0009.",
+      "fonte": "brief.md (público-alvo: Ministério da Educação); normalizador.md, método 2 (regra em falta: propor registo)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Se o autor preferir o uso genérico («o ministério»), manter e registar a decisão na folha de estilo. «direcção provincial» (parágrafo 1) está coerente em minúscula como uso genérico."
+  },
+  {
+    "id": "NOR-0009",
+    "agente": "normalizador",
+    "categoria": "datas",
+    "subcategoria": "maiuscula-de-mes",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "janeiro de 2025",
+    "proposta": "Janeiro de 2025",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Na norma de 1945, os nomes dos meses levam maiúscula inicial (convenção de datas: «28 de Novembro de 2026»). O texto usa «Março de 2024» no parágrafo 1, pelo que há inconsistência interna.",
+      "fonte": "normas/norma-pt-ao.md §3 (Janeiro, Março) e §6 (Datas); folha-de-estilo.md, linha «Ortografia» (exemplo: Janeiro)",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta",
+    "nota": ""
+  }
+]

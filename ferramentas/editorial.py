@@ -133,15 +133,26 @@ def avaliar(achados_path, gabarito_path):
         k = norm(chave).lower()
         return k in e or (e and e in k)
 
+    def chaves(item):
+        return item.get("chaves") or [item["chave"]]
+
     detectados, falhados = [], []
     for item in esperados:
-        hit = [a for a in achados if casa(item["chave"], a)]
+        tipos = item.get("requer_tipo")
+        hit = [a for a in achados
+               if any(casa(k, a) for k in chaves(item))
+               and (not tipos or a.get("tipo_intervencao") in tipos)]
         (detectados if hit else falhados).append((item, hit))
+
+    def preserva(a, chave):
+        """Achado de preservação (categoria 'preservacao') ou proposta que mantém o texto da armadilha."""
+        return a.get("categoria") == "preservacao" or norm(chave).lower() in norm(a.get("proposta", "")).lower()
 
     violacoes = []
     for t in armadilhas:
         for a in achados:
-            if casa(t["chave"], a) and a.get("tipo_intervencao") in ("obrigatoria", "recomendada"):
+            if (casa(t["chave"], a) and a.get("tipo_intervencao") in ("obrigatoria", "recomendada")
+                    and a.get("estado") != "rejeitado-auditor" and not preserva(a, t["chave"])):
                 violacoes.append((t, a))
 
     total = len(esperados)
@@ -151,7 +162,7 @@ def avaliar(achados_path, gabarito_path):
 
     print(f"Erros semeados detectados: {len(detectados)}/{total} (cobertura {recall:.0%})")
     for item, _ in falhados:
-        print(f"  [NÃO DETECTADO] {item['id']} ({item['tipo']}): «{item['chave']}»")
+        print(f"  [NÃO DETECTADO] {item['id']} ({item['tipo']}): «{' | '.join(chaves(item))}»")
     print(f"Armadilhas violadas (variação legítima 'corrigida'): {len(violacoes)}")
     for t, a in violacoes:
         print(f"  [FALSO POSITIVO] {a.get('id')} sobre «{t['chave']}»: {t['motivo']}")

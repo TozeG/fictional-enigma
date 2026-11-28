@@ -1,0 +1,128 @@
+[
+  {
+    "id": "ESTL-0001",
+    "agente": "estilista",
+    "categoria": "estilo",
+    "subcategoria": "repeticao-estrutural",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "Cada sessão durava cerca de duas horas, e cada sessão incluía momentos de leitura em voz alta, e cada sessão terminava com um debate",
+    "proposta": "Cada sessão durava cerca de duas horas, incluía momentos de leitura em voz alta e terminava com um debate",
+    "tipo_intervencao": "recomendada",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Três ocorrências de «cada sessão» em 22 palavras, ligadas por «e» repetido (polissíndeto), sem efeito retórico aparente. O sujeito mantém-se, pelo que pode ficar elíptico nos dois últimos verbos.",
+      "fonte": "",
+      "estatuto": "preferencia-estilo"
+    },
+    "confianca": "alta",
+    "nota": "Nota de voz do autor: registo institucional sóbrio; frases de extensão média (cerca de 15 a 25 palavras), maioritariamente coordenadas e em ordem directa; parágrafos curtos, alguns de uma só frase; vocabulário simples e concreto; voz activa; sem marcas pessoais fortes. Preservam-se os angolanismos (zungueira, candongueiros) e a fala citada. A proposta mantém todo o léxico e a ordem do autor."
+  },
+  {
+    "id": "ESTL-0002",
+    "agente": "estilista",
+    "categoria": "estilo",
+    "subcategoria": "ambiguidade",
+    "localizacao": {"seccao": "S01", "paragrafo": 2},
+    "excerto": "Segundo o director, 85%",
+    "proposta": "Identificar o director de que se fala (por exemplo, «Segundo o director provincial, 85%»), se se tratar do mesmo responsável da direcção provincial referida no primeiro parágrafo.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "«o director» surge com artigo definido sem antecedente explícito: o primeiro parágrafo só menciona «a direcção provincial» (instituição), não uma pessoa nem um cargo individual. O leitor-decisor não consegue identificar a fonte de um dado central.",
+      "fonte": "",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Só o autor sabe a quem se refere. Se a identificação da fonte for matéria de rigor factual, o verificador-factual pode retomar o ponto."
+  },
+  {
+    "id": "ESTL-0003",
+    "agente": "estilista",
+    "categoria": "estilo",
+    "subcategoria": "ambiguidade",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "o que representa um aumento de 15%",
+    "proposta": "o que representa um aumento de 15 pontos percentuais",
+    "tipo_intervencao": "recomendada",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "A passagem de 20% para 35% é lida de duas formas: 15 pontos percentuais (diferença absoluta) ou 75% de variação relativa. «aumento de 15%» é ambíguo e, para o leitor, aponta para a leitura errada. A norma da obra manda distinguir pontos percentuais de variação percentual.",
+      "fonte": "normas/norma-pt-ao.md, secção 6 (Percentagens: distinguir pontos percentuais de variação percentual)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Sinalizado aqui só pela ambiguidade de leitura. A verificação aritmética e a normalização numérica pertencem ao verificador-factual e ao normalizador; se propuserem outra forma para este excerto, prevalece a decisão do auditor."
+  },
+  {
+    "id": "ESTL-0004",
+    "agente": "estilista",
+    "categoria": "estilo",
+    "subcategoria": "repeticao-lexical",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "ou seja, cerca de metade do previsto",
+    "proposta": "ou seja, cerca de metade desse valor",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "«previsto» repete-se na mesma frase («O orçamento previsto era de… metade do previsto»), a pouca distância e com o mesmo sentido. Um demonstrativo retoma o valor sem repetir o adjectivo.",
+      "fonte": "",
+      "estatuto": "preferencia-estilo"
+    },
+    "confianca": "media",
+    "nota": "A proposta resolve apenas a repetição e não valida a comparação «cerca de metade», que compete ao verificador-factual."
+  },
+  {
+    "id": "ESTL-0005",
+    "agente": "estilista",
+    "categoria": "estilo",
+    "subcategoria": "coesao-conector",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "Apesar disso o projecto enfrentou problemas de financiamento.",
+    "proposta": "Porém, o projecto enfrentou problemas de financiamento.",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "«Apesar disso» é concessivo e o seu antecedente («disso») é a participação dos encarregados de educação e dos candongueiros, mais distante e sem relação lógica directa com o financiamento. Um conector adversativo simples liga ao conjunto dos resultados positivos sem exigir antecedente preciso.",
+      "fonte": "",
+      "estatuto": "preferencia-estilo"
+    },
+    "confianca": "baixa",
+    "nota": "A pontuação após «Apesar disso» é matéria do revisor-linguistico. Alteração dispensável se o autor quiser manter a concessão."
+  },
+  {
+    "id": "ESTL-0006",
+    "agente": "estilista",
+    "categoria": "estilo",
+    "subcategoria": "conector-coesao",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Em suma, o projecto demonstra",
+    "proposta": "Assim, o projecto demonstra",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "«Em suma» anuncia uma síntese do que antecede, mas o parágrafo introduz uma afirmação nova («com poucos recursos e sem dificuldades») que o texto anterior não resume e que o próprio relatório matiza (dificuldades no arranque, falta de livros, falta de financiamento). «Assim» marca consequência sem prometer resumo.",
+      "fonte": "",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "baixa",
+    "nota": "A tensão entre «sem dificuldades» e as dificuldades relatadas atrás é de coerência interna e factual, fora do escopo do estilista; fica registada para o analista-estrutural e o verificador-factual."
+  },
+  {
+    "id": "ESTL-0007",
+    "agente": "estilista",
+    "categoria": "estilo",
+    "subcategoria": "vagueza-referente",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "que já conheciam a realidade,",
+    "proposta": "que já conheciam a realidade das escolas,",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "«a realidade» sem complemento é vago para um leitor externo (decisores e financiadores): não diz se se trata das escolas, dos alunos ou do contexto social. Um complemento fecha o referente com o mínimo de palavras.",
+      "fonte": "",
+      "estatuto": "preferencia-estilo"
+    },
+    "confianca": "baixa",
+    "nota": "O complemento «das escolas» é a leitura mais provável pelo contexto. Se o autor pretendia outra (por exemplo, a realidade dos alunos), ajusta-se."
+  }
+]

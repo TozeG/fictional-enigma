@@ -1,0 +1,197 @@
+[
+  {
+    "id": "EST-0001",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "conclusao-contradiz-evidencia",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "o projecto demonstra que a leitura pode ser promovida com poucos recursos e sem dificuldades",
+    "proposta": "Reformular a conclusão para que decorra do que o relatório mostra. Opção A: «o projecto demonstra que, mesmo com dificuldades de arranque e um financiamento abaixo do previsto, é possível promover a leitura» (mantém a mensagem positiva sem a desmentir). Opção B: apresentar a conclusão em dois tempos, resultados obtidos e condições necessárias para os repetir (mais útil para fundamentar a expansão, mas exige dados adicionais).",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "critica",
+    "fundamento": {
+      "regra": "A conclusão de um relatório tem de decorrer da evidência apresentada. O texto afirma «muitas dificuldades no arranque» (§1), «falta de livros» (§1) e «problemas de financiamento» (§6), o que contradiz «sem dificuldades».",
+      "fonte": "O próprio manuscrito, §1, §6 e §7",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "É a frase de maior risco para o objectivo do brief: um decisor ou financiador que leia os §1 e §6 deixa de confiar no resto. «Com poucos recursos» é defensável (houve financiamento parcial); «sem dificuldades» não é."
+  },
+  {
+    "id": "EST-0002",
+    "agente": "analista-estrutural",
+    "categoria": "coerencia-interna",
+    "subcategoria": "contradicao-numerica",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "A biblioteca móvel percorreu as 25 escolas participantes",
+    "proposta": "Confirmar com o autor o número de escolas participantes (vinte no §1, 25 no §3) e uniformizar. Se o número cresceu durante o projecto, explicitá-lo («iniciou em vinte escolas e alargou-se a 25»), o que até reforça o argumento da expansão.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Coerência interna: o mesmo universo do projecto é descrito com dois números diferentes (§1 «vinte escolas»; §3 «25 escolas participantes»).",
+      "fonte": "O próprio manuscrito, §1 e §3",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "Não se sabe qual dos números está certo; por isso é consulta-autor e não correcção. A divergência afecta também a leitura das percentagens do §4 (base de alunos)."
+  },
+  {
+    "id": "EST-0003",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "leitura-da-evidencia",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "o que representa um aumento de 15%",
+    "proposta": "o que representa um aumento de 15 pontos percentuais (cerca de 75 % em termos relativos)",
+    "tipo_intervencao": "recomendada",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "De 20 % para 35 % há uma subida de 15 pontos percentuais; a variação percentual é (35 − 20) / 20 = 75 %. A norma da casa exige distinguir pontos percentuais de variação percentual.",
+      "fonte": "normas/norma-pt-ao.md, §6 (percentagens); cálculo aritmético sobre os valores do §4",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "Do ponto de vista estrutural, o erro subvaloriza o principal resultado do relatório. Cabe também ao verificador factual; registado aqui por afectar a força da conclusão."
+  },
+  {
+    "id": "EST-0004",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "leitura-da-evidencia",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "ou seja, cerca de metade do previsto",
+    "proposta": "ou seja, 60 % do previsto",
+    "tipo_intervencao": "recomendada",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "3 000 000 Kz sobre 5 000 000 Kz correspondem a 60 % do orçamento previsto, não a «cerca de metade».",
+      "fonte": "Cálculo aritmético sobre os valores do §6 do manuscrito",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "A aproximação exagera a falta de financiamento; num documento de prestação de contas a financiadores, o número exacto é preferível. Sobrepõe-se ao âmbito do verificador factual."
+  },
+  {
+    "id": "EST-0005",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "lacuna-metodologica",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "A taxa de leitura regular subiu de 20% para 35%",
+    "proposta": "Acrescentar, antes ou junto dos resultados, um bloco curto de método: o que se entende por «leitura regular», quantos alunos foram medidos, como (inquérito, registo de empréstimos, observação) e em que datas (início e fim do período avaliado). Opção A: duas ou três frases no próprio parágrafo (mínimo, mantém a brevidade). Opção B: secção «Metodologia e indicadores» autónoma (mais robusta para financiadores, aumenta a extensão).",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Um relatório que fundamenta uma decisão de expansão precisa de indicadores definidos e de um período de medição. O texto afirma «Os resultados foram ótimos» e apoia o juízo num único indicador sem definição, sem amostra e sem datas.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "O juízo «Os resultados foram ótimos» antecede e excede a evidência dada. Não se sabe quando o projecto terminou ou quando foi feita a segunda medição (só se conhece o início, Março de 2024)."
+  },
+  {
+    "id": "EST-0006",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "evidencia-nao-sustentada",
+    "localizacao": {"seccao": "S01", "paragrafo": 2},
+    "excerto": "Segundo o director, 85% dos alunos nunca tinham lido um livro completo antes do projecto.",
+    "proposta": "Indicar a origem do dado (diagnóstico inicial, inquérito, estimativa do director) ou apresentá-lo como percepção. Se houver diagnóstico, integrá-lo na linha de base junto dos 20 % do §4, para que o leitor compare antes e depois com os mesmos instrumentos.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Dado quantitativo atribuído a uma pessoa, sem método nem ligação aos indicadores de resultado; o parágrafo fica isolado e não é retomado na avaliação.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Também não se diz de que director se trata (escola, direcção provincial). O dado é potencialmente forte como linha de base; o problema é a apresentação, não o conteúdo."
+  },
+  {
+    "id": "EST-0007",
+    "agente": "analista-estrutural",
+    "categoria": "coerencia-interna",
+    "subcategoria": "plausibilidade-operacional",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "percorreu as 25 escolas participantes todos os sábados",
+    "proposta": "Esclarecer a logística: quantas bibliotecas móveis havia, se as escolas eram visitadas em rotação (ex.: cada escola uma vez por mês) ou se as sessões eram conduzidas por equipas diferentes. Uma frase basta.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Com sessões de «cerca de duas horas», visitar 25 escolas no mesmo sábado exigiria cerca de 50 horas de sessões, o que não é compatível com uma única biblioteca móvel. Provavelmente a formulação descreve uma rotação, mas o texto não o diz.",
+      "estatuto": "hipotese"
+    },
+    "confianca": "media",
+    "nota": "Um financiador atento fará esta conta. A resposta permite também calcular a intensidade da intervenção (sessões por aluno), útil para justificar resultados e custos."
+  },
+  {
+    "id": "EST-0008",
+    "agente": "analista-estrutural",
+    "categoria": "adequacao-ao-genero",
+    "subcategoria": "estrutura-do-relatorio",
+    "localizacao": {"seccao": "S01", "paragrafo": 0},
+    "excerto": "Relatório: A Leitura nas Escolas de Luanda",
+    "proposta": "Opção A (mínima): manter o texto corrido e acrescentar intertítulos que tornem visível a lógica de prestação de contas: Contexto e objectivos; Actividades; Resultados; Financiamento; Conclusões e recomendações. Opção B: reestruturar como relatório institucional completo, com objectivos declarados no início e uma recomendação explícita ao ministério no fim. Quanto ao título, considerar torná-lo coerente com o conteúdo (ex.: «Relatório do Projecto de Leitura nas Escolas de Luanda, 2024»), já que o texto trata de um projecto e não da leitura nas escolas de Luanda em geral.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O brief define o género como relatório institucional de projecto, com o objectivo de prestar contas e fundamentar a expansão. O texto não declara objectivos, não separa actividades, resultados e financiamento e não formula recomendação. O título promete um retrato da leitura nas escolas de Luanda; o texto entrega o balanço de um projecto.",
+      "fonte": "projectos/calibracao-v02/brief.md (género e objectivo)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "A ordem actual (arranque, linha de base, actividades, resultados, comunidade, financiamento, conclusão) já é quase a de um relatório; o trabalho é sobretudo de sinalização e de preenchimento de lacunas, não de reescrita."
+  },
+  {
+    "id": "EST-0009",
+    "agente": "analista-estrutural",
+    "categoria": "adequacao-ao-objectivo",
+    "subcategoria": "prestacao-de-contas",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "mas apenas 3 000 000 Kz foram disponibilizados",
+    "proposta": "Acrescentar como foi gerido o défice: em que se gastaram os 3 000 000 Kz (livros, transporte, pessoal), que actividades foram cortadas ou adiadas e que apoios em espécie supriram a falta (o transporte gratuito dos candongueiros do §5 é um exemplo a quantificar). Opção A: duas ou três frases no §6. Opção B: pequeno quadro de orçamento previsto contra executado.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O objectivo declarado é prestar contas a decisores e financiadores. O relatório menciona o défice mas não diz como foram usados os fundos nem que efeito teve a falta de verbas, o que é exactamente a evidência que sustentaria a tese «com poucos recursos».",
+      "fonte": "projectos/calibracao-v02/brief.md (objectivo)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "O conector «Apesar disso» liga o financiamento ao parágrafo comunitário; com a informação de execução orçamental, a relação entre os dois parágrafos tornar-se-ia argumento (a comunidade compensou parte do défice)."
+  },
+  {
+    "id": "EST-0010",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "recomendacao-nao-fundamentada",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Os próximos passos incluem a expanção para outras províncias.",
+    "proposta": "Fundamentar a expansão com o que o ministério precisa para decidir: condições de replicação, custo estimado por escola ou por aluno (a partir da execução de 2024), riscos (financiamento, livros) e o que se pede concretamente (verba, parceria, calendário). Opção A: um parágrafo final de recomendações. Opção B: propor primeiro a consolidação em Luanda e só depois a expansão, o que é mais coerente com os problemas de financiamento descritos.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O brief atribui ao relatório a função de fundamentar a expansão. O texto salta do projecto em Luanda para «outras províncias» numa frase, sem custos, critérios nem pedido explícito.",
+      "fonte": "projectos/calibracao-v02/brief.md (objectivo)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "A grafia «expanção» é matéria do revisor linguístico; o excerto é citado literalmente."
+  },
+  {
+    "id": "EST-0011",
+    "agente": "analista-estrutural",
+    "categoria": "ponto-de-vista",
+    "subcategoria": "enunciador-e-destinatario",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Iremos reunir-nos com o ministério em janeiro de 2025.",
+    "proposta": "Definir quem assina o relatório e para quem fala. O texto começa na terceira pessoa («a direcção provincial iniciou»), passa à primeira do singular («me disseram», §1) e termina na primeira do plural («Iremos»). Como o destinatário é o próprio ministério, a frase final pode converter-se em pedido ou recomendação (ex.: propor a reunião e a respectiva agenda) em vez de anúncio a terceiros.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Coerência do ponto de vista enunciativo e adequação ao público-alvo definido no brief (decisores do Ministério da Educação e financiadores).",
+      "fonte": "projectos/calibracao-v02/brief.md (público-alvo)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Não se trata de corrigir a colocação pronominal nem a maiúscula do mês (âmbito do revisor linguístico), mas de decidir a voz institucional do documento."
+  }
+]

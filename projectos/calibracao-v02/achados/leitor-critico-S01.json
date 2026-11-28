@@ -1,0 +1,287 @@
+[
+  {
+    "id": "LEI-0001",
+    "agente": "leitor-critico",
+    "categoria": "promessa",
+    "subcategoria": "titulo-vs-conteudo",
+    "localizacao": {"seccao": "S01", "paragrafo": 0},
+    "excerto": "Relatório: A Leitura nas Escolas de Luanda",
+    "proposta": "Como decisor que espera um relatório de prestação de contas, procurei objectivos, actividades realizadas, beneficiários, indicadores e execução orçamental, e encontrei uma narrativa curta. Consultar o autor sobre se o documento deve ganhar estrutura de relatório (objectivos, metodologia, resultados, execução financeira, recomendações) ou se é, de facto, uma nota-resumo.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O título e o brief prometem um relatório que preste contas e fundamente a expansão; o texto entrega um resumo narrativo sem a estrutura e os dados que este leitor precisa para decidir.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado (brief.md: prestar contas e fundamentar a expansão do projecto).",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "Não é um erro: é a distância entre a promessa do título e o que o leitor recebe.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0002",
+    "agente": "leitor-critico",
+    "categoria": "credibilidade",
+    "subcategoria": "incoerencia-numerica",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "iniciou um projeto de leitura em vinte escolas",
+    "proposta": "Confirmar com o autor o número de escolas. O texto diz vinte aqui e 25 no terceiro parágrafo; se houve alargamento ao longo do projecto, dizê-lo expressamente.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Li «vinte escolas» no arranque e «25 escolas participantes» pouco depois, e duvidei de qual seria o número real. Um financiador que encontra dois números para a mesma base desconfia dos restantes.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "Pode haver explicação legítima (projecto iniciado com 20 e alargado a 25), mas o texto não a dá.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0003",
+    "agente": "leitor-critico",
+    "categoria": "credibilidade",
+    "subcategoria": "dificuldade-nao-desenvolvida",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "muitas dificuldades no arranque, sobretudo pela falta de livros",
+    "proposta": "Dizer que dificuldades foram e como se resolveu a falta de livros (quantos livros, de onde vieram, quem os forneceu). Interessa ao decisor porque a mesma dificuldade se repetirá na expansão.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "O problema é anunciado e abandonado: não percebi como foi ultrapassado, e essa resposta é exactamente o que me ajudaria a avaliar o risco de replicar o projecto noutras províncias.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Ligado ao LEI-0013: a conclusão afirma «sem dificuldades», o que esta frase desmente.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0004",
+    "agente": "leitor-critico",
+    "categoria": "confusao",
+    "subcategoria": "voz-narrativa",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "me disseram que os alunos gostam de ler",
+    "proposta": "Esclarecer quem fala. Aqui entra um «eu» (alguém a quem os professores disseram), no fim aparece um «nós» («Iremos reunir-nos»). Como leitor, não sei se o relatório é da direcção provincial, de uma equipa ou de um autor individual. Definir a voz institucional e, se possível, referir quantos professores foram ouvidos e como.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Num relatório institucional, a mudança de pessoa gramatical fez-me perder a noção de quem presta contas. A afirmação de que «os alunos gostam de ler» assenta apenas em testemunho oral não quantificado.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Não avalio aqui a colocação do pronome (matéria do revisor linguístico); registo só o efeito na identificação do autor da voz.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0005",
+    "agente": "leitor-critico",
+    "categoria": "credibilidade",
+    "subcategoria": "fonte-nao-identificada",
+    "localizacao": {"seccao": "S01", "paragrafo": 2},
+    "excerto": "Segundo o director, 85% dos alunos nunca tinham lido um livro completo",
+    "proposta": "Identificar o director (de escola? provincial?) e indicar como o número foi obtido (inquérito, amostra, data). Sem isso, o dado que serve de ponto de partida para todo o relatório parece uma impressão.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "A cifra mais forte do arranque vem de uma fonte sem nome, cargo ou método. Como decisor, não consegui avaliar a sua solidez nem perceber a que alunos se refere (os das 20 ou 25 escolas, todos ou uma amostra).",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "A frase está isolada num parágrafo de uma linha, o que lhe dá peso de facto estabelecido.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0006",
+    "agente": "leitor-critico",
+    "categoria": "credibilidade",
+    "subcategoria": "plausibilidade-logistica",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "A biblioteca móvel percorreu as 25 escolas participantes todos os sábados",
+    "proposta": "Explicar a logística: quantas bibliotecas móveis existiam, que escola recebia a visita em cada sábado, qual a rotação. Se o sentido é «cada escola era visitada ao sábado», dizê-lo assim.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Li que uma só biblioteca móvel visitou 25 escolas no mesmo dia, com sessões de cerca de duas horas cada, o que dá cerca de 50 horas num sábado. Parei, fiz a conta e duvidei. A «biblioteca móvel» também surge sem apresentação (veículo, acervo, equipa).",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado; cálculo aritmético simples a partir do próprio texto (25 escolas x cerca de duas horas).",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "É possível que existam várias unidades móveis; o texto não o diz.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0007",
+    "agente": "leitor-critico",
+    "categoria": "quebra-atencao",
+    "subcategoria": "repeticao",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "cada sessão incluía momentos de leitura em voz alta, e cada sessão terminava com um debate",
+    "proposta": "Aqui a minha atenção caiu: a repetição de «cada sessão» três vezes em seguida fez-me ler a frase como enumeração mecânica. Consultar o autor sobre se a descrição da sessão pode ser dada de uma só vez (duração, leitura em voz alta, debate final).",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Registo o efeito na leitura (monotonia), não uma correcção de estilo. A decisão de reformular cabe ao autor e ao estilista.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "O conteúdo da sessão (leitura em voz alta e debate) é, em si, informação útil e concreta.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0008",
+    "agente": "leitor-critico",
+    "categoria": "credibilidade",
+    "subcategoria": "indicador-nao-definido",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "A taxa de leitura regular subiu de 20% para 35%",
+    "proposta": "Definir «leitura regular» (quantos livros, em que período), indicar quem foi medido, quando e como (as duas medições, o mesmo grupo de alunos?). Sem isso, o resultado central do relatório não é verificável.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "É o único resultado quantificado do relatório e não sei o que mede nem como foi medido. Antes dele, «Os resultados foram ótimos» é um juízo de valor que chega sem prova, e só depois vem a cifra.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "Um financiador pedirá a linha de base, o método e a data de cada medição.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0009",
+    "agente": "leitor-critico",
+    "categoria": "confusao",
+    "subcategoria": "pontos-percentuais",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "o que representa um aumento de 15%",
+    "proposta": "Esclarecer a leitura: de 20% para 35% são 15 pontos percentuais, o que corresponde a um aumento relativo de 75%. Escolher uma das duas formulações (ou ambas) e nomeá-la.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Li «15%» e, por um instante, tomei-o como variação relativa, o que não bate com 20 para 35. Tive de refazer a conta para perceber que se tratava da diferença entre as duas taxas. Um decisor apressado ou fará esta leitura errada ou subestimará o ganho.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado; aritmética: 35 - 20 = 15 pontos percentuais; 15/20 = 75%. A norma do sistema (norma-pt-ao.md, secção 6) manda distinguir pontos percentuais de variação percentual.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "A matéria é também do verificador factual; registo aqui o efeito de confusão na leitura.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0010",
+    "agente": "leitor-critico",
+    "categoria": "credibilidade",
+    "subcategoria": "participacao-nao-quantificada",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "Os encarregados de educação também participaram.",
+    "proposta": "Quantificar ou concretizar: quantos encarregados, em que actividades, com que regularidade. Hoje a afirmação apoia-se numa só voz (a citação que se segue).",
+    "tipo_intervencao": "recomendada",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "A participação das famílias é dada por um caso único e por um gesto pontual dos candongueiros, sem números. Para quem decide sobre expansão, um testemunho ilustra mas não prova.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Ver LEI-0011: o testemunho em si é um dos melhores momentos do texto e deve ser conservado.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0011",
+    "agente": "leitor-critico",
+    "categoria": "envolvimento",
+    "subcategoria": "momento-forte",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "A gente agora lemos juntos todas as noites, eu e o meu filho.",
+    "proposta": "Preservar tal como está, na voz da interveniente e sem normalização. Se o autor puder, acrescentar-lhe o contexto mínimo (bairro, idade do filho) e fazer dela o fecho de uma evidência quantitativa, não o seu substituto.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Foi o momento em que mais me envolvi: a voz é concreta, familiar para um leitor de Luanda e comove sem artifício. A oralidade em discurso directo não se normaliza (norma-pt-ao.md, secção 2). O mesmo vale para «zungueira» e «candongueiros», que este público entende sem glossário.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado; norma-pt-ao.md, secções 2 e 5.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "Achado de preservação: pede-se que outros agentes não alterem este excerto.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0012",
+    "agente": "leitor-critico",
+    "categoria": "credibilidade",
+    "subcategoria": "descricao-numerica-imprecisa",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "ou seja, cerca de metade do previsto",
+    "proposta": "Rever a descrição: 3 000 000 Kz sobre 5 000 000 Kz são 60% do orçamento previsto (um défice de 40%), não «cerca de metade». Dizer o valor exacto da falta (2 000 000 Kz) e explicar o que deixou de se fazer por causa dela.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Fiz a conta e 3 em 5 não é «cerca de metade». Num parágrafo sobre dinheiro, um financiador que apanha uma imprecisão passa a desconfiar do resto. Além disso, o texto não diz como o défice afectou as actividades nem os resultados, que ficam apresentados como «ótimos».",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado; aritmética a partir dos valores do próprio texto.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "O cruzamento com o verificador factual é natural; registo aqui o efeito na credibilidade.",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0013",
+    "agente": "leitor-critico",
+    "categoria": "credibilidade",
+    "subcategoria": "conclusao-contradiz-corpo",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "o projecto demonstra que a leitura pode ser promovida com poucos recursos e sem dificuldades",
+    "proposta": "Reformular a conclusão para a fazer concordar com o corpo do texto: o relatório menciona «muitas dificuldades no arranque» e «problemas de financiamento». Ponderar, por exemplo, «apesar de dificuldades de arranque e de um financiamento inferior ao previsto, o projecto obteve resultados com recursos limitados», e moderar «demonstra» para «indica», dado que não há grupo de comparação.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Cheguei à conclusão e senti-me contrariado: o texto acabara de me falar de dificuldades e de um corte de 40% no orçamento, e agora diz «sem dificuldades». Isto abalou a minha confiança no autor. «Demonstra» também pede mais prova do que um antes/depois sem controlo.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado; contradição interna com o 1.º e o 6.º parágrafos.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "É a maior barreira de credibilidade do texto. A coerência interna pesa na precedência do CLAUDE.md; a escolha da nova formulação é do autor (G2).",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0014",
+    "agente": "leitor-critico",
+    "categoria": "promessa",
+    "subcategoria": "fundamentacao-da-expansao",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Os próximos passos incluem a expanção para outras províncias.",
+    "proposta": "Fundamentar o pedido: que províncias, quantas escolas, em que calendário, com que orçamento e que custo por aluno ou por escola; que lições do arranque (falta de livros, défice de financiamento) a expansão vai incorporar.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O brief diz que o relatório serve para fundamentar a expansão, mas a expansão aparece numa frase, sem números nem justificação. Como decisor, termino a leitura sem saber o que se me pede nem quanto custa.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado (brief.md: objectivo da publicação).",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "A grafia de «expanção» não é matéria deste agente (fica para o revisor linguístico).",
+    "estado": "proposto"
+  },
+  {
+    "id": "LEI-0015",
+    "agente": "leitor-critico",
+    "categoria": "confusao",
+    "subcategoria": "destinatario-e-data",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Iremos reunir-nos com o ministério em janeiro de 2025.",
+    "proposta": "Esclarecer a data do relatório e o destinatário. O leitor-alvo inclui o próprio Ministério, que aqui aparece em terceira pessoa («com o ministério»); e sem data de emissão não sei se «Janeiro de 2025» é futuro ou passado. Indicar o objectivo da reunião (o que se vai pedir) ou reformular para um pedido directo.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Li a última frase como um compromisso que não percebi a quem se dirige. O documento não traz data nem autor, por isso não posso avaliar se o prazo ainda é actual. Se for lido depois da data, a frase fica obsoleta.",
+      "fonte": "Experiência de leitura declarada do leitor-alvo simulado (brief.md: público-alvo e autor por preencher).",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "A forma da data («janeiro de 2025») segue a norma tipográfica noutro agente (normalizador); aqui só interessa o efeito de sentido.",
+    "estado": "proposto"
+  }
+]
