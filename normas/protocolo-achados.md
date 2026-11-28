@@ -46,6 +46,10 @@ Prefixos de `id`: EST (estrutural), LIN (linguístico), ESTL (estilo), FAC (fact
 5. Os `id` são únicos.
 6. Dois agentes com propostas diferentes para o mesmo excerto geram **conflito**, que o auditor resolve pela regra de precedência do `CLAUDE.md`.
 
+### 3-A. Confirmação literal obrigatória
+
+Antes de gravar um achado, confirma o `excerto` com a ferramenta Grep (pesquisa literal) sobre o manuscrito. **Copia o erro tal como está, mesmo quando é gritante.** Na calibração, um agente escreveu «a expansão» onde o original diz «expanção», corrigindo sem dar por isso o texto que devia citar. Um excerto corrigido deixa de ser verificável e esconde o próprio erro.
+
 ## 4. Achados de preservação
 
 Quando um agente quer **proteger** um excerto de alterações (um angolanismo, uma fala de personagem, um trecho forte), usa `categoria: "preservacao"`, `tipo_intervencao: "opcional"` e uma `proposta` que começa por «Preservar». Assim, nem os outros agentes nem o avaliador confundem uma protecção com uma correcção.

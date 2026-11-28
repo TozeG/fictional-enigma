@@ -1,0 +1,128 @@
+[
+  {
+    "id": "FAC-0001",
+    "agente": "verificador-factual",
+    "categoria": "numeros",
+    "subcategoria": "pontos-percentuais-vs-variacao-relativa",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "o que representa um aumento de 15%",
+    "proposta": "o que representa um aumento de 15 pontos percentuais (uma subida relativa de 75%)",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "A diferença entre duas percentagens exprime-se em pontos percentuais; a variação relativa calcula-se sobre o valor de partida.",
+      "fonte": "Cálculo interno: python3 -c \"print(35-20); print((35-20)/20*100)\" -> 15 p.p.; 75,0% de variação relativa. Norma SIE-AO normas/norma-pt-ao.md §6 (distinguir pontos percentuais de variação percentual).",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "De 20% para 35%: 35 - 20 = 15 pontos percentuais; (35 - 20) / 20 x 100 = 75%. «Aumento de 15%» subestima a variação relativa (que é de 75%) e confunde as duas medidas. Num relatório para financiadores, o erro é relevante."
+  },
+  {
+    "id": "FAC-0002",
+    "agente": "verificador-factual",
+    "categoria": "numeros",
+    "subcategoria": "proporcao",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "ou seja, cerca de metade do previsto",
+    "proposta": "ou seja, 60% do previsto (faltaram 2 000 000 Kz, 40% do orçamento)",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Uma proporção citada tem de corresponder aos valores apresentados no próprio texto.",
+      "fonte": "Cálculo interno: python3 -c \"print(3000000/5000000*100, 5000000-3000000, (5000000-3000000)/5000000*100)\" -> 60,0; 2 000 000; 40,0.",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "3 000 000 / 5 000 000 = 0,60, ou seja, 60%, não «cerca de metade». O défice foi de 2 000 000 Kz (40%). Se o autor quiser reforçar a falta de financiamento, o dado correcto é o défice de 40%. A formatação dos milhares (5.000.000 vs 3 000 000) é do normalizador."
+  },
+  {
+    "id": "FAC-0003",
+    "agente": "verificador-factual",
+    "categoria": "contradicao-interna",
+    "subcategoria": "numero-de-escolas",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "as 25 escolas participantes",
+    "proposta": "Pergunta ao autor: o projecto abrangeu vinte ou 25 escolas? O 1.º parágrafo diz «um projeto de leitura em vinte escolas» e o 3.º diz «as 25 escolas participantes». Uniformizar com o número correcto (ou explicar se entraram mais 5 escolas depois do arranque).",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O mesmo dado não pode aparecer com valores diferentes na mesma obra.",
+      "fonte": "Comparação interna: §1 «vinte escolas» vs §3 «25 escolas»; python3 -c \"print(25-20, (25-20)/20*100)\" -> 5 escolas de diferença (25%).",
+      "estatuto": "facto-verificado"
+    },
+    "confianca": "alta",
+    "nota": "A contradição está demonstrada, mas o texto não permite saber qual dos valores está certo; por isso é consulta-autor e não obrigatoria. Pode haver uma explicação legítima (alargamento do projecto), que deve ficar escrita."
+  },
+  {
+    "id": "FAC-0004",
+    "agente": "verificador-factual",
+    "categoria": "plausibilidade",
+    "subcategoria": "logistica",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "A biblioteca móvel percorreu as 25 escolas participantes todos os sábados",
+    "proposta": "Pergunta ao autor: quantas escolas visitava a biblioteca móvel em cada sábado? Havia mais do que uma unidade, ou as escolas eram visitadas de forma rotativa (por ex., cada escola uma vez por mês)?",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Os dados operacionais citados têm de ser fisicamente compatíveis entre si.",
+      "fonte": "Cálculo interno: python3 -c \"print(25*2, 20*2)\" -> 50 horas (ou 40 com vinte escolas) de sessões por sábado, sem contar deslocações.",
+      "estatuto": "hipotese"
+    },
+    "confianca": "media",
+    "nota": "Com sessões de «cerca de duas horas», visitar todas as escolas num só sábado exigiria 50 horas de sessões num dia de 24 horas, se houvesse uma única biblioteca móvel. A frase pode querer dizer que a biblioteca saía aos sábados, numa rotação. Não está demonstrado que esteja errada; precisa de esclarecimento."
+  },
+  {
+    "id": "FAC-0005",
+    "agente": "verificador-factual",
+    "categoria": "fontes",
+    "subcategoria": "dado-sem-fonte",
+    "localizacao": {"seccao": "S01", "paragrafo": 2},
+    "excerto": "Segundo o director, 85% dos alunos nunca tinham lido um livro completo antes do projecto.",
+    "proposta": "Pergunta ao autor: de que director se trata (nome e cargo: director provincial, director de uma escola)? Os 85% vêm de um inquérito? Se sim, com quantos alunos, em que escolas e em que data? Se for uma estimativa do director, convém dizê-lo (por ex., «Segundo estimativa do director…»).",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Uma estatística num relatório de prestação de contas precisa de fonte identificável e de método.",
+      "fonte": "",
+      "estatuto": "hipotese"
+    },
+    "confianca": "media",
+    "nota": "Não há forma de confirmar o dado dentro do texto nem há fonte externa indicada. Também não está claro se «o director» é o da direcção provincial referida no 1.º parágrafo."
+  },
+  {
+    "id": "FAC-0006",
+    "agente": "verificador-factual",
+    "categoria": "fontes",
+    "subcategoria": "metodo-de-medicao",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "A taxa de leitura regular subiu de 20% para 35%",
+    "proposta": "Pergunta ao autor: como se definiu «leitura regular» e como foi medida? Qual o universo (número de alunos, escolas) e as datas das duas medições (antes e depois)?",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Um resultado quantitativo que fundamenta um pedido de expansão precisa de definição, amostra e período.",
+      "fonte": "",
+      "estatuto": "hipotese"
+    },
+    "confianca": "media",
+    "nota": "Internamente, a base de 20% de leitores regulares é compatível com os 85% que nunca tinham lido um livro completo (§2), mas não há fonte para nenhum dos dois valores. O público-alvo (decisores e financiadores) vai querer a origem dos números."
+  },
+  {
+    "id": "FAC-0007",
+    "agente": "verificador-factual",
+    "categoria": "datas",
+    "subcategoria": "actualidade",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Iremos reunir-nos com o ministério em janeiro de 2025.",
+    "proposta": "Pergunta ao autor: qual é a data do relatório? Se for publicado agora (Novembro de 2026), a reunião de Janeiro de 2025 já ocorreu há cerca de 22 meses. Nesse caso, reescrever no passado e dar o resultado da reunião, ou actualizar a data prevista.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "As datas futuras devem ser coerentes com a data de publicação do documento.",
+      "fonte": "Data de referência da revisão: 28 de Novembro de 2026 (indicada na tarefa). python3 -c \"print((2026-2025)*12+(11-1))\" -> 22 meses.",
+      "estatuto": "hipotese"
+    },
+    "confianca": "media",
+    "nota": "O texto não diz quando foi escrito. Pode ser um relatório de finais de 2024 que só agora é revisto; é preciso que o autor confirme. A minúscula de «janeiro» é do revisor-linguistico. Também falta dizer qual ministério (presumivelmente o da Educação, segundo o brief)."
+  }
+]

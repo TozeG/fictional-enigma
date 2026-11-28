@@ -1,0 +1,20 @@
+[
+  {
+    "id": "NOR-0001",
+    "agente": "normalizador",
+    "categoria": "numeros",
+    "subcategoria": "separador-de-milhares",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "5.000.000 Kz",
+    "proposta": "5 000 000 Kz",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "A folha de estilo da obra fixa milhares com espaço (5 000 000 Kz). O mesmo parágrafo escreve «3 000 000 Kz» com espaço; o ponto cria duas formas para o mesmo tipo de dado.",
+      "fonte": "projectos/calibracao-v02-e3/folha-de-estilo.md, linha «Números»; normas/norma-pt-ao.md §6",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta",
+    "nota": "Uniformização de forma apenas; os valores não são tocados."
+  }
+]

@@ -1,0 +1,208 @@
+[
+  {
+    "id": "LIN-0001",
+    "agente": "revisor-linguistico",
+    "categoria": "ortografia",
+    "subcategoria": "consoante-conservada-pre-ao90",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "iniciou um projeto de leitura",
+    "proposta": "iniciou um projecto de leitura",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Na ortografia de 1945, conserva-se o c em «projecto» (norma-pt-ao §3). O próprio texto usa «projecto» noutros pontos.",
+      "fonte": "Acordo Ortográfico de 1945; norma-pt-ao.md §3; Priberam (opção antes do AO), «projecto»",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0002",
+    "agente": "revisor-linguistico",
+    "categoria": "sintaxe",
+    "subcategoria": "haver-impessoal",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "Houveram muitas dificuldades no arranque",
+    "proposta": "Houve muitas dificuldades no arranque",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O verbo «haver» com sentido de «existir» é impessoal e fica na 3.ª pessoa do singular.",
+      "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo (verbos impessoais); norma-pt-ao.md §4",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0003",
+    "agente": "revisor-linguistico",
+    "categoria": "sintaxe",
+    "subcategoria": "colocacao-pronominal",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "me disseram que os alunos gostam de ler",
+    "proposta": "disseram-me que os alunos gostam de ler",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Na norma formal, a ênclise é a regra por defeito. A oração principal («Os professores [...] disseram») não tem atractor de próclise, porque o «já» está na relativa intercalada.",
+      "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo (colocação dos pronomes átonos); norma-pt-ao.md §4",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta",
+    "nota": "O trecho está fora do discurso directo, num relatório institucional. Numa fala de personagem seria preservado."
+  },
+  {
+    "id": "LIN-0004",
+    "agente": "revisor-linguistico",
+    "categoria": "sintaxe",
+    "subcategoria": "regencia-crase",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "os alunos assistiram as sessões de leitura",
+    "proposta": "os alunos assistiram às sessões de leitura",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "No sentido de «presenciar», «assistir» rege a preposição «a». Com o artigo «as», há contracção em «às».",
+      "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo (regência verbal); norma-pt-ao.md §4",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0005",
+    "agente": "revisor-linguistico",
+    "categoria": "ortografia",
+    "subcategoria": "consoante-conservada-pre-ao90",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "Os resultados foram ótimos.",
+    "proposta": "Os resultados foram óptimos.",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Na ortografia de 1945, conserva-se o p em «óptimo».",
+      "fonte": "Acordo Ortográfico de 1945; norma-pt-ao.md §3; Priberam (opção antes do AO), «óptimo»",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0006",
+    "agente": "revisor-linguistico",
+    "categoria": "preservacao",
+    "subcategoria": "discurso-directo-oralidade",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "«A gente agora lemos juntos todas as noites",
+    "proposta": "Preservar: concordância oral em discurso directo (testemunho citado).",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "O discurso directo e a voz de terceiros não se normalizam. «A gente lemos» é marca de oralidade e não é erro do autor.",
+      "fonte": "norma-pt-ao.md §2 (regra de ouro) e §4 (concordância)",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0007",
+    "agente": "revisor-linguistico",
+    "categoria": "preservacao",
+    "subcategoria": "angolanismo",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "Uma zungueira do bairro contou",
+    "proposta": "Preservar «zungueira», sem itálico (brief: angolanismos sem marca).",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Os angolanismos são variação legítima e preservam-se. A ausência de marca vem do brief.",
+      "fonte": "norma-pt-ao.md §5; brief.md (tratamento de angolanismos: sem marca)",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0008",
+    "agente": "revisor-linguistico",
+    "categoria": "preservacao",
+    "subcategoria": "angolanismo",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "Os candongueiros da zona chegaram",
+    "proposta": "Preservar «candongueiros», sem itálico (brief: angolanismos sem marca).",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Os angolanismos são variação legítima e preservam-se. A ausência de marca vem do brief.",
+      "fonte": "norma-pt-ao.md §5; brief.md (tratamento de angolanismos: sem marca)",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0009",
+    "agente": "revisor-linguistico",
+    "categoria": "pontuacao",
+    "subcategoria": "virgula-adverbial-anteposto",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "Apesar disso o projecto enfrentou",
+    "proposta": "Apesar disso, o projecto enfrentou",
+    "tipo_intervencao": "recomendada",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Em geral, separa-se por vírgula a expressão adverbial concessiva anteposta ao sujeito. Num adjunto curto, a vírgula é facultativa.",
+      "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo (emprego da vírgula)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media"
+  },
+  {
+    "id": "LIN-0010",
+    "agente": "revisor-linguistico",
+    "categoria": "ortografia",
+    "subcategoria": "paronimia",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "incluem a expanção para outras províncias",
+    "proposta": "incluem a expansão para outras províncias",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "A grafia correcta é «expansão», com s, da família de «expandir» e «expansivo». «Expanção» não existe.",
+      "fonte": "Dicionário da Língua Portuguesa Contemporânea (ACL, 2001); Priberam, «expansão»",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0011",
+    "agente": "revisor-linguistico",
+    "categoria": "maiusculas",
+    "subcategoria": "meses-maiuscula-pre-ao90",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "com o ministério em janeiro de 2025",
+    "proposta": "com o ministério em Janeiro de 2025",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Na ortografia de 1945, os nomes dos meses escrevem-se com maiúscula inicial. O próprio texto usa «Março».",
+      "fonte": "Acordo Ortográfico de 1945 (emprego de maiúsculas); norma-pt-ao.md §3",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "LIN-0012",
+    "agente": "revisor-linguistico",
+    "categoria": "maiusculas",
+    "subcategoria": "nome-instituicao",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Iremos reunir-nos com o ministério",
+    "proposta": "Iremos reunir-nos com o Ministério",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Quando designa uma instituição concreta (aqui, presumivelmente o Ministério da Educação), o nome escreve-se com maiúscula, mesmo abreviado. Se o sentido for genérico, a minúscula é admissível.",
+      "fonte": "Acordo Ortográfico de 1945 (emprego de maiúsculas em nomes de instituições)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Confirmar com o autor qual é o ministério referido. Se for o Ministério da Educação, convém nomeá-lo."
+  }
+]

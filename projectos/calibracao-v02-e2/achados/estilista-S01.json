@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ESTL-0001",
+    "agente": "estilista",
+    "categoria": "estilo",
+    "subcategoria": "repeticao-estrutural",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "Cada sessão durava cerca de duas horas, e cada sessão incluía momentos de leitura em voz alta, e cada sessão terminava com um debate.",
+    "proposta": "Cada sessão durava cerca de duas horas, incluía momentos de leitura em voz alta e terminava com um debate.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Três ocorrências de «cada sessão» em 22 palavras, com a conjunção «e» repetida três vezes. Elidir o sujeito repetido e deixar uma só conjunção antes do último elemento da enumeração.",
+      "fonte": "",
+      "estatuto": "preferencia-estilo"
+    },
+    "confianca": "alta",
+    "nota": "Voz do autor: frases curtas a médias (12 a 25 palavras), vocabulário simples e institucional, ritmo regular, sem marcas literárias. A proposta mantém essa voz e só remove a repetição. Não toca no verbo «assistiram as sessões» da frase anterior (âmbito do revisor-linguistico)."
+  },
+  {
+    "id": "ESTL-0002",
+    "agente": "estilista",
+    "categoria": "preservacao",
+    "subcategoria": "discurso-directo",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "A gente agora lemos juntos todas as noites, eu e o meu filho.",
+    "proposta": "Preservar: fala directa de uma testemunha, com oralidade angolana. Não normalizar a concordância nem o registo.",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "O discurso directo e a voz de testemunhas não se normalizam (norma-pt-ao.md, §2 e §4).",
+      "fonte": "normas/norma-pt-ao.md §2, regra de ouro",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "A citação dá ao relatório institucional a única voz de beneficiário e deve ficar intacta."
+  },
+  {
+    "id": "ESTL-0003",
+    "agente": "estilista",
+    "categoria": "preservacao",
+    "subcategoria": "angolanismo",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "Os candongueiros da zona chegaram a transportar caixas de livros sem cobrar.",
+    "proposta": "Preservar «candongueiros» (e «zungueira» na frase anterior) sem itálico nem glossário. O público é angolano e o brief indica «sem marca».",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Angolanismos legítimos preservam-se. O brief define tratamento «sem marca» para público angolano.",
+      "fonte": "normas/norma-pt-ao.md §5; brief.md",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "Os decisores do Ministério e os parceiros conhecem os termos. Se o autor quiser enviar o relatório a financiadores estrangeiros, pode ponderar um glossário (consulta-autor futura)."
+  }
+]

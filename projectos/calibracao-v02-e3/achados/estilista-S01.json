@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ESTL-0001",
+    "agente": "estilista",
+    "categoria": "estilo",
+    "subcategoria": "repeticao-estrutural",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "Cada sessão durava cerca de duas horas, e cada sessão incluía momentos de leitura em voz alta, e cada sessão terminava com um debate.",
+    "proposta": "Cada sessão durava cerca de duas horas, incluía momentos de leitura em voz alta e terminava com um debate.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Três ocorrências de «cada sessão» em 24 palavras, ligadas por «e» repetido. Omitir o sujeito repetido e manter um só «e» final conserva o sentido e o ritmo curto do autor.",
+      "fonte": "",
+      "estatuto": "preferencia-estilo"
+    },
+    "confianca": "alta",
+    "nota": "Voz do autor: frases curtas a médias (15-25 palavras), registo institucional simples, sem metáforas. A proposta mantém «cerca de duas horas» e a ordem dos elementos."
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "NOR-0001",
+    "agente": "normalizador",
+    "categoria": "numeros",
+    "subcategoria": "separador-de-milhares",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "5.000.000 Kz",
+    "proposta": "5 000 000 Kz",
+    "tipo_intervencao": "obrigatoria",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Milhares separados por espaço, de forma uniforme na obra. No mesmo parágrafo o valor «3 000 000 Kz» usa espaço e «5.000.000 Kz» usa ponto.",
+      "fonte": "folha-de-estilo.md do projecto (Números: milhares com espaço; exemplo 5 000 000 Kz); normas/norma-pt-ao.md §6",
+      "estatuto": "facto-normativo"
+    },
+    "confianca": "alta",
+    "nota": "Só a forma é tratada. Os valores e a conta «cerca de metade» pertencem ao verificador-factual."
+  }
+]

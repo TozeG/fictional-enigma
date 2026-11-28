@@ -1,0 +1,105 @@
+[
+  {
+    "id": "EST-0001",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "conclusao-contradiz-evidencia",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "com poucos recursos e sem dificuldades",
+    "proposta": "Reformular a conclusão para a tornar coerente com os §1 («muitas dificuldades no arranque») e §6 (problemas de financiamento). Opção a: «resultados alcançados apesar de constrangimentos de arranque e de financiamento», o que também reforça o pedido de apoio. Opção b: manter a ideia de eficiência («com recursos limitados») e retirar «sem dificuldades».",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Uma conclusão tem de decorrer da evidência apresentada no próprio texto. O §1 e o §6 descrevem dificuldades e o §7 nega-as, o que é uma contradição interna. Além disso, negar as dificuldades enfraquece o objectivo do brief (fundamentar a expansão).",
+      "fonte": "brief.md (objectivo da publicação); texto do próprio relatório, §1, §6 e §7",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "A contradição é objectiva. A formulação final cabe ao autor (G1)."
+  },
+  {
+    "id": "EST-0002",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "lacuna-argumentativa",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Os próximos passos incluem",
+    "proposta": "Fundamentar a expansão, que é o objectivo declarado da publicação. Opção a: acrescentar uma secção «Recomendações e condições para a expansão» com lições do piloto, orçamento necessário, províncias prioritárias e indicadores. Opção b: converter o §7 num pedido explícito sustentado por dois ou três argumentos que remetam para os §4 a §6.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Num relatório institucional dirigido a decisores e financiadores, a recomendação principal tem de ser justificada e accionável. A expansão é anunciada numa única frase, sem razões, custos nem condições.",
+      "fonte": "brief.md: objectivo «Prestar contas e fundamentar a expansão do projecto»; público «Decisores do Ministério da Educação e parceiros financiadores»",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta"
+  },
+  {
+    "id": "EST-0003",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "evidencia-insuficiente",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "A taxa de leitura regular subiu de 20% para 35%",
+    "proposta": "Acrescentar um parágrafo de método (definição de «leitura regular», instrumento, amostra, datas das medições) e explicar a relação com a linha de base do §2. Se não houver dados sistemáticos, apresentar os valores como indicativos e moderar a conclusão.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O resultado que sustenta a conclusão não tem base metodológica declarada e a linha de base (§2) vem de uma declaração isolada. Assim, o efeito não pode ser atribuído ao projecto.",
+      "fonte": "brief.md (público decisor/financiador); texto do relatório, §2 e §4",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "O erro de cálculo («aumento de 15%» em vez de 15 pontos percentuais) é do verificador-factual e não faz parte deste achado."
+  },
+  {
+    "id": "EST-0004",
+    "agente": "analista-estrutural",
+    "categoria": "estrutura",
+    "subcategoria": "lacuna-prestacao-contas",
+    "localizacao": {"seccao": "S01", "paragrafo": 6},
+    "excerto": "O orçamento previsto era de",
+    "proposta": "Explicar o efeito do défice orçamental na execução: o que se cortou, o que se manteve e como se compensou (por exemplo, com os contributos comunitários do §5). Ligar o défice ao pedido de expansão. Opcionalmente, deslocar este parágrafo para antes dos resultados (§4), para que estes sejam lidos à luz dos recursos efectivos.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Numa prestação de contas, o constrangimento financeiro tem de ser relacionado com a execução e com os resultados. Aqui é mencionado sem consequências e fica desligado do argumento.",
+      "fonte": "brief.md: objectivo «Prestar contas»",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "A reordenação é preferência do analista. A lacuna de conteúdo é objectiva. A percentagem «cerca de metade» é do verificador-factual e o formato «5.000.000 Kz» é do normalizador."
+  },
+  {
+    "id": "EST-0005",
+    "agente": "analista-estrutural",
+    "categoria": "estrutura",
+    "subcategoria": "promessa-titulo",
+    "localizacao": {"seccao": "Título"},
+    "excerto": "Relatório: A Leitura nas Escolas de Luanda",
+    "proposta": "Considerar um subtítulo que identifique o projecto e o período (por exemplo, «Relatório do projecto-piloto de leitura, 2024»), porque o texto trata de um piloto num número limitado de escolas e não da leitura em Luanda em geral. Manter o título se for a designação oficial.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "O título deve corresponder ao âmbito efectivamente tratado. Promete um diagnóstico provincial e entrega o relatório de um projecto.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media"
+  },
+  {
+    "id": "EST-0006",
+    "agente": "analista-estrutural",
+    "categoria": "preservacao",
+    "subcategoria": "ponto-forte",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "Os candongueiros da zona chegaram a transportar caixas de livros sem cobrar.",
+    "proposta": "Preservar o §5 (testemunhos da comunidade e contributo dos candongueiros). É a evidência qualitativa mais forte do relatório e pode ser reaproveitada como argumento de adesão comunitária e de contributos em espécie a favor da expansão.",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Os pontos fortes estruturais devem ser assinalados para não serem cortados nem diluídos na revisão.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta"
+  }
+]

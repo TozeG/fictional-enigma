@@ -1,0 +1,146 @@
+[
+  {
+    "id": "LEI-0001",
+    "agente": "leitor-critico",
+    "categoria": "termo-opaco",
+    "subcategoria": "indicador-indefinido",
+    "localizacao": {"seccao": "S01", "paragrafo": 4},
+    "excerto": "taxa de leitura regular",
+    "proposta": "Perguntar ao autor o que conta como «leitura regular» (livros por mês? sessões por semana?), quem mediu e em que amostra, porque o indicador central do relatório não é definido.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Como decisor que vai fundamentar uma expansão, não consigo interpretar a subida de 20% para 35% sem saber o que se mediu.",
+      "fonte": "",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Experiência declarada do leitor-alvo. A correcção do cálculo (pontos percentuais) é do verificador-factual e não consta aqui."
+  },
+  {
+    "id": "LEI-0002",
+    "agente": "leitor-critico",
+    "categoria": "quebra-de-atencao",
+    "subcategoria": "elemento-nao-introduzido",
+    "localizacao": {"seccao": "S01", "paragrafo": 3},
+    "excerto": "A biblioteca móvel",
+    "proposta": "Perguntar ao autor se a biblioteca móvel deve ser apresentada antes (quem a criou, como resolveu a «falta de livros» do 1.º parágrafo). Aparece com artigo definido, como se já a conhecesse, e fiquei sem saber se é a resposta do projecto à falta de livros.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Tive de reler o 1.º parágrafo à procura da origem da biblioteca móvel.",
+      "fonte": "",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Não é achado estrutural formal: regista apenas a perda de fio do leitor."
+  },
+  {
+    "id": "LEI-0003",
+    "agente": "leitor-critico",
+    "categoria": "promessa-nao-cumprida",
+    "subcategoria": "fundamentar-expansao",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Os próximos passos incluem a expansão para outras províncias.",
+    "proposta": "Perguntar ao autor se pretende fundamentar a expansão. O objectivo declarado é «fundamentar a expansão», mas o texto não traz o custo por escola, o orçamento necessário nem as condições de replicação. Como financiador, termino sem saber o que me pedem nem para quê.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "O brief promete prestação de contas e fundamentação da expansão. A expansão surge numa frase final, sem pedido concreto.",
+      "fonte": "brief.md, objectivo da publicação",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "A conclusão face à evidência é do analista-estrutural. Aqui regista-se só a promessa não entregue, sob o ponto de vista do leitor."
+  },
+  {
+    "id": "LEI-0004",
+    "agente": "leitor-critico",
+    "categoria": "termo-opaco",
+    "subcategoria": "interlocutor-ambiguo",
+    "localizacao": {"seccao": "S01", "paragrafo": 7},
+    "excerto": "Iremos reunir-nos com o ministério",
+    "proposta": "Perguntar ao autor a quem o relatório se dirige. Sendo eu do Ministério da Educação, ler «o ministério» na terceira pessoa deixou-me sem saber se sou o destinatário ou um terceiro. Confirmar também quem é o «nós» que se reúne.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Dúvida sobre o interlocutor, experiência do leitor-alvo.",
+      "fonte": "",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "baixa",
+    "nota": "O ano da reunião («janeiro de 2025») é questão factual e fica no relatório."
+  },
+  {
+    "id": "LEI-0005",
+    "agente": "leitor-critico",
+    "categoria": "termo-opaco",
+    "subcategoria": "angolanismo-parceiros",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "Uma zungueira do bairro contou",
+    "proposta": "Perguntar ao autor se os parceiros financiadores não angolanos precisam de uma breve explicação de «zungueira» e «candongueiros» (glossário ou aposto). Para o leitor angolano é transparente e deve manter-se sem marca, como determina o brief.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Como decisor angolano percebo os dois termos de imediato. Um parceiro estrangeiro poderia não os perceber.",
+      "fonte": "norma-pt-ao.md §5; brief.md (tratamento de angolanismos: sem marca)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "baixa",
+    "nota": "Não se propõe alteração do texto. O termo mantém-se."
+  },
+  {
+    "id": "LEI-0006",
+    "agente": "leitor-critico",
+    "categoria": "preservacao",
+    "subcategoria": "testemunho",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "A gente agora lemos juntos todas as noites, eu e o meu filho.",
+    "proposta": "Preservar. É o momento mais forte do relatório: a voz da mãe diz mais do que as percentagens. A oralidade é testemunho e não se normaliza.",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Discurso directo e voz de testemunha não se normalizam.",
+      "fonte": "norma-pt-ao.md §2 (regra de ouro)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "Trunfo 1. Sugestão de leitor: dar-lhe mais espaço, por exemplo logo a seguir aos números."
+  },
+  {
+    "id": "LEI-0007",
+    "agente": "leitor-critico",
+    "categoria": "preservacao",
+    "subcategoria": "detalhe-concreto",
+    "localizacao": {"seccao": "S01", "paragrafo": 5},
+    "excerto": "Os candongueiros da zona chegaram a transportar caixas de livros sem cobrar.",
+    "proposta": "Preservar. Detalhe concreto de envolvimento da comunidade, que prende o leitor e dá credibilidade local ao projecto.",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Passagem forte do ponto de vista do leitor e angolanismo legítimo.",
+      "fonte": "norma-pt-ao.md §5",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "Trunfo 2."
+  },
+  {
+    "id": "LEI-0008",
+    "agente": "leitor-critico",
+    "categoria": "preservacao",
+    "subcategoria": "diagnostico",
+    "localizacao": {"seccao": "S01", "paragrafo": 1},
+    "excerto": "os alunos gostam de ler, mas não têm acesso a obras adequadas",
+    "proposta": "Preservar. É a tese do relatório numa frase: o problema é o acesso e não o desinteresse. É a melhor justificação do projecto para um decisor.",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Frase de maior valor argumentativo para o público-alvo.",
+      "fonte": "",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "Trunfo 3. A colocação pronominal de «me disseram», na mesma frase, não é tratada aqui (é do revisor-linguistico)."
+  }
+]

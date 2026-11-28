@@ -1,0 +1,680 @@
+[
+ {
+  "id": "EST-0001",
+  "agente": "analista-estrutural",
+  "categoria": "argumento",
+  "subcategoria": "conclusao-contradiz-evidencia",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 7
+  },
+  "excerto": "com poucos recursos e sem dificuldades",
+  "proposta": "Reformular a conclusão para a tornar coerente com os §1 («muitas dificuldades no arranque») e §6 (problemas de financiamento). Opção a: «resultados alcançados apesar de constrangimentos de arranque e de financiamento», o que também reforça o pedido de apoio. Opção b: manter a ideia de eficiência («com recursos limitados») e retirar «sem dificuldades».",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "alta",
+  "fundamento": {
+   "regra": "Uma conclusão tem de decorrer da evidência apresentada no próprio texto. O §1 e o §6 descrevem dificuldades e o §7 nega-as, o que é uma contradição interna. Além disso, negar as dificuldades enfraquece o objectivo do brief (fundamentar a expansão).",
+   "fonte": "brief.md (objectivo da publicação); texto do próprio relatório, §1, §6 e §7",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "alta",
+  "nota": "A contradição é objectiva. A formulação final cabe ao autor (G1)."
+ },
+ {
+  "id": "EST-0002",
+  "agente": "analista-estrutural",
+  "categoria": "argumento",
+  "subcategoria": "lacuna-argumentativa",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 7
+  },
+  "excerto": "Os próximos passos incluem",
+  "proposta": "Fundamentar a expansão, que é o objectivo declarado da publicação. Opção a: acrescentar uma secção «Recomendações e condições para a expansão» com lições do piloto, orçamento necessário, províncias prioritárias e indicadores. Opção b: converter o §7 num pedido explícito sustentado por dois ou três argumentos que remetam para os §4 a §6.",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "alta",
+  "fundamento": {
+   "regra": "Num relatório institucional dirigido a decisores e financiadores, a recomendação principal tem de ser justificada e accionável. A expansão é anunciada numa única frase, sem razões, custos nem condições.",
+   "fonte": "brief.md: objectivo «Prestar contas e fundamentar a expansão do projecto»; público «Decisores do Ministério da Educação e parceiros financiadores»",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "alta"
+ },
+ {
+  "id": "EST-0003",
+  "agente": "analista-estrutural",
+  "categoria": "argumento",
+  "subcategoria": "evidencia-insuficiente",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 4
+  },
+  "excerto": "A taxa de leitura regular subiu de 20% para 35%",
+  "proposta": "Acrescentar um parágrafo de método (definição de «leitura regular», instrumento, amostra, datas das medições) e explicar a relação com a linha de base do §2. Se não houver dados sistemáticos, apresentar os valores como indicativos e moderar a conclusão.",
+  "tipo_intervencao": "recomendada",
+  "severidade": "alta",
+  "fundamento": {
+   "regra": "O resultado que sustenta a conclusão não tem base metodológica declarada e a linha de base (§2) vem de uma declaração isolada. Assim, o efeito não pode ser atribuído ao projecto.",
+   "fonte": "brief.md (público decisor/financiador); texto do relatório, §2 e §4",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "media",
+  "nota": "O erro de cálculo («aumento de 15%» em vez de 15 pontos percentuais) é do verificador-factual e não faz parte deste achado."
+ },
+ {
+  "id": "EST-0004",
+  "agente": "analista-estrutural",
+  "categoria": "estrutura",
+  "subcategoria": "lacuna-prestacao-contas",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 6
+  },
+  "excerto": "O orçamento previsto era de",
+  "proposta": "Explicar o efeito do défice orçamental na execução: o que se cortou, o que se manteve e como se compensou (por exemplo, com os contributos comunitários do §5). Ligar o défice ao pedido de expansão. Opcionalmente, deslocar este parágrafo para antes dos resultados (§4), para que estes sejam lidos à luz dos recursos efectivos.",
+  "tipo_intervencao": "recomendada",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Numa prestação de contas, o constrangimento financeiro tem de ser relacionado com a execução e com os resultados. Aqui é mencionado sem consequências e fica desligado do argumento.",
+   "fonte": "brief.md: objectivo «Prestar contas»",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "media",
+  "nota": "A reordenação é preferência do analista. A lacuna de conteúdo é objectiva. A percentagem «cerca de metade» é do verificador-factual e o formato «5.000.000 Kz» é do normalizador."
+ },
+ {
+  "id": "EST-0005",
+  "agente": "analista-estrutural",
+  "categoria": "estrutura",
+  "subcategoria": "promessa-titulo",
+  "localizacao": {
+   "seccao": "Título"
+  },
+  "excerto": "Relatório: A Leitura nas Escolas de Luanda",
+  "proposta": "Considerar um subtítulo que identifique o projecto e o período (por exemplo, «Relatório do projecto-piloto de leitura, 2024»), porque o texto trata de um piloto num número limitado de escolas e não da leitura em Luanda em geral. Manter o título se for a designação oficial.",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "O título deve corresponder ao âmbito efectivamente tratado. Promete um diagnóstico provincial e entrega o relatório de um projecto.",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "media"
+ },
+ {
+  "id": "EST-0006",
+  "agente": "analista-estrutural",
+  "categoria": "preservacao",
+  "subcategoria": "ponto-forte",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 5
+  },
+  "excerto": "Os candongueiros da zona chegaram a transportar caixas de livros sem cobrar.",
+  "proposta": "Preservar o §5 (testemunhos da comunidade e contributo dos candongueiros). É a evidência qualitativa mais forte do relatório e pode ser reaproveitada como argumento de adesão comunitária e de contributos em espécie a favor da expansão.",
+  "tipo_intervencao": "opcional",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "Os pontos fortes estruturais devem ser assinalados para não serem cortados nem diluídos na revisão.",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "alta"
+ },
+ {
+  "id": "ESTL-0001",
+  "agente": "estilista",
+  "categoria": "estilo",
+  "subcategoria": "repeticao-estrutural",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 3
+  },
+  "excerto": "Cada sessão durava cerca de duas horas, e cada sessão incluía momentos de leitura em voz alta, e cada sessão terminava com um debate.",
+  "proposta": "Cada sessão durava cerca de duas horas, incluía momentos de leitura em voz alta e terminava com um debate.",
+  "tipo_intervencao": "recomendada",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "Três ocorrências de «cada sessão» em 22 palavras, com a conjunção «e» repetida três vezes. Elidir o sujeito repetido e deixar uma só conjunção antes do último elemento da enumeração.",
+   "fonte": "",
+   "estatuto": "preferencia-estilo"
+  },
+  "confianca": "alta",
+  "nota": "Voz do autor: frases curtas a médias (12 a 25 palavras), vocabulário simples e institucional, ritmo regular, sem marcas literárias. A proposta mantém essa voz e só remove a repetição. Não toca no verbo «assistiram as sessões» da frase anterior (âmbito do revisor-linguistico)."
+ },
+ {
+  "id": "ESTL-0002",
+  "agente": "estilista",
+  "categoria": "preservacao",
+  "subcategoria": "discurso-directo",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 5
+  },
+  "excerto": "A gente agora lemos juntos todas as noites, eu e o meu filho.",
+  "proposta": "Preservar: fala directa de uma testemunha, com oralidade angolana. Não normalizar a concordância nem o registo.",
+  "tipo_intervencao": "opcional",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "O discurso directo e a voz de testemunhas não se normalizam (norma-pt-ao.md, §2 e §4).",
+   "fonte": "normas/norma-pt-ao.md §2, regra de ouro",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "alta",
+  "nota": "A citação dá ao relatório institucional a única voz de beneficiário e deve ficar intacta."
+ },
+ {
+  "id": "ESTL-0003",
+  "agente": "estilista",
+  "categoria": "preservacao",
+  "subcategoria": "angolanismo",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 5
+  },
+  "excerto": "Os candongueiros da zona chegaram a transportar caixas de livros sem cobrar.",
+  "proposta": "Preservar «candongueiros» (e «zungueira» na frase anterior) sem itálico nem glossário. O público é angolano e o brief indica «sem marca».",
+  "tipo_intervencao": "opcional",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "Angolanismos legítimos preservam-se. O brief define tratamento «sem marca» para público angolano.",
+   "fonte": "normas/norma-pt-ao.md §5; brief.md",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "alta",
+  "nota": "Os decisores do Ministério e os parceiros conhecem os termos. Se o autor quiser enviar o relatório a financiadores estrangeiros, pode ponderar um glossário (consulta-autor futura)."
+ },
+ {
+  "id": "LEI-0001",
+  "agente": "leitor-critico",
+  "categoria": "termo-opaco",
+  "subcategoria": "angolanismo-publico-externo",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 5
+  },
+  "excerto": "Uma zungueira do bairro contou",
+  "proposta": "Consulta ao autor: os parceiros financiadores externos a Angola podem não conhecer «zungueira». Decidir se se acrescenta uma explicação breve na primeira ocorrência (por exemplo, vendedora ambulante). O termo mantém-se, sem marca, como diz o brief.",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "Como leitor-alvo (decisor ou financiador), um financiador estrangeiro pode ficar sem perceber o termo. Um decisor angolano percebe-o de imediato.",
+   "fonte": "",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "media",
+  "nota": "O brief prevê «sem marca» para angolanismos. Não se propõe alteração do termo, só a decisão sobre o glossário."
+ },
+ {
+  "id": "LEI-0002",
+  "agente": "leitor-critico",
+  "categoria": "termo-opaco",
+  "subcategoria": "angolanismo-publico-externo",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 5
+  },
+  "excerto": "Os candongueiros da zona chegaram a transportar",
+  "proposta": "Consulta ao autor: o mesmo risco de «zungueira» para financiadores de fora. Se houver glossário ou explicação, convém tratar os dois termos da mesma maneira.",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "Opacidade possível para parte do público-alvo. O leitor angolano não tem dúvida.",
+   "fonte": "",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "media",
+  "nota": "Ligado a LEI-0001."
+ },
+ {
+  "id": "LEI-0003",
+  "agente": "leitor-critico",
+  "categoria": "promessa-nao-cumprida",
+  "subcategoria": "fundamentacao-da-expansao",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 7
+  },
+  "excerto": "Os próximos passos incluem a expansão para outras províncias.",
+  "proposta": "Consulta ao autor: o objectivo declarado é «fundamentar a expansão do projecto», mas o texto fecha com uma única frase sobre a expansão. Como decisor, não encontrei quantas províncias, que custo, que meta nem que apoio se pede ao Ministério. Convém dizer se o relatório pretende só prestar contas ou também pedir uma decisão.",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "alta",
+  "fundamento": {
+   "regra": "O brief define como objectivo prestar contas e fundamentar a expansão. Como leitor-alvo, o texto não me deu os elementos para decidir.",
+   "fonte": "",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "alta",
+  "nota": "Julgamento sobre a experiência de leitura. A estrutura do argumento pertence ao analista-estrutural."
+ },
+ {
+  "id": "LEI-0004",
+  "agente": "leitor-critico",
+  "categoria": "preservacao",
+  "subcategoria": "voz-testemunhal",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 5
+  },
+  "excerto": "«A gente agora lemos juntos todas as noites, eu e o meu filho.»",
+  "proposta": "Preservar. É o momento mais forte do relatório: a voz directa da mãe prova o efeito do projecto melhor do que qualquer percentagem. A oralidade é testemunho em discurso directo e não se normaliza.",
+  "tipo_intervencao": "opcional",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "Discurso directo e variação angolana são preservados (norma-pt-ao §2 e §4).",
+   "fonte": "normas/norma-pt-ao.md, §2 (regra de ouro) e §4",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "alta"
+ },
+ {
+  "id": "LEI-0005",
+  "agente": "leitor-critico",
+  "categoria": "preservacao",
+  "subcategoria": "detalhe-concreto",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 5
+  },
+  "excerto": "transportar caixas de livros sem cobrar",
+  "proposta": "Preservar. Este pormenor concreto mostra o envolvimento da comunidade e dá imagem ao leitor. Convém conservar-lhe o lugar no parágrafo.",
+  "tipo_intervencao": "opcional",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "Trecho forte do ponto de vista do leitor-alvo.",
+   "fonte": "",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "media"
+ },
+ {
+  "id": "LEI-0006",
+  "agente": "leitor-critico",
+  "categoria": "preservacao",
+  "subcategoria": "diagnostico-claro",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 1
+  },
+  "excerto": "os alunos gostam de ler, mas não têm acesso a obras adequadas",
+  "proposta": "Preservar. Esta é a frase que formula o problema com mais clareza (procura sem oferta). Justifica o projecto, e o decisor percebe de imediato a necessidade.",
+  "tipo_intervencao": "opcional",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "Trecho forte do ponto de vista do leitor-alvo.",
+   "fonte": "",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "media",
+  "nota": "A colocação pronominal de «me disseram», na mesma frase, é do revisor-linguistico e fica fora desta preservação."
+ },
+ {
+  "id": "NOR-0001",
+  "agente": "normalizador",
+  "categoria": "numeros",
+  "subcategoria": "separador-de-milhares",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 6
+  },
+  "excerto": "5.000.000 Kz",
+  "proposta": "5 000 000 Kz",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Milhares separados por espaço, de forma uniforme na obra. No mesmo parágrafo o valor «3 000 000 Kz» usa espaço e «5.000.000 Kz» usa ponto.",
+   "fonte": "folha-de-estilo.md do projecto (Números: milhares com espaço; exemplo 5 000 000 Kz); normas/norma-pt-ao.md §6",
+   "estatuto": "facto-normativo"
+  },
+  "confianca": "alta",
+  "nota": "Só a forma é tratada. Os valores e a conta «cerca de metade» pertencem ao verificador-factual."
+ },
+ {
+  "id": "LIN-0001",
+  "agente": "revisor-linguistico",
+  "categoria": "ortografia",
+  "subcategoria": "consoante-etimologica",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 1
+  },
+  "excerto": "iniciou um projeto de leitura",
+  "proposta": "iniciou um projecto de leitura",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Na ortografia de 1945 conserva-se o c em projecto; «projeto» é grafia AO90/PT-BR. O próprio texto usa «projecto» nos restantes parágrafos.",
+   "fonte": "Acordo Ortográfico de 1945; norma-pt-ao.md §3; Dicionário da Língua Portuguesa Contemporânea (ACL, 2001)",
+   "estatuto": "facto-normativo"
+  },
+  "confianca": "alta"
+ },
+ {
+  "id": "LIN-0002",
+  "agente": "revisor-linguistico",
+  "categoria": "sintaxe",
+  "subcategoria": "concordancia-haver-existencial",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 1
+  },
+  "excerto": "Houveram muitas dificuldades no arranque",
+  "proposta": "Houve muitas dificuldades no arranque",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "alta",
+  "fundamento": {
+   "regra": "Haver no sentido de existir é impessoal e usa-se só na 3.ª pessoa do singular.",
+   "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo — verbos impessoais; norma-pt-ao.md §4",
+   "estatuto": "facto-normativo"
+  },
+  "confianca": "alta"
+ },
+ {
+  "id": "LIN-0003",
+  "agente": "revisor-linguistico",
+  "categoria": "sintaxe",
+  "subcategoria": "colocacao-pronominal",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 1
+  },
+  "excerto": "me disseram que os alunos gostam de ler",
+  "proposta": "disseram-me que os alunos gostam de ler",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Ênclise por defeito em texto formal. O «que» pertence à oração relativa intercalada e não atrai o pronome da oração principal, cujo sujeito é «Os professores».",
+   "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo — colocação dos pronomes átonos; norma-pt-ao.md §4",
+   "estatuto": "facto-normativo"
+  },
+  "confianca": "alta",
+  "nota": "Fora do discurso directo; relatório institucional em registo formal."
+ },
+ {
+  "id": "LIN-0004",
+  "agente": "revisor-linguistico",
+  "categoria": "sintaxe",
+  "subcategoria": "regencia-crase",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 3
+  },
+  "excerto": "os alunos assistiram as sessões de leitura",
+  "proposta": "os alunos assistiram às sessões de leitura",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Assistir, no sentido de presenciar, rege a preposição «a»; a + as = às.",
+   "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo — regência verbal; norma-pt-ao.md §4",
+   "estatuto": "facto-normativo"
+  },
+  "confianca": "alta"
+ },
+ {
+  "id": "LIN-0005",
+  "agente": "revisor-linguistico",
+  "categoria": "ortografia",
+  "subcategoria": "consoante-etimologica",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 4
+  },
+  "excerto": "Os resultados foram ótimos.",
+  "proposta": "Os resultados foram óptimos.",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Na ortografia de 1945 conserva-se o p em óptimo; «ótimo» é grafia AO90/PT-BR.",
+   "fonte": "Acordo Ortográfico de 1945; norma-pt-ao.md §3; Dicionário da Língua Portuguesa Contemporânea (ACL, 2001)",
+   "estatuto": "facto-normativo"
+  },
+  "confianca": "alta"
+ },
+ {
+  "id": "LIN-0006",
+  "agente": "revisor-linguistico",
+  "categoria": "preservacao",
+  "subcategoria": "discurso-directo-oralidade",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 5
+  },
+  "excerto": "«A gente agora lemos juntos todas as noites",
+  "proposta": "Preservar: citação literal em discurso directo; a concordância «a gente lemos» é marca de oralidade da testemunha e não se normaliza.",
+  "tipo_intervencao": "opcional",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "O discurso directo e a voz de testemunhas não se normalizam.",
+   "fonte": "norma-pt-ao.md §2 (regra de ouro) e §4 (concordância)",
+   "estatuto": "facto-normativo"
+  },
+  "confianca": "alta",
+  "nota": "Os angolanismos «zungueira» e «candongueiros» são igualmente legítimos e ficam sem marca, conforme o brief."
+ },
+ {
+  "id": "LIN-0007",
+  "agente": "revisor-linguistico",
+  "categoria": "pontuacao",
+  "subcategoria": "virgula-adjunto-anteposto",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 6
+  },
+  "excerto": "Apesar disso o projecto enfrentou problemas",
+  "proposta": "Apesar disso, o projecto enfrentou problemas",
+  "tipo_intervencao": "recomendada",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "A locução adverbial concessiva anteposta ao sujeito separa-se habitualmente por vírgula; com adjuntos curtos a vírgula é facultativa, mas aqui marca a articulação concessiva com o parágrafo anterior.",
+   "fonte": "Cunha & Cintra, Nova Gramática do Português Contemporâneo — emprego da vírgula",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "media"
+ },
+ {
+  "id": "LIN-0008",
+  "agente": "revisor-linguistico",
+  "categoria": "ortografia",
+  "subcategoria": "paronimia",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 7
+  },
+  "excerto": "a expanção para outras províncias",
+  "proposta": "a expansão para outras províncias",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "alta",
+  "fundamento": {
+   "regra": "A forma correcta é «expansão» (do latim expansio, cf. expandir/expansivo); «expanção» não existe.",
+   "fonte": "Dicionário da Língua Portuguesa Contemporânea (ACL, 2001); Priberam (antes do AO), entrada «expansão»",
+   "estatuto": "facto-normativo"
+  },
+  "confianca": "alta",
+  "nota": "Palavra-chave do objectivo declarado no brief («fundamentar a expansão do projecto»)."
+ },
+ {
+  "id": "LIN-0009",
+  "agente": "revisor-linguistico",
+  "categoria": "ortografia",
+  "subcategoria": "maiuscula-meses",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 7
+  },
+  "excerto": "em janeiro de 2025",
+  "proposta": "em Janeiro de 2025",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Na ortografia de 1945 os nomes dos meses escrevem-se com maiúscula inicial. O texto usa «Março» no 1.º parágrafo.",
+   "fonte": "Acordo Ortográfico de 1945 — emprego das maiúsculas; norma-pt-ao.md §3",
+   "estatuto": "facto-normativo"
+  },
+  "confianca": "alta"
+ },
+ {
+  "id": "LIN-0010",
+  "agente": "revisor-linguistico",
+  "categoria": "ortografia",
+  "subcategoria": "maiuscula-instituicoes",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 7
+  },
+  "excerto": "reunir-nos com o ministério",
+  "proposta": "Confirmar se se refere ao Ministério da Educação; nesse caso, «reunir-nos com o Ministério» (ou o nome completo).",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "baixa",
+  "fundamento": {
+   "regra": "Os nomes de instituições escrevem-se com maiúscula; a forma abreviada que designa uma instituição concreta costuma manter a maiúscula. Uso genérico admite minúscula.",
+   "fonte": "Acordo Ortográfico de 1945 — emprego das maiúsculas",
+   "estatuto": "interpretacao"
+  },
+  "confianca": "media"
+ },
+ {
+  "id": "FAC-0001",
+  "agente": "verificador-factual",
+  "categoria": "numeros",
+  "subcategoria": "pontos-percentuais-vs-variacao-relativa",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 4
+  },
+  "excerto": "o que representa um aumento de 15%",
+  "proposta": "o que representa um aumento de 15 pontos percentuais (uma subida relativa de 75%)",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "alta",
+  "fundamento": {
+   "regra": "A diferença entre duas percentagens exprime-se em pontos percentuais; a variação relativa calcula-se sobre o valor de partida.",
+   "fonte": "Cálculo interno: python3 -c \"print(35-20); print((35-20)/20*100)\" -> 15 p.p.; 75,0% de variação relativa. Norma SIE-AO normas/norma-pt-ao.md §6 (distinguir pontos percentuais de variação percentual).",
+   "estatuto": "facto-verificado"
+  },
+  "confianca": "alta",
+  "nota": "De 20% para 35%: 35 - 20 = 15 pontos percentuais; (35 - 20) / 20 x 100 = 75%. «Aumento de 15%» subestima a variação relativa (que é de 75%) e confunde as duas medidas. Num relatório para financiadores, o erro é relevante."
+ },
+ {
+  "id": "FAC-0002",
+  "agente": "verificador-factual",
+  "categoria": "numeros",
+  "subcategoria": "proporcao",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 6
+  },
+  "excerto": "ou seja, cerca de metade do previsto",
+  "proposta": "ou seja, 60% do previsto (faltaram 2 000 000 Kz, 40% do orçamento)",
+  "tipo_intervencao": "obrigatoria",
+  "severidade": "alta",
+  "fundamento": {
+   "regra": "Uma proporção citada tem de corresponder aos valores apresentados no próprio texto.",
+   "fonte": "Cálculo interno: python3 -c \"print(3000000/5000000*100, 5000000-3000000, (5000000-3000000)/5000000*100)\" -> 60,0; 2 000 000; 40,0.",
+   "estatuto": "facto-verificado"
+  },
+  "confianca": "alta",
+  "nota": "3 000 000 / 5 000 000 = 0,60, ou seja, 60%, não «cerca de metade». O défice foi de 2 000 000 Kz (40%). Se o autor quiser reforçar a falta de financiamento, o dado correcto é o défice de 40%. A formatação dos milhares (5.000.000 vs 3 000 000) é do normalizador."
+ },
+ {
+  "id": "FAC-0003",
+  "agente": "verificador-factual",
+  "categoria": "contradicao-interna",
+  "subcategoria": "numero-de-escolas",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 3
+  },
+  "excerto": "as 25 escolas participantes",
+  "proposta": "Pergunta ao autor: o projecto abrangeu vinte ou 25 escolas? O 1.º parágrafo diz «um projeto de leitura em vinte escolas» e o 3.º diz «as 25 escolas participantes». Uniformizar com o número correcto (ou explicar se entraram mais 5 escolas depois do arranque).",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "alta",
+  "fundamento": {
+   "regra": "O mesmo dado não pode aparecer com valores diferentes na mesma obra.",
+   "fonte": "Comparação interna: §1 «vinte escolas» vs §3 «25 escolas»; python3 -c \"print(25-20, (25-20)/20*100)\" -> 5 escolas de diferença (25%).",
+   "estatuto": "facto-verificado"
+  },
+  "confianca": "alta",
+  "nota": "A contradição está demonstrada, mas o texto não permite saber qual dos valores está certo; por isso é consulta-autor e não obrigatoria. Pode haver uma explicação legítima (alargamento do projecto), que deve ficar escrita."
+ },
+ {
+  "id": "FAC-0004",
+  "agente": "verificador-factual",
+  "categoria": "plausibilidade",
+  "subcategoria": "logistica",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 3
+  },
+  "excerto": "A biblioteca móvel percorreu as 25 escolas participantes todos os sábados",
+  "proposta": "Pergunta ao autor: quantas escolas visitava a biblioteca móvel em cada sábado? Havia mais do que uma unidade, ou as escolas eram visitadas de forma rotativa (por ex., cada escola uma vez por mês)?",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Os dados operacionais citados têm de ser fisicamente compatíveis entre si.",
+   "fonte": "Cálculo interno: python3 -c \"print(25*2, 20*2)\" -> 50 horas (ou 40 com vinte escolas) de sessões por sábado, sem contar deslocações.",
+   "estatuto": "hipotese"
+  },
+  "confianca": "media",
+  "nota": "Com sessões de «cerca de duas horas», visitar todas as escolas num só sábado exigiria 50 horas de sessões num dia de 24 horas, se houvesse uma única biblioteca móvel. A frase pode querer dizer que a biblioteca saía aos sábados, numa rotação. Não está demonstrado que esteja errada; precisa de esclarecimento."
+ },
+ {
+  "id": "FAC-0005",
+  "agente": "verificador-factual",
+  "categoria": "fontes",
+  "subcategoria": "dado-sem-fonte",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 2
+  },
+  "excerto": "Segundo o director, 85% dos alunos nunca tinham lido um livro completo antes do projecto.",
+  "proposta": "Pergunta ao autor: de que director se trata (nome e cargo: director provincial, director de uma escola)? Os 85% vêm de um inquérito? Se sim, com quantos alunos, em que escolas e em que data? Se for uma estimativa do director, convém dizê-lo (por ex., «Segundo estimativa do director…»).",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Uma estatística num relatório de prestação de contas precisa de fonte identificável e de método.",
+   "fonte": "",
+   "estatuto": "hipotese"
+  },
+  "confianca": "media",
+  "nota": "Não há forma de confirmar o dado dentro do texto nem há fonte externa indicada. Também não está claro se «o director» é o da direcção provincial referida no 1.º parágrafo."
+ },
+ {
+  "id": "FAC-0006",
+  "agente": "verificador-factual",
+  "categoria": "fontes",
+  "subcategoria": "metodo-de-medicao",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 4
+  },
+  "excerto": "A taxa de leitura regular subiu de 20% para 35%",
+  "proposta": "Pergunta ao autor: como se definiu «leitura regular» e como foi medida? Qual o universo (número de alunos, escolas) e as datas das duas medições (antes e depois)?",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "Um resultado quantitativo que fundamenta um pedido de expansão precisa de definição, amostra e período.",
+   "fonte": "",
+   "estatuto": "hipotese"
+  },
+  "confianca": "media",
+  "nota": "Internamente, a base de 20% de leitores regulares é compatível com os 85% que nunca tinham lido um livro completo (§2), mas não há fonte para nenhum dos dois valores. O público-alvo (decisores e financiadores) vai querer a origem dos números."
+ },
+ {
+  "id": "FAC-0007",
+  "agente": "verificador-factual",
+  "categoria": "datas",
+  "subcategoria": "actualidade",
+  "localizacao": {
+   "seccao": "S01",
+   "paragrafo": 7
+  },
+  "excerto": "Iremos reunir-nos com o ministério em janeiro de 2025.",
+  "proposta": "Pergunta ao autor: qual é a data do relatório? Se for publicado agora (Novembro de 2026), a reunião de Janeiro de 2025 já ocorreu há cerca de 22 meses. Nesse caso, reescrever no passado e dar o resultado da reunião, ou actualizar a data prevista.",
+  "tipo_intervencao": "consulta-autor",
+  "severidade": "media",
+  "fundamento": {
+   "regra": "As datas futuras devem ser coerentes com a data de publicação do documento.",
+   "fonte": "Data de referência da revisão: 28 de Novembro de 2026 (indicada na tarefa). python3 -c \"print((2026-2025)*12+(11-1))\" -> 22 meses.",
+   "estatuto": "hipotese"
+  },
+  "confianca": "media",
+  "nota": "O texto não diz quando foi escrito. Pode ser um relatório de finais de 2024 que só agora é revisto; é preciso que o autor confirme. A minúscula de «janeiro» é do revisor-linguistico. Também falta dizer qual ministério (presumivelmente o da Educação, segundo o brief)."
+ }
+]

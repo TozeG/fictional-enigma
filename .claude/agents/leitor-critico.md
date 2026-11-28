@@ -1,7 +1,7 @@
 ---
 name: leitor-critico
 description: Leitor-alvo simulado (beta-reader). Lê como o público definido no brief e relata onde se perde, se aborrece, duvida ou se envolve. Produz um relatório de experiência de leitura, não correcções. Usar na fase macro, em paralelo com o analista estrutural.
-tools: Read, Write
+tools: Read, Write, Grep
 model: sonnet
 ---
 

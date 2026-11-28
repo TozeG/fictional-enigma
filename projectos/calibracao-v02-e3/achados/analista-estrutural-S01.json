@@ -1,0 +1,127 @@
+[
+  {
+    "id": "EST-0001",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "conclusao-contradiz-evidencia",
+    "localizacao": {"seccao": "corpo único", "paragrafo": 7},
+    "excerto": "Em suma, o projecto demonstra que a leitura pode ser promovida com poucos recursos e sem dificuldades.",
+    "proposta": "Reformular a conclusão para integrar os constrangimentos que o próprio relatório regista. Opção A: retirar «sem dificuldades» e afirmar que os resultados foram obtidos apesar das dificuldades de arranque e do financiamento parcial (mantém o tom positivo e fica coerente com os §1 e §6). Opção B: transformar as dificuldades em argumento, dizendo o que foi possível fazer com o orçamento efectivamente recebido e o que ficou por fazer (mais útil para o financiador, mas exige dados de execução que o texto ainda não tem).",
+    "tipo_intervencao": "recomendada",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Coerência interna do argumento: uma conclusão não pode negar premissas do próprio texto. O §1 diz «Houveram muitas dificuldades no arranque» e o §6 diz que «o projecto enfrentou problemas de financiamento». Para um decisor, esta contradição tira credibilidade a todo o relatório.",
+      "fonte": "Comparação interna do manuscrito (§1, §6 e §7)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "A contradição é objectiva, porque está no texto. A forma de a resolver é uma decisão do autor."
+  },
+  {
+    "id": "EST-0002",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "evidencia-insuficiente",
+    "localizacao": {"seccao": "corpo único", "paragrafo": 4},
+    "excerto": "A taxa de leitura regular subiu de 20% para 35%",
+    "proposta": "Dar ao resultado o suporte que um decisor exige antes de aceitar «demonstra» (§7) e «ótimos» (§4). Opção A: acrescentar, em duas ou três frases, como se definiu e mediu a «leitura regular», quando, em quantos alunos e por quem. Mantém a extensão curta. Opção B: baixar o grau das afirmações (por exemplo, «indica» em vez de «demonstra») se esses dados não existirem. É mais honesto, mas fica mais fraco como fundamento para a expansão.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Proporção entre a afirmação e a evidência: a conclusão generaliza («demonstra») a partir de um único indicador, sem método, amostra nem fonte da medição. O resultado ocupa 21 palavras, menos do que a descrição das actividades (§3).",
+      "fonte": "Mapa estrutural (relatorios/mapa-estrutural.md)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Não avalio o cálculo do aumento (pontos percentuais contra variação percentual). Esse ponto é do verificador-factual."
+  },
+  {
+    "id": "EST-0003",
+    "agente": "analista-estrutural",
+    "categoria": "estrutura",
+    "subcategoria": "objectivo-nao-cumprido",
+    "localizacao": {"seccao": "corpo único", "paragrafo": 7},
+    "excerto": "Os próximos passos incluem a expanção para outras províncias.",
+    "proposta": "O objectivo declarado da publicação é fundamentar a expansão, e o texto só a anuncia. Opção A: acrescentar um parágrafo ou secção «Proposta de expansão» com âmbito (que províncias, quantas escolas), recursos necessários, condições de êxito retiradas desta experiência e o pedido concreto ao ministério ou aos financiadores. Opção B: se o relatório for apenas de prestação de contas, retirar a expansão do objectivo e tratá-la num documento próprio. O texto fica mais curto e coerente, mas o objectivo do brief deixa de ser cumprido por este documento.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "alta",
+    "fundamento": {
+      "regra": "Adequação ao género e ao objectivo: segundo o brief, o relatório serve para «Prestar contas e fundamentar a expansão do projecto». A expansão aparece numa única frase, sem argumento, custos nem lições aprendidas.",
+      "fonte": "projectos/calibracao-v02-e3/brief.md, campo «Objectivo da publicação»",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "Não trato a grafia de «expanção» (revisor-linguistico). O excerto é a frase inteira porque o achado é sobre a sua função no relatório."
+  },
+  {
+    "id": "EST-0004",
+    "agente": "analista-estrutural",
+    "categoria": "argumento",
+    "subcategoria": "linha-de-base-sem-seguimento",
+    "localizacao": {"seccao": "corpo único", "paragrafo": 2},
+    "excerto": "nunca tinham lido um livro completo antes do projecto",
+    "proposta": "Fechar o ciclo do indicador de partida. Opção A: se existir medição final, dizer quantos alunos leram pelo menos um livro completo durante o projecto. É o resultado mais forte e mais directo para o leitor. Opção B: se não existir, ligar explicitamente o §2 ao indicador do §4 ou apresentar o §2 apenas como contexto, sem sugerir que seja a base de comparação.",
+    "tipo_intervencao": "consulta-autor",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Lacuna argumentativa: o relatório apresenta uma linha de base (livro completo lido) e depois mede outro indicador (taxa de leitura regular). O leitor fica sem saber se o problema descrito no §2 mudou.",
+      "fonte": "Comparação interna do manuscrito (§2 e §4)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "A atribuição da fonte («Segundo o director») é assunto do verificador-factual."
+  },
+  {
+    "id": "EST-0005",
+    "agente": "analista-estrutural",
+    "categoria": "estrutura",
+    "subcategoria": "seccao-desligada",
+    "localizacao": {"seccao": "corpo único", "paragrafo": 6},
+    "excerto": "o projecto enfrentou problemas de financiamento",
+    "proposta": "Ligar o constrangimento financeiro ao resto do argumento. Opção A: dizer o que o défice impediu ou adiou (escolas, sessões, livros) e como foi compensado, por exemplo com o apoio comunitário do §5. Assim a falta de verba passa a fazer parte da história de eficiência. Opção B: juntar §6 e §7 numa secção «Constrangimentos e lições» antes da conclusão. Fica mais claro, mas obriga a reorganizar o final.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Função das secções: o parágrafo sobre o financiamento não tem consequências no texto. Não se diz que efeito teve nos resultados, e a conclusão ignora-o. Num relatório de prestação de contas, a execução orçamental é uma componente central.",
+      "fonte": "Mapa estrutural (relatorios/mapa-estrutural.md)",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "media",
+    "nota": "Não avalio os valores nem a fracção («cerca de metade»), que são do verificador-factual, nem o formato dos números, que é do normalizador."
+  },
+  {
+    "id": "EST-0006",
+    "agente": "analista-estrutural",
+    "categoria": "estrutura",
+    "subcategoria": "adequacao-ao-genero",
+    "localizacao": {"seccao": "título"},
+    "excerto": "Relatório: A Leitura nas Escolas de Luanda",
+    "proposta": "Ajustar a promessa e a arquitectura ao género. Opção A: acrescentar entretítulos curtos (Contexto e objectivos; Actividades; Resultados; Orçamento; Conclusões e proposta de expansão) e um título que identifique o projecto e o período. O decisor encontra logo o que procura, e o texto pouco aumenta. Opção B: manter a prosa corrida e abrir com um parágrafo-síntese (objectivo, resultado principal, pedido). A intervenção é mínima, mas o texto continua difícil de consultar.",
+    "tipo_intervencao": "recomendada",
+    "severidade": "media",
+    "fundamento": {
+      "regra": "Promessa ao leitor contra o que é entregue: o título anuncia um tema geral (a leitura nas escolas de Luanda) e o corpo é o relato de um projecto concreto. O texto não declara os objectivos do projecto e não tem secções que permitam ao decisor localizar resultados, custos e pedido.",
+      "fonte": "brief.md (género: relatório institucional de projecto; público: decisores e financiadores)",
+      "estatuto": "preferencia-estilo"
+    },
+    "confianca": "media",
+    "nota": "A forma concreta dos entretítulos é preferência minha. A falta de objectivos declarados é uma lacuna objectiva."
+  },
+  {
+    "id": "EST-0007",
+    "agente": "analista-estrutural",
+    "categoria": "preservacao",
+    "subcategoria": "ponto-forte",
+    "localizacao": {"seccao": "corpo único", "paragrafo": 5},
+    "excerto": "Os candongueiros da zona chegaram a transportar caixas de livros sem cobrar.",
+    "proposta": "Preservar. É a prova mais concreta de adesão comunitária e de custos evitados, e pode sustentar directamente o argumento de que o projecto se faz «com poucos recursos». Se houver reestruturação, convém ligá-la ao §6 e não a cortar.",
+    "tipo_intervencao": "opcional",
+    "severidade": "baixa",
+    "fundamento": {
+      "regra": "Ponto forte a proteger: evidência testemunhal concreta e local que dá credibilidade ao relatório junto do público angolano.",
+      "estatuto": "interpretacao"
+    },
+    "confianca": "alta",
+    "nota": "O testemunho em discurso directo da zungueira também deve ser preservado, mas a protecção da oralidade é do revisor-linguistico."
+  }
+]
