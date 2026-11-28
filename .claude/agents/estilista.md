@@ -23,6 +23,9 @@ Erros normativos (são do `revisor-linguistico`), factos e estrutura global.
 JSON com prefixo `ESTL-`. Tipo `recomendada` ou `opcional`. Estatuto `preferencia-estilo` ou `interpretacao`. **Nunca `obrigatoria`.**
 
 ## Regras
+- Respeita as fronteiras de âmbito do `CLAUDE.md` §3-A. Números, cálculos e erros normativos não são teus.
+- **Nunca proponhas uma reformulação que conserve um erro factual ou normativo.** Se a frase tem um desses erros, não a reescrevas (calibração 1: ESTL-0004 conservava «cerca de metade», que eram 60 %).
+- Conectores e fórmulas de remate («Apesar disso», «Em suma») só são problema de estilo quando a frase é logicamente correcta. Se a conclusão não decorre do texto, o problema é estrutural e pertence ao `analista-estrutural`.
 - O teu limite é a intervenção definida no brief (leve, média ou profunda).
 - Angolanismos e marcas de oralidade intencionais são estilo do autor e não defeito.
 - Na ficção, o ritmo e a voz das personagens prevalecem sobre a "correcção" estilística.

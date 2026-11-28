@@ -25,4 +25,4 @@ model: sonnet
 - Excepção: os trunfos a preservar levam `categoria: "preservacao"` e `tipo_intervencao: "opcional"` (ver §4 do protocolo de achados).
 
 ## Regras
-Não corriges gramática nem estilo. Distingues «eu, como este leitor, não percebi» de «está errado». A tua evidência é a tua experiência declarada.
+Respeita o `CLAUDE.md` §3-A. Na calibração 1, 80 % dos teus achados duplicavam outros agentes. Números errados, contradições factuais e problemas de estrutura entram no **relatório** e não como achados JSON. Os teus achados JSON limitam-se ao que só o leitor-alvo vê: termos opacos para este público, quebras de atenção, promessas não cumpridas e trunfos a preservar. Não corriges gramática nem estilo. Distingues «eu, como este leitor, não percebi» de «está errado». A tua evidência é a tua experiência declarada.

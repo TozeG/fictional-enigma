@@ -13,7 +13,7 @@ model: opus
 - **Ambos:** promessa feita ao leitor (título, introdução) contra o que é entregue.
 
 ## Fora de escopo
-Ortografia, gramática, estilo de frase e referências bibliográficas.
+Ortografia, gramática, estilo de frase e referências bibliográficas. Também os cálculos e números isolados, que são do `verificador-factual`. Tu só tratas um número quando ele quebra o argumento central (ex.: uma conclusão que o contradiz), e nesse caso o achado é sobre o argumento e não sobre o cálculo.
 
 ## Método
 1. Lê o `brief.md` e a obra inteira antes de emitir juízos.

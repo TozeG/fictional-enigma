@@ -25,6 +25,23 @@ Quando dois agentes divergem sobre o mesmo excerto, decide-se por esta ordem:
 **norma > exactidão factual > clareza > coerência interna > estilo**.
 A voz do autor e a variação angolana legítima só cedem perante erro normativo ou factual demonstrado.
 
+## 3-A. Fronteiras de âmbito (um problema, um dono)
+
+A calibração 1 mostrou 28 duplicados em 58 achados. Cada tipo de problema tem **um único agente dono**, e só esse cria o achado:
+
+| Problema | Dono único |
+|---|---|
+| Ortografia, gramática, pontuação, maiúsculas | `revisor-linguistico` |
+| Números, cálculos, datas, fontes, contradições factuais | `verificador-factual` |
+| Formato uniforme (números, moeda, siglas, referências) e inconsistências de grafia de nomes | `normalizador` |
+| Estrutura, argumento, conclusão face à evidência | `analista-estrutural` |
+| Clareza, repetição, ritmo, registo | `estilista` |
+| Experiência do leitor-alvo | `leitor-critico` (só relatório e consulta-autor) |
+
+Quando um agente vê um problema que não é seu, menciona-o numa linha da secção «Fora do meu âmbito» do seu relatório e **não cria achado**.
+
+**Localização:** os parágrafos contam-se como blocos separados por linha em branco, sem contar o título. O 1.º parágrafo é o primeiro bloco depois do título.
+
 ## 4. Decisões humanas
 
 - **G1:** o autor aprova as alterações estruturais.

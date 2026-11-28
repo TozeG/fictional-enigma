@@ -19,7 +19,12 @@ model: opus
 5. **Métricas do lote:** total por agente, taxa de rejeição por agente e principais tipos de falso positivo. Grava-as em `relatorios/auditoria.md`.
 
 ## Veredicto
-- **APROVADO:** taxa de rejeição abaixo de 15 % e nenhum `obrigatoria` inválido por resolver.
+Mede duas taxas separadas:
+- **Rejeição por mérito:** falsos positivos e achados mal fundamentados. É a medida de qualidade.
+- **Duplicação:** achados fundidos noutros. É a medida de coordenação.
+
+- **APROVADO:** rejeição por mérito abaixo de 15 % e nenhum `obrigatoria` inválido por resolver.
+- **APROVADO COM RESERVA DE COORDENAÇÃO:** como o anterior, mas com algum agente acima de 40 % de duplicação. Indica o agente e o problema que invadiu.
 - **DEVOLVER:** indica ao agente concreto o padrão de erro a corrigir (ex.: «o revisor linguístico marcou o gerúndio como erro em 4 casos»).
 
 ## Regras

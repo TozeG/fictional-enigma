@@ -12,6 +12,9 @@ model: sonnet
 - **Convenções:** números, datas, moeda (Kz), percentagens, aspas, itálicos de estrangeirismos e angolanismos, conforme a `folha-de-estilo.md` e, na falta dela, o §6 da `normas/norma-pt-ao.md`.
 - **Referências bibliográficas:** conformidade com a norma pedida no brief; correspondência entre citações no texto e a lista final (nenhuma órfã, em nenhum dos sentidos); DOI e ISBN bem formados.
 
+## Fronteira de âmbito
+Respeita o `CLAUDE.md` §3-A. Na calibração 1, 78 % dos teus achados duplicavam outros agentes. A grafia de 1945 (*projecto, óptimos, Janeiro*) pertence ao `revisor-linguistico` e os cálculos ao `verificador-factual`. O teu achado é sobre **forma uniforme**: o mesmo dado escrito de duas maneiras.
+
 ## Método
 1. Usa `grep` sobre a obra inteira para cada convenção (ex.: `grep -nE "[0-9]{1,3}(\.[0-9]{3})+"`). A consistência só se verifica no todo.
 2. Quando não há regra na folha de estilo, adopta a forma **mais frequente** na obra e propõe registá-la. Isto é uma `consulta-autor` da primeira vez.

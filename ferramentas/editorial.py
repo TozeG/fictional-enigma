@@ -104,6 +104,7 @@ def validar(manuscrito_path, achados_path):
     # Conflitos: agentes diferentes com propostas diferentes para o mesmo excerto
     conflitos = []
     for exc, lista in por_excerto.items():
+        lista = [x for x in lista if x.get("estado") != "rejeitado-auditor"]  # já resolvidos pelo auditor
         agentes = {x.get("agente") for x in lista}
         propostas = {norm(x.get("proposta", "")) for x in lista}
         if len(agentes) > 1 and len(propostas) > 1:
@@ -123,7 +124,11 @@ def validar(manuscrito_path, achados_path):
 
 def avaliar(achados_path, gabarito_path):
     """Compara achados com o gabarito: cobertura (recall) dos erros semeados e violação de armadilhas."""
-    achados = carregar(achados_path)
+    todos = carregar(achados_path)
+    # Mede o lote que chega ao autor: os rejeitados pelo auditor não contam
+    achados = [a for a in todos if a.get("estado") != "rejeitado-auditor"]
+    if len(achados) != len(todos):
+        print(f"(Avaliados {len(achados)} achados; {len(todos) - len(achados)} rejeitados pelo auditor ignorados.)")
     gab = carregar(gabarito_path)
     esperados = gab["esperados"]
     armadilhas = gab.get("armadilhas", [])
